@@ -1,0 +1,30 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Simple web app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --mode=production --progress",
+    "watch": "webpack --mode=production --watch --progress"
+  },
+  "devDependencies": {
+    "@webdiscus/pug-loader": "^1.8.0",
+    "autoprefixer": "^10.4.2",
+    "css-loader": "^6.7.0",
+    "css-url-relative-plugin": "^1.1.0",
+    "cssnano": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss-loader": "^6.2.1",
+    "pug-plugin": "^2.0.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
