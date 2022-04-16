@@ -1,25 +1,22 @@
 $mainFont: "Montserrat", Arial, sans-serif;
 
 // Size
-$mainFontColor: rgba(31, 32, 65, 0.5);
-$mainFontSize: 14px;
+$mainFontSize: 0.875rem; //14px от 16 браузерных
 $mainFontWeight: 400;
-$mainLineHeight: 17px;
+$mainLineHeight: 24px;
+$mainFontStyle: normal;
+$mainFontColor: rgba(31, 32, 65, 0.75);
 
-$maxWidth: 1440px;
+$maxWidth: 1440px; //вариант 1920px
 $smDesktopWidth: 980px;
 $tableWidth: 768px;
 $phoneWidth: 480px;
 $smPhoneWidth: 320px;
 
-// Main color
-$default-color: #ffffff;
-$primary-color: #444ce0;
-$success-color: #26de81;
-$danger-color: #fc5c65;
-$warning-color: #fed330;
-$light-color: #999999;
-$purple-color: #8854d0;
+// Main colors
+$mainColor: #1f2041;
+$green: #6fcf97;
+$purple: #bc9cff;
 
 // Neutral Color
 $neutral-primary: #303133;

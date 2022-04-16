@@ -1,0 +1,27 @@
+include mixins
+
+doctype html
+html
+  head
+  include _head
+    //- the compiled CSS from public path
+    //- link(rel='stylesheet' href='assets/css/vendor.css')
+    //- link(rel='stylesheet' href='assets/css/post-css-demo.min.css')
+ 
+  body
+    .wrapper
+      #app-root
+      block ui 
+        //- ul
+        //-   a(href='./UI.html')
+        //-     li UI kit 
+        //-   a(href='./about.html')
+        //-     li Website
+          //- The application content from PUG templates will be added via JavaScript.
+              This supports `live reload` after edit.
+      
+      include ../assets/modules/footer
+      
+
+
+

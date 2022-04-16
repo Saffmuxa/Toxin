@@ -1,19 +1,43 @@
-@import "reset.scss";
+@import "reset";
 @import "fonts";
 @import "vars";
-html,
+html {
+  height: 100%;
+}
 body,
 input {
   height: 100%;
   background-color: #ffffff;
-  color: $mainFontColor;
   margin: 0px 5px;
   font-family: $mainFont;
-  line-height: $mainLineHeight;
+  font-style: $mainFontStyle;
+  font-weight: $mainFontWeight;
   font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  color: $mainFontColor;
+}
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem; //24px
+  line-height: 29px;
+  color: rgba(31, 32, 65, 1);
+}
+h2 {
+  font-weight: 700;
+  font-size: 1.1875rem; //19px
+  line-height: 23px;
+  color: rgba(31, 32, 65, 1);
+}
+h3 {
+  font-weight: 700;
+  font-size: 0.75rem; //12px при 16 браузерных
+  line-height: 15px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 1);
 }
 .wrapper {
   max-width: $maxWidth;
+  overflow: hidden;
   margin: 0px auto;
 
   display: flex;

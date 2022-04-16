@@ -33,11 +33,17 @@ module.exports = {
     // vendor: "./src/assets/styles/vendor.css",
     // "post-css-demo.min": "./src/assets/styles/post-css-demo.scss",
 
-    index: "./src/templates/index.pug",
-    aboutHtml: {
-      import: "./src/templates/about.html",
-      filename: "about.html",
-    },
+    index: "./src/templates/pages/index.pug",
+    Toxin: "./src/templates/pages/toxin.pug",
+    UI: "./src/templates/pages/ui.pug",
+    // aboutHtml: {
+    //   import: "./src/templates/about.html",
+    //   filename: "about.html",
+    // },
+    // UI: {
+    //   import: "./src/templates/pages/UI.pug",
+    //   filename: "UI.html",
+    // },
   },
 
   plugins: [
