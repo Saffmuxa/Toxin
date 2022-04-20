@@ -28,6 +28,7 @@ module.exports = {
 
   entry: {
     app: "./src/main.js",
+    dropdown: "./src/templates/pages/ui/dropdown.js",
     // mainStyle: "./src/assets/styles/styles.scss",
     // about: "./src/assets/styles/about.css",
     // vendor: "./src/assets/styles/vendor.css",
@@ -54,10 +55,8 @@ module.exports = {
       modules: [
         PugPlugin.extractHtml(),
         PugPlugin.extractCss({
-          verbose: true,
-          filename: isProduction
-            ? "assets/css/[name].[contenthash:8].css"
-            : "assets/css/[name].css",
+          verbose: false,
+          filename: "assets/css/[name].css",
         }),
       ],
     }),
@@ -91,15 +90,20 @@ module.exports = {
           // filename: "assets/img/[name].[hash][ext]",
         },
       },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
 
       // {
-      //   test: /\.(ttf|otf|svg|eot|woff(2)?)/,
+      //   test: /\.(js)/,
       //   use: [
       //     {
       //       loader: "file-loader",
       //       options: {
       //         name: "[name].[ext]",
-      //         outputPath: "assets/fonts/",
+      //         outputPath: "assets/js/",
       //         // publicPath: "../fonts/",
       //       },
       //     },
@@ -114,10 +118,10 @@ module.exports = {
             loader: "css-loader",
             options: {},
           },
-          {
-            loader: "resolve-url-loader",
-            options: { sourceMap: true },
-          },
+          // {
+          //   loader: "resolve-url-loader",
+          //   options: { sourceMap: true },
+          // },
           // Add browser prefixes and minify CSS.
           {
             loader: "postcss-loader",

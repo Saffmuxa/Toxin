@@ -1,20 +1,49 @@
 @import "reset";
 @import "fonts";
 @import "vars";
+// @import "./ui.scss"; //убрать
+
 html {
   height: 100%;
 }
 body,
 input {
   height: 100%;
-  background-color: #ffffff;
-  margin: 0px 5px;
+  background-color: $mainBackground;
   font-family: $mainFont;
   font-style: $mainFontStyle;
   font-weight: $mainFontWeight;
   font-size: $mainFontSize;
   line-height: $mainLineHeight;
   color: $mainFontColor;
+}
+input {
+  height: 44px;
+  width: 320px;
+  padding: 12px 15px;
+  background-color: rgba(31, 32, 65, 0);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    color: rgba(31, 32, 65, 0.75);
+  }
+  &::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+button {
+  cursor: pointer;
+  background-color: $mainBackground;
+  font-family: $mainFont;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 18px;
+  line-height: 22px;
 }
 h1 {
   font-weight: 700;
@@ -35,15 +64,125 @@ h3 {
   text-transform: uppercase;
   color: rgba(31, 32, 65, 1);
 }
+
 .wrapper {
   max-width: $maxWidth;
   overflow: hidden;
   margin: 0px auto;
-
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 #app-root {
   flex: 1 0 auto;
+}
+//для вариантов input
+.subscribtion {
+  input {
+    width: 260px;
+  }
+  button {
+    position: relative;
+    margin-left: -14%;
+  }
+}
+.drop-wrap {
+  height: 44px;
+  width: 320px;
+}
+.dropdown {
+  position: absolute;
+  background-color: $mainBackground;
+  width: 320px;
+
+  &.active {
+    input {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      color: rgba(31, 32, 65, 0.75);
+      border-radius: 4px 4px 0px 0px;
+    }
+  }
+}
+.dropdown-menu {
+  width: 320px;
+  height: 0px;
+  border: 0px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  left: 0;
+  top: calc(100% - 0px);
+  background-color: $mainBackground;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-1px);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
+    height 200ms ease-in-out, border 200ms ease-in-out;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 5px 5px 14px;
+  }
+  li:last-child {
+    justify-content: space-between;
+    display: flex;
+    margin: 20px 0px 0px 0px;
+    align-items: flex-end;
+    h3 {
+      color: $purple;
+      margin-left: 8px;
+    }
+  }
+  #dropdown-reset {
+    display: none;
+  }
+}
+.dropdown.active > .dropdown-toggle + .dropdown-menu {
+  opacity: 1;
+  height: 159px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  transform: translateY(-1px);
+  pointer-events: auto;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
+    height 200ms ease-in-out, border 200ms ease-in-out;
+  position: absolute;
+}
+.dropdown-toggle {
+  background-color: $mainBackground;
+  &:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 4px 4px 0px 0px;
+  }
+}
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  width: 92px;
+  justify-content: space-between;
+  button {
+    border-radius: 22px;
+    width: 30px;
+    height: 30px;
+    // margin-left: 12px;
+    margin-top: 2px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    // &.active {
+    // }
+    &.non-active {
+      opacity: 0.38;
+    }
+  }
+  h3 {
+    // margin-left: 12px;
+  }
+  &_plus {
+  }
+  &_minus {
+  }
+}
+.date-field {
+  color: rgba(31, 32, 65, 0.25);
+  text-transform: uppercase;
+  // display: none;
 }

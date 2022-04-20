@@ -1,6 +1,56 @@
 mixin headImg
   .head-container
     img(src=require('Images/GroupBlack.svg')) 
-  //- img(src=require('Images/`${name}`.svg'))
-//- mixin img(name)
-//-     img(src=require(`../src/images/${name}`) alt=name)
+mixin subscriptionField
+  form.subscribtion
+    input(type="text" placeholder="Email") 
+    button(type="submit")
+      img(src=require('Images/arrow_forward.svg'))
+mixin textField
+  form.text
+    input(type="text" placeholder="Email") 
+mixin dropdown(oneLi, twoLi, threeLi)
+  .drop-wrap 
+    form.dropdown(data-dropdown)
+      input.dropdown-toggle(data-dropdown-button id="visitors" value="Сколько гостей")
+      .dropdown-menu  
+        ul 
+          li 
+            div 
+              h3= oneLi
+            .dropdown-button
+              button(type="button" id="dropdown-oneLi-minus" class="non-active")
+                p -
+              h3#calc1 0
+              button(type="button" id="dropdown-oneLi-plus")
+                p +
+          li 
+            div 
+              h3= twoLi
+            .dropdown-button 
+              button(type="button" id="dropdown-TwoLi-minus" class="non-active")
+                p -
+              h3#calc2 0
+              button(type="button" id="dropdown-TwoLi-plus")
+                p +
+          li 
+            div 
+              h3= threeLi
+            .dropdown-button 
+              button(type="button" id="dropdown-ThreeLi-minus" class="non-active")
+                p -
+              h3#calc3 0
+              button(type="button" id="dropdown-ThreeLi-plus")
+                p +
+          li 
+            button(type="button")
+              h3#dropdown-reset очистить
+            button(type="button")
+              h3#dropdown-apply применить
+              //- id="dropdown-apply"
+
+
+mixin birthDate 
+  input(type="date" class="date-field") 
+
+//- mixin dropdownCalendar 

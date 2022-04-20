@@ -1,4 +1,7 @@
-@import "styles";
+@import "styles"; //вернуть
+@import "./ui/uiColors.scss";
+@import "./ui/uiElements.scss";
+// @import ".././styles/modules/footer.scss";
 body {
   background-color: rgba(31, 32, 65, 0.25);
 }
@@ -15,111 +18,4 @@ body {
 }
 .head-container {
   padding: 30px;
-}
-.block {
-  max-width: $maxWidth;
-  background-color: #ffffff;
-  &.colors {
-    height: 900px;
-    &_sections {
-      display: grid;
-      grid-template-columns: minmax(5px, 150px) 360px minmax(5px, 322px) 458px minmax(
-          5px,
-          150px
-        );
-    }
-
-    section {
-      padding: 37px 0px 0px 0px;
-    }
-  }
-  .colors {
-    grid-column: 2/3;
-    li {
-      display: flex;
-    }
-  }
-}
-.quad {
-  border-radius: 6px;
-  width: 70px;
-  height: 70px;
-  margin: 0px 40px 20px 0px;
-  &.main-dark {
-    background: $mainColor;
-    &.shade75 {
-      opacity: 0.75;
-    }
-    &.shade50 {
-      opacity: 0.5;
-    }
-    &.shade25 {
-      opacity: 0.25;
-    }
-    &.shade5 {
-      opacity: 0.05;
-    }
-  }
-  &.green {
-    background: $green;
-  }
-  &.purple {
-    background: $purple;
-  }
-  &_info {
-    h2 {
-      padding-top: 10px;
-    }
-    p {
-      padding-top: 4px;
-      font-size: 18px;
-      letter-spacing: 0.7px;
-    }
-  }
-}
-
-.type {
-  align-items: baseline;
-  justify-content: flex-start;
-  grid-column: 4/5;
-
-  display: grid;
-  grid-template-columns: 54px 27px 370px;
-  grid-template-rows: 110px 95px 66px 110px;
-  .fonts-name {
-    text-align: right;
-    margin-right: 4px;
-    grid-column: 1/2;
-    &._name-h1 {
-      font-size: 24px;
-      grid-row: 1/2;
-    }
-    &._name-h2 {
-      font-size: 20px;
-      grid-row: 2/3;
-    }
-    &._name-h3 {
-      font-size: 12px;
-      grid-row: 3/4;
-    }
-    &._name-body {
-      grid-column: 1/2;
-      grid-row: 4/5;
-    }
-  }
-  .fonts-info {
-    grid-column: 3/4;
-    &._info-h1 {
-      grid-row: 1/2;
-    }
-    &._info-h2 {
-      grid-row: 2/3;
-    }
-    &._info-h3 {
-      grid-row: 3/4;
-    }
-    &._info-body {
-      grid-row: 4/5;
-    }
-  }
 }
