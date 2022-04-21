@@ -11,6 +11,7 @@ html
         link(rel='icon' href=require('~Images/favicon.ico'))
         link(rel='stylesheet' href=require('~Styles/ui.scss'))
         link(rel='stylesheet' href=require('~Styles/modules/footer.scss'))
+        link(rel='stylesheet' href=require('~Styles/modules/header.scss'))
 a(href='../index.html')
     button.to-home < Home 
 .wrapper
@@ -20,5 +21,9 @@ a(href='../index.html')
     h2.ui-info Form Elements
     article.block.elements
         include ./ui/elements
+    h2.ui-info Headers & Footers
+    +headImgGrey
+    article.block.headers-footers
+        include ./ui/headersAndFooters
 
-    include ../../assets/modules/footer
+    

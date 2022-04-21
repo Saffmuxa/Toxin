@@ -1,0 +1,26 @@
+header
+  .header-wrap
+    div.header-block._left
+      a(target='_blank' href='//google.com')
+        +toxinLogo 
+    nav.header-block._right
+      ul.header-block._nav 
+        li 
+          a(target='_blank' href='//google.com') О нас
+        li.dropdown-li(data-dropdown) 
+          button(class="dropdown-li-toggle" data-dropdown-button) Услуги
+            img(src=require('Images/expand_more.svg') class="more-img")
+          +dropdownWord('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
+        li 
+          a(target='_blank' href='//google.com') Вакансии
+        li 
+          a(target='_blank' href='//google.com') Новости
+        li.dropdown-li(data-dropdown) 
+          button(class="dropdown-li-toggle" data-dropdown-button) Соглашения
+            img(src=require('Images/expand_more.svg') class="more-img")
+          +dropdownWord('Соглашения-0', "Соглашения-1", "Соглашения-2")
+
+      .header-block._login
+          +enterButton('войти')
+          +registerButton('зарегистрироваться')
+

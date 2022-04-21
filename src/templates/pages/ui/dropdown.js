@@ -128,10 +128,26 @@ dropdownApply.onclick = function () {
 dropdownReset.onclick = function () {
   dropdownReset.style.display = "none";
   visitors.value = "Сколько гостей";
-  calc1.innerHTML = 0;
-  btnMinus1.className = "non-active";
-  calc2.innerHTML = 0;
-  btnMinus2.className = "non-active";
-  calc3.innerHTML = 0;
-  btnMinus3.className = "non-active";
+  calc1.innerHTML = calc2.innerHTML = calc3.innerHTML = 0;
+  btnMinus1.className =
+    btnMinus2.className =
+    btnMinus3.className =
+      "non-active";
+  btnPlus1.className = btnPlus2.className = btnPlus3.className = "";
 };
+
+// document.addEventListener("click", (e) => {
+//   const isDropdownButton = e.target.matches("[data-dropdown-button]");
+//   if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return;
+
+//   let currentDropdown;
+//   if (isDropdownButton) {
+//     currentDropdown = e.target.closest("[data-dropdown]");
+//     currentDropdown.classList.toggle("active");
+//   }
+
+//   document.querySelectorAll("[data-dropdown].active").forEach((dropdown) => {
+//     if (dropdown === currentDropdown) return;
+//     dropdown.classList.remove("active");
+//   });
+// });

@@ -64,7 +64,15 @@ h3 {
   text-transform: uppercase;
   color: rgba(31, 32, 65, 1);
 }
-
+a {
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: normal;
+  text-transform: none;
+  line-height: 17px;
+  &:hover {
+    color: rgba(31, 32, 65, 1);
+  }
+}
 .wrapper {
   max-width: $maxWidth;
   overflow: hidden;
@@ -76,6 +84,10 @@ h3 {
 #app-root {
   flex: 1 0 auto;
 }
+.toxin-img {
+  padding-right: 12px;
+}
+
 //для вариантов input
 .subscribtion {
   input {
@@ -185,4 +197,31 @@ h3 {
   color: rgba(31, 32, 65, 0.25);
   text-transform: uppercase;
   // display: none;
+}
+.enter-button {
+  // text-transform: uppercase;
+  // position: relative;
+  // width: 87px;
+  // margin: 0px 5px;
+  height: 34px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  margin-left: 21px;
+  h3 {
+    color: $purple;
+    padding: 0px 12px;
+  }
+}
+.register-button {
+  height: 34px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  margin-left: 20px;
+  h3 {
+    color: #ffffff;
+    padding: 0px 12px;
+  }
 }

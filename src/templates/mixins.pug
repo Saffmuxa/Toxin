@@ -1,5 +1,11 @@
+mixin toxinLogo 
+  img(src=require('Images/Group.svg') alt="Group-ico" class="toxin-img")
+  img(src=require('Images/TOXIN.svg') alt="Group-name" class="toxin-img")
 mixin headImg
   .head-container
+    img(src=require('Images/GroupBlack.svg')) 
+mixin headImgGrey
+  .head-container_grey
     img(src=require('Images/GroupBlack.svg')) 
 mixin subscriptionField
   form.subscribtion
@@ -49,8 +55,22 @@ mixin dropdown(oneLi, twoLi, threeLi)
               h3#dropdown-apply применить
               //- id="dropdown-apply"
 
-
+mixin dropdownWord(...items)
+  
+    ul.dropdown-li-menu 
+      each item in items
+          li 
+            a(target='_blank' href='//google.com')= item
+          
+            
 mixin birthDate 
   input(type="date" class="date-field") 
-
+mixin enterButton(text)
+  button(type="button" class="enter-button") 
+    h3= text
+mixin registerButton(text)
+  button(type="button" class="register-button") 
+    h3= text
+mixin actionButton
+  button(type="button" class="non-active")
 //- mixin dropdownCalendar 
