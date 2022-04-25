@@ -3,14 +3,23 @@
 header {
   background-color: #ffffff;
   margin: auto;
+  padding: 0 6px;
   height: 70px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  // display: grid;
+  // grid-template-columns:
+  //   minmax(6px, 140px) auto
+  //   minmax(6px, 140px);
+  // grid-template-rows: 70px;
 }
 .header-wrap {
+  // grid-column: 2/3;
   height: 70px;
   display: flex;
   justify-content: space-between;
   margin: auto;
   max-width: calc($maxWidth - 280px);
+  // padding: 0px 6px;
 }
 .header-block {
   display: flex;
@@ -48,48 +57,45 @@ header {
     }
   }
 }
-.dropdown-li {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  button {
-    img {
-      transform: rotate(0deg);
-      transition: transform 200ms ease-in-out;
-    }
-  }
-  &.active {
-    button {
-      img {
-        transform: rotate(180deg);
-        transition: transform 200ms ease-in-out;
-      }
-    }
-  }
-}
-.dropdown-li.active > .dropdown-li-toggle + .dropdown-li-menu {
-  opacity: 1;
+// .dropdown-li {
+//   position: relative;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: space-evenly;
+//   button {
+//     img {
+//       transform: rotate(0deg);
+//       transition: transform 200ms ease-in-out;
+//     }
+//   }
+//   &.active {
+//     button {
+//       img {
+//         transform: rotate(180deg);
+//         transition: transform 200ms ease-in-out;
+//       }
+//     }
+//   }
+// }
+// .dropdown-el.active > .dropdown-el-toggle + .dropdown-el-menu {
+//   opacity: 1;
 
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  transform: translateY(0px);
-  pointer-events: auto;
+//   border: 1px solid rgba(31, 32, 65, 0.25);
+//   transform: translateY(0px);
+//   pointer-events: auto;
 
-  position: absolute;
-}
-.dropdown-li-menu {
+//   position: absolute;
+// }
+.dropdown-el-menu {
   min-width: 160px;
-
   display: flex;
   align-items: stretch;
   flex-direction: column;
   justify-content: space-evenly;
-
   position: absolute;
   border: 0px solid rgba(31, 32, 65, 0.25);
   border-radius: 0px 0px 4px 4px;
   overflow: hidden;
-
   margin-top: 26px;
   background-color: $mainBackground;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -98,10 +104,17 @@ header {
   transform: translateY(-4px);
   transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
     border 200ms ease-in-out;
-
   li {
     display: flex;
     justify-content: space-around;
     margin: 4px 0px;
   }
+}
+.account {
+  border-left: 1px solid rgba(31, 32, 65, 0.1);
+  height: 33px;
+  padding-left: 20px;
+  margin-left: 21px;
+  display: flex;
+  align-items: center;
 }

@@ -9,7 +9,7 @@ header
           a(target='_blank' href='//google.com') О нас
         li.dropdown-el(data-dropdown) 
           button(class="dropdown-el-toggle" data-dropdown-button) Услуги
-            img(src=require('Images/expand_more.svg'))
+            img(src=require('Images/expand_more.svg') class="more-img")
           +dropdownWord('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
         li 
           a(target='_blank' href='//google.com') Вакансии
@@ -17,10 +17,10 @@ header
           a(target='_blank' href='//google.com') Новости
         li.dropdown-el(data-dropdown) 
           button(class="dropdown-el-toggle" data-dropdown-button) Соглашения
-            img(src=require('Images/expand_more.svg'))
+            img(src=require('Images/expand_more.svg') class="more-img")
           +dropdownWord('Соглашения-0', "Соглашения-1", "Соглашения-2")
 
       .header-block._login
-          +enterButton('войти')
-          +registerButton('зарегистрироваться')
+         .account 
+            a(target='_blank' href='//google.com') Юлий Цезарь 
 

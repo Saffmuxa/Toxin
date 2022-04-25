@@ -1,7 +1,7 @@
 @import "reset";
 @import "fonts";
 @import "vars";
-// @import "./ui.scss"; //убрать
+// @import "./modules/calendar.scss"; //убрать
 
 html {
   height: 100%;
@@ -20,7 +20,7 @@ input {
 input {
   height: 44px;
   width: 320px;
-  padding: 12px 15px;
+  padding: 0px 15px;
   background-color: rgba(31, 32, 65, 0);
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
@@ -75,7 +75,7 @@ a {
 }
 .wrapper {
   max-width: $maxWidth;
-  overflow: hidden;
+  // overflow: hidden;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
@@ -85,29 +85,55 @@ a {
   flex: 1 0 auto;
 }
 .toxin-img {
-  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 106px;
+  // padding-right: 12px;
 }
 
 //для вариантов input
 .subscribtion {
+  display: flex;
+  max-width: 267px;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+
   input {
-    width: 260px;
+    position: relative;
+    // width: 100%;
+    padding-bottom: 2px;
   }
   button {
-    position: relative;
-    margin-left: -14%;
+    position: absolute;
+    margin: 0px 7px 4px 0px;
   }
 }
 .drop-wrap {
   height: 44px;
-  width: 320px;
+  // width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .dropdown {
   position: absolute;
   background-color: $mainBackground;
   width: 320px;
 
+  img {
+    position: absolute;
+    right: 5%;
+    // padding-right: 6px;
+    transform: rotate(0deg);
+    transition: transform 200ms ease-in-out;
+  }
+
   &.active {
+    img {
+      transform: rotate(180deg);
+      transition: transform 200ms ease-in-out;
+    }
     input {
       border: 1px solid rgba(31, 32, 65, 0.5);
       color: rgba(31, 32, 65, 0.75);
@@ -116,6 +142,7 @@ a {
   }
 }
 .dropdown-menu {
+  z-index: 1;
   width: 320px;
   height: 0px;
   border: 0px solid rgba(31, 32, 65, 0.5);
@@ -150,7 +177,7 @@ a {
     display: none;
   }
 }
-.dropdown.active > .dropdown-toggle + .dropdown-menu {
+.dropdown.active > .dropdown-menu {
   opacity: 1;
   height: 159px;
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -160,12 +187,21 @@ a {
     height 200ms ease-in-out, border 200ms ease-in-out;
   position: absolute;
 }
-.dropdown-toggle {
+.dropdown-toggle,
+.dropdown-toggle__mid,
+.dropdown-toggle__short {
   background-color: $mainBackground;
+
   &:focus {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 4px 4px 0px 0px;
   }
+}
+.dropdown-toggle__short {
+  max-width: 150px;
+}
+.dropdown-toggle__mid {
+  max-width: 267px;
 }
 .dropdown-button {
   display: flex;
@@ -185,24 +221,67 @@ a {
       opacity: 0.38;
     }
   }
-  h3 {
-    // margin-left: 12px;
-  }
-  &_plus {
-  }
-  &_minus {
-  }
 }
 .date-field {
   color: rgba(31, 32, 65, 0.25);
   text-transform: uppercase;
-  // display: none;
 }
+.date-dropdown {
+  position: absolute;
+  // width: 150px;
+  overflow: hidden;
+  &.active img {
+    transform: rotate(180deg);
+    transition: transform 200ms ease-in-out;
+  }
+  .date-dropdown_input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // width: 150px;
+  }
+  img {
+    position: absolute;
+    right: 15px;
+    // padding-right: 6px;
+    transform: rotate(0deg);
+    transition: transform 200ms ease-in-out;
+  }
+  input {
+    // text-transform: uppercase;
+    // width: 150px;
+    display: inline-block;
+  }
+}
+.calendar {
+  width: 100px;
+  z-index: 1;
+  height: 0px;
+  border: 0px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  left: 0;
+  top: calc(100% - 0px);
+  background-color: $mainBackground;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-1px);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
+    height 200ms ease-in-out, border 200ms ease-in-out;
+}
+.date-dropdown.active > .calendar {
+  opacity: 1;
+  height: 159px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  transform: translateY(-1px);
+  pointer-events: auto;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
+    height 200ms ease-in-out, border 200ms ease-in-out;
+  position: absolute;
+}
+
 .enter-button {
-  // text-transform: uppercase;
-  // position: relative;
-  // width: 87px;
-  // margin: 0px 5px;
   height: 34px;
   background: linear-gradient(#fff, #fff) padding-box,
     linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
@@ -224,4 +303,63 @@ a {
     color: #ffffff;
     padding: 0px 12px;
   }
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+}
+.link-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 112px;
+}
+.link-wrap {
+  height: 367px;
+  width: 768px;
+  background-color: $mainBackground;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2px;
+  .link-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin-bottom: 3px;
+      padding: 18px 0px;
+    }
+  }
+}
+
+.dropdown-el {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  button {
+    img {
+      transform: rotate(0deg);
+      transition: transform 200ms ease-in-out;
+    }
+  }
+  &.active {
+    button {
+      img {
+        transform: rotate(180deg);
+        transition: transform 200ms ease-in-out;
+      }
+    }
+  }
+}
+.dropdown-el.active > .dropdown-el-toggle + .dropdown-el-menu {
+  opacity: 1;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  transform: translateY(0px);
+  pointer-events: auto;
+  position: absolute;
 }

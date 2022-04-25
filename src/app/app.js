@@ -5,5 +5,5 @@ const appRootId = "app-root";
 
 export function app() {
   const appRootContainer = document.getElementById(appRootId);
-  // appRootContainer.innerHTML = html;
+  appRootContainer.innerHTML = html;
 }

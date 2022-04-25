@@ -1,25 +1,62 @@
+//- Круглое лого и надпись Toxin
 mixin toxinLogo 
-  img(src=require('Images/Group.svg') alt="Group-ico" class="toxin-img")
-  img(src=require('Images/TOXIN.svg') alt="Group-name" class="toxin-img")
+  .toxin-img
+    img(src=require('Images/Group.svg') alt="Group-ico")
+    img(src=require('Images/TOXIN.svg') alt="Group-name")
+
+//- Цветной лого для UI
 mixin headImg
   .head-container
     img(src=require('Images/GroupBlack.svg')) 
+
+//- ЧБ лого для UI
 mixin headImgGrey
   .head-container_grey
     img(src=require('Images/GroupBlack.svg')) 
+
+//- copyright
+mixin copyright
+  .copyright
+    p Copyright © 2018 Toxin отель. Все права защищены.
+
+mixin linkSocial
+  .link-social
+    a(target='_blank' href='//google.com')  
+      img(src=require('Images/twitter.svg'))
+    a(target='_blank' href='//google.com') 
+      img(src=require('Images/facebook.svg'))
+    a(target='_blank' href='//google.com') 
+      img(src=require('Images/instagramm.svg'))
+
+//- карточка с соц сетями
+mixin links
+  .link-wrap 
+    .link-info
+      +toxinLogo 
+      +copyright
+      +linkSocial
+
+    
+//- Input для подписки    
 mixin subscriptionField
   form.subscribtion
     input(type="text" placeholder="Email") 
     button(type="submit")
       img(src=require('Images/arrow_forward.svg'))
+
+//- Email input
 mixin textField
   form.text
     input(type="text" placeholder="Email") 
-mixin dropdown(oneLi, twoLi, threeLi)
-  .drop-wrap 
-    form.dropdown(data-dropdown)
+
+//- dropdown для выбора количества гостей
+mixin dropdown(oneLi, twoLi, threeLi, active)
+
+  form(data-dropdown class="dropdown" class= active)
+    .drop-wrap 
       input.dropdown-toggle(data-dropdown-button id="visitors" value="Сколько гостей")
-      .dropdown-menu  
+      img(src=require('Images/expand_more.svg') data-dropdown-button)
+    .dropdown-menu  
         ul 
           li 
             div 
@@ -55,16 +92,28 @@ mixin dropdown(oneLi, twoLi, threeLi)
               h3#dropdown-apply применить
               //- id="dropdown-apply"
 
+//- dropdown для меню header'a
 mixin dropdownWord(...items)
-  
-    ul.dropdown-li-menu 
+    ul.dropdown-el-menu 
       each item in items
           li 
             a(target='_blank' href='//google.com')= item
           
-            
+//- input с датой рождения           
 mixin birthDate 
   input(type="date" class="date-field") 
+
+//- input dropdown date
+mixin drophDate 
+  
+  form.date-dropdown(data-dropdown)
+    .date-dropdown_input()
+      input.dropdown-toggle(type="date" value="дд.мм.гггг" data-dropdown-button)
+      img(src=require('Images/expand_more.svg') data-dropdown-button)
+    .calendar 
+        p 123
+
+
 mixin enterButton(text)
   button(type="button" class="enter-button") 
     h3= text

@@ -1,7 +1,8 @@
 footer
-  
+  .footer-wrap
         .footer-brand
-            +toxinLogo 
+            h3 
+              +toxinLogo 
             p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         .footer-navi
             h3 Навигация
@@ -42,13 +43,9 @@ footer
                 li
                     +subscriptionField
                         
-        .footer-shadow                
-        .footer-copyright 
-          p Copyright © 2018 Toxin отель. Все права защищены.
-        .footer-social
-          a(target='_blank' href='//google.com')  
-            img(src=require('Images/twitter.svg'))
-          a(target='_blank' href='//google.com') 
-            img(src=require('Images/facebook.svg'))
-          a(target='_blank' href='//google.com') 
-            img(src=require('Images/instagramm.svg'))
+  .footer-shadow 
+  .footer-wrap._end               
+    +copyright
+    +linkSocial
+   
+            

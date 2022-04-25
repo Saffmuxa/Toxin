@@ -1,17 +1,61 @@
 +headImg 
-div
-    h3.field-name Text Field
-div
-    p Default
-+textField
-div
-    h3.field-name Text Field
-div
-    p Hover / Focus
-form.focus-hover
-    input(type="text" placeholder="Email" value="This is pretty awesome")     
+.elements-grid
+  section.fields-dropdowns
+      .text-field
+        .line-text
+          div
+              h3.line-text_main-text Text Field
+          div
+              h3.line-text_minor-text.__up Default
+        +textField
+      .text-field_two
+        .line-text
+          div
+              h3.line-text_main-text Text Field
+          div
+              h3.line-text_minor-text Hover / Focus
+        form.focus-hover
+          input(type="text" placeholder="Email" value="This is pretty awesome")     
+      .text-field_three
+        .line-text
+          h3.line-text_main-text Dropdown
+        
+        form.dropdown(data-dropdown)
+          .drop-wrap 
+            input.dropdown-toggle(data-dropdown-button value="Сколько гостей")
+            img(src=require('Images/expand_more.svg') data-dropdown-button)
+      .text-field_four 
+        .line-text
+          h3.line-text_main-text masked text field
+        +birthDate 
+      .date-dropdown-wrap 
+          .left-dd
+              h3.line-text_main-text.line-text date Dropdown
+                  //- +drophDate 
+              form.date-dropdown(data-dropdown)
+                  .date-dropdown_input()
+                      input.dropdown-toggle__short(type="text" value="ДД.ММ.ГГГГ" data-dropdown-button)
+                      img(src=require('Images/expand_more.svg') data-dropdown-button)
 
-h3.field-name Dropdown
-+dropdown('взрослые', 'дети', 'младенцы')
-h3.field-name masked text field
-+birthDate 
+          .right-dd
+              h3.line-text_main-text.line-text date Dropdown
+                  //- +drophDate 
+              form.date-dropdown(data-dropdown)
+                  .date-dropdown_input()
+                      input.dropdown-toggle__short(type="text" value="19.08.2019" data-dropdown-button)
+                      img(src=require('Images/expand_more.svg') data-dropdown-button)
+
+      .text-field_four 
+        h3.line-text_main-text.line-text filter date dropdown
+        form.date-dropdown(data-dropdown)
+          .date-dropdown_input 
+            input.dropdown-toggle__mid(type="text" value="19 авг - 23 авг" data-dropdown-button)
+            img(src=require('Images/expand_more.svg') data-dropdown-button)
+
+      .text-field_four   
+        h3.line-text_main-text.line-text subscription text field
+        +subscriptionField
+
+  section.dropdowns
+      h3.line-text_main-text.line-text dropdown
+      +dropdown('взрослые', 'дети', 'младенцы', 'active')

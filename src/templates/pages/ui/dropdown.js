@@ -102,21 +102,36 @@ btnMinus3.onclick = function () {
 //появление кнопки очистить в дропдауне и суммирование гостей
 let dropdownApply = document.getElementById("dropdown-apply");
 let dropdownReset = document.getElementById("dropdown-reset");
+
 let visitors = document.getElementById("visitors");
 dropdownApply.onclick = function () {
-  let calcAll =
-    Number(calc1.innerHTML) + Number(calc2.innerHTML) + Number(calc3.innerHTML);
+  let calcAll = Number(calc1.innerHTML) + Number(calc2.innerHTML);
+  let babyCount = "...";
+  if (Number(calc3.innerHTML) == 1) {
+    babyCount = "младенец";
+  }
+  if (Number(calc3.innerHTML) >= 2 && Number(calc3.innerHTML) <= 4) {
+    babyCount = "младенца";
+  }
+  if (Number(calc3.innerHTML) >= 5) {
+    babyCount = "младенцев";
+  }
+  if (Number(calc3.innerHTML) == 0) {
+    babies = "";
+  } else {
+    babies = ", " + String(calc3.innerHTML) + " " + babyCount;
+  }
   if (calcAll == 0) {
     visitors.value = "Сколько гостей";
   }
   if (calcAll == 1) {
-    visitors.value = calcAll + " гость";
+    visitors.value = calcAll + " гость" + babies;
   }
   if (calcAll >= 2 && calcAll <= 4) {
-    visitors.value = calcAll + " гостя";
+    visitors.value = calcAll + " гостя" + babies;
   }
   if (calcAll >= 5) {
-    visitors.value = calcAll + " гостей";
+    visitors.value = calcAll + " гостей" + babies;
   }
   if (visitors.value !== "Сколько гостей") {
     dropdownReset.style.display = "block";
@@ -124,6 +139,7 @@ dropdownApply.onclick = function () {
     dropdownReset.style.display = "none";
   }
 };
+
 // очистка дропдауна
 dropdownReset.onclick = function () {
   dropdownReset.style.display = "none";
@@ -135,19 +151,3 @@ dropdownReset.onclick = function () {
       "non-active";
   btnPlus1.className = btnPlus2.className = btnPlus3.className = "";
 };
-
-// document.addEventListener("click", (e) => {
-//   const isDropdownButton = e.target.matches("[data-dropdown-button]");
-//   if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return;
-
-//   let currentDropdown;
-//   if (isDropdownButton) {
-//     currentDropdown = e.target.closest("[data-dropdown]");
-//     currentDropdown.classList.toggle("active");
-//   }
-
-//   document.querySelectorAll("[data-dropdown].active").forEach((dropdown) => {
-//     if (dropdown === currentDropdown) return;
-//     dropdown.classList.remove("active");
-//   });
-// });
