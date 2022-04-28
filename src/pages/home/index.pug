@@ -1,0 +1,23 @@
+extends ../layout
+
+append style
+  link(rel='stylesheet' href=require('./home.scss'))
+
+//- append script
+  script(src=require('./main.js'))
+
+block content
+  h1 Hello World!
+
+  main.main-content
+    //- #app-root
+      //- The dynamic content compiled at runtime in JavaScript.
+
+    //- #static-content
+    nav.main-menu
+    ul
+        a(href='ui.html')
+            li UI kit 
+        a(href='./pages/toxin.html')
+            li Website
+        a(href='about.html') about!!

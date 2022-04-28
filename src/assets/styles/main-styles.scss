@@ -1,7 +1,6 @@
-@import "reset";
-@import "fonts";
-@import "vars";
-// @import "./modules/calendar.scss"; //убрать
+@import "./reset.scss";
+@import "./fonts.scss";
+@import "./vars.scss";
 
 html {
   height: 100%;
@@ -83,12 +82,6 @@ a {
 }
 #app-root {
   flex: 1 0 auto;
-}
-.toxin-img {
-  display: flex;
-  justify-content: space-between;
-  width: 106px;
-  // padding-right: 12px;
 }
 
 //для вариантов input
@@ -303,63 +296,4 @@ a {
     color: #ffffff;
     padding: 0px 12px;
   }
-}
-
-.copyright {
-  display: flex;
-  align-items: center;
-}
-.link-social {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 112px;
-}
-.link-wrap {
-  height: 367px;
-  width: 768px;
-  background-color: $mainBackground;
-  margin: auto;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 2px;
-  .link-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    p {
-      margin-bottom: 3px;
-      padding: 18px 0px;
-    }
-  }
-}
-
-.dropdown-el {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  button {
-    img {
-      transform: rotate(0deg);
-      transition: transform 200ms ease-in-out;
-    }
-  }
-  &.active {
-    button {
-      img {
-        transform: rotate(180deg);
-        transition: transform 200ms ease-in-out;
-      }
-    }
-  }
-}
-.dropdown-el.active > .dropdown-el-toggle + .dropdown-el-menu {
-  opacity: 1;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  transform: translateY(0px);
-  pointer-events: auto;
-  position: absolute;
 }

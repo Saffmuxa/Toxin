@@ -1,0 +1,25 @@
+extends ../layout
+
+append script
+  script(src=require('./ui-parts/dropdown.js'))
+
+append style
+    link(rel='stylesheet' href=require('./ui.scss'))
+
+
+include ../mixins
+block content
+  a(href='index.html')
+      button.to-home < Home 
+  .wrapper
+      h2.ui-info Color & Type
+      article.block.colors
+        include ./ui-parts/colors
+      h2.ui-info Form Elements
+      article.block.elements
+        include ./ui-parts/elements
+    
+      h2.ui-info Headers & Footers
+      +headImgGrey
+      article.block.headers-footers
+        include ./ui-parts/headersAndFooters

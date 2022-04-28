@@ -1,10 +1,8 @@
-@import "styles"; //вернуть
-@import "./ui/uiColors.scss";
-@import "./ui/uiElements.scss";
-@import "./ui/uiHeadersAndFooters.scss";
-@import "./modules/calendar.scss";
+@import "../../assets/styles/vars.scss";
+@import "./ui-parts/colors.scss";
+@import "./ui-parts/elements.scss";
+@import "./ui-parts/headersAndFooters.scss";
 
-// @import ".././styles/modules/footer.scss";
 body {
   background-color: rgba(31, 32, 65, 0.25);
 }
@@ -28,9 +26,4 @@ body {
 }
 .block.elements {
   max-width: 1440px;
-  // margin: 0 auto;
-  // max-width: calc($maxWidth);
 }
-// .block.calendar {
-//   height: 600px;
-// }

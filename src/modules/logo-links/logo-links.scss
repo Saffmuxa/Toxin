@@ -1,0 +1,20 @@
+.link-wrap {
+  height: 367px;
+  width: 768px;
+  background-color: $mainBackground;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2px;
+  .link-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin-bottom: 3px;
+      padding: 18px 0px;
+    }
+  }
+}

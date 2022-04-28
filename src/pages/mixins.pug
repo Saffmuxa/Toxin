@@ -1,8 +1,6 @@
 //- Круглое лого и надпись Toxin
 mixin toxinLogo 
-  .toxin-img
-    img(src=require('Images/Group.svg') alt="Group-ico")
-    img(src=require('Images/TOXIN.svg') alt="Group-name")
+  include ../modules/blocks/toxinLogo/toxinLogo
 
 //- Цветной лого для UI
 mixin headImg
@@ -16,25 +14,10 @@ mixin headImgGrey
 
 //- copyright
 mixin copyright
-  .copyright
-    p Copyright © 2018 Toxin отель. Все права защищены.
+  include ../modules/blocks/copyright/copyright
 
 mixin linkSocial
-  .link-social
-    a(target='_blank' href='//google.com')  
-      img(src=require('Images/twitter.svg'))
-    a(target='_blank' href='//google.com') 
-      img(src=require('Images/facebook.svg'))
-    a(target='_blank' href='//google.com') 
-      img(src=require('Images/instagramm.svg'))
-
-//- карточка с соц сетями
-mixin links
-  .link-wrap 
-    .link-info
-      +toxinLogo 
-      +copyright
-      +linkSocial
+  include ../modules/blocks/social-links/social-links
 
     
 //- Input для подписки    
@@ -94,14 +77,15 @@ mixin dropdown(oneLi, twoLi, threeLi, active)
 
 //- dropdown для меню header'a
 mixin dropdownWord(...items)
-    ul.dropdown-el-menu 
-      each item in items
+    .dropdown-el-menu 
+      ul
+        each item in items
           li 
             a(target='_blank' href='//google.com')= item
           
 //- input с датой рождения           
 mixin birthDate 
-  input(type="date" class="date-field") 
+  input(type="text" class="date-field" value="ДД.ММ.ГГГГ") 
 
 //- input dropdown date
 mixin drophDate 
