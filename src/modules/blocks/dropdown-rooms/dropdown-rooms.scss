@@ -1,0 +1,24 @@
+.rooms {
+  width: 266px;
+
+  // li {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   margin: 4px 5px 5px 14px;
+  // }
+}
+.mid-size {
+  width: 266px;
+}
+.dropdown.active > .dropdown-menu.rooms {
+  height: 119px;
+}
+// input:hover {
+//   width: 200px;
+//   height: 30px;
+//   padding: 0 10px;
+//   text-overflow: ellipsis !important;
+//   white-space: nowrap !important;
+//   overflow: hidden !important;
+// }

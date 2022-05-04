@@ -1,13 +1,18 @@
 extends ../layout
 
 append script
-  script(src=require('./ui-parts/dropdown.js'))
+  script(src=require('../../modules/blocks/dropdown-guests/dropdown-guests.js'))
+  script(src=require('../../modules/blocks/dropdown-rooms/dropdown-rooms.js'))
+  script(src=require('../../modules/blocks/expandable-checkbox-list/dropdown-checkbox.js'))
 
 append style
     link(rel='stylesheet' href=require('./ui.scss'))
 
 
 include ../mixins
+include ../../modules/blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../modules/blocks/dropdown-guests/dropdown-guests
+include ../../modules/blocks/dropdown-rooms/dropdown-rooms
 block content
   a(href='index.html')
       button.to-home < Home 

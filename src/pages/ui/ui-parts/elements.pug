@@ -21,9 +21,7 @@
           h3.line-text_main-text Dropdown
         
         form.dropdown(data-dropdown)
-          .drop-wrap 
-            input.dropdown-toggle(data-dropdown-button value="Сколько гостей")
-            img(src=require('Images/expand_more.svg') data-dropdown-button)
+            +dropdownGuest
       .text-field_four 
         .line-text
           h3.line-text_main-text masked text field
@@ -56,6 +54,92 @@
         h3.line-text_main-text.line-text subscription text field
         +subscriptionField
 
-  section.dropdowns
+ 
+  .apartment 
+    .text-field_two 
+      .line-text.mid-size
+        div
+          h3.line-text_main-text dropdown
+        div
+          h3.line-text_minor-text Default
+      +dropdownRooms('', 'check-markUI', value="2 спальни, 2 кровати...", 2, 2, '', '')
+    .line-text.mid-size
+      div
+        h3.line-text_main-text dropdown
+      div
+        h3.line-text_minor-text expanded
+    +dropdownRooms('active', 'check-markUI', "2 спальни, 2 кровати...", 2, 2, '', '')
+  .guests-empty
       h3.line-text_main-text.line-text dropdown
-      +dropdown('взрослые', 'дети', 'младенцы', 'active')
+      //- +dropdownGuestsUIActive
+      +dropdownGuest('active', 'check-markUI')
+  .guests
+      h3.line-text_main-text.line-text dropdown
+      +dropdownGuest('active', 'check-markUI', '3 гостя', 2, 1, 'display: block', '', '')
+  .checkboxs
+    .checkbox1
+      +checkBoxList({
+          name: 'expandable checkbox list',
+          open: '',
+          id: 'checkbox',
+          closing: false,
+          items: [{id: 'breakfast',
+                  checked: false,
+                  text:'Завтрак'
+                  },
+                  {id: 'table',
+                  checked: false,
+                  text:'Письменный стол',
+                  },
+                  {id: 'baby-chair',
+                  checked: false,
+                  text:'Стул для кормления',
+                  },
+                  {id: 'baby-bed',
+                  checked: false,
+                  text:'Кроватка',
+                  },
+                  {id: 'tv',
+                  checked: false,
+                  text:'Телевизор',
+                  },
+                  {id: 'shampoo',
+                  checked: false,
+                  text:'Шампунь',
+                  }],
+        })
+   
+    .checkbox2
+      +checkBoxList({
+        name: 'expandable checkbox list',
+        open: 'active',
+        id: 'checkbox',
+        closing: false,
+        items: [{id: 'breakfast',
+                checked: false,
+                text:'Завтрак'
+                },
+                {id: 'table',
+                checked: true,
+                text:'Письменный стол',
+                },
+                {id: 'baby-chair',
+                checked: true,
+                text:'Стул для кормления',
+                },
+                {id: 'baby-bed',
+                checked: true,
+                text:'Кроватка',
+                },
+                {id: 'tv',
+                checked: false,
+                text:'Телевизор',
+                },
+                {id: 'shampoo',
+                checked: false,
+                text:'Шампунь',
+                }],
+      })
+      
+
+      //- +checkBoxList('active', "expandable checkbox list", true, false, true)

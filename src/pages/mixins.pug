@@ -32,52 +32,10 @@ mixin textField
   form.text
     input(type="text" placeholder="Email") 
 
-//- dropdown для выбора количества гостей
-mixin dropdown(oneLi, twoLi, threeLi, active)
-
-  form(data-dropdown class="dropdown" class= active)
-    .drop-wrap 
-      input.dropdown-toggle(data-dropdown-button id="visitors" value="Сколько гостей")
-      img(src=require('Images/expand_more.svg') data-dropdown-button)
-    .dropdown-menu  
-        ul 
-          li 
-            div 
-              h3= oneLi
-            .dropdown-button
-              button(type="button" id="dropdown-oneLi-minus" class="non-active")
-                p -
-              h3#calc1 0
-              button(type="button" id="dropdown-oneLi-plus")
-                p +
-          li 
-            div 
-              h3= twoLi
-            .dropdown-button 
-              button(type="button" id="dropdown-TwoLi-minus" class="non-active")
-                p -
-              h3#calc2 0
-              button(type="button" id="dropdown-TwoLi-plus")
-                p +
-          li 
-            div 
-              h3= threeLi
-            .dropdown-button 
-              button(type="button" id="dropdown-ThreeLi-minus" class="non-active")
-                p -
-              h3#calc3 0
-              button(type="button" id="dropdown-ThreeLi-plus")
-                p +
-          li 
-            button(type="button")
-              h3#dropdown-reset очистить
-            button(type="button")
-              h3#dropdown-apply применить
-              //- id="dropdown-apply"
-
+          
 //- dropdown для меню header'a
 mixin dropdownWord(...items)
-    .dropdown-el-menu 
+    .dropdown-el-menu
       ul
         each item in items
           li 

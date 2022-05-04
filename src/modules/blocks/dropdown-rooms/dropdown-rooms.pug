@@ -1,0 +1,35 @@
+//- dropdown для выбора количества комнат
+mixin dropdownRooms(active, classImg='check-mark', value="1 спальня, 1 кровать...", oneLi=1, twoLi=1, class1='non-active', class2='non-active' )
+  form(data-dropdownRoom class="dropdown mid-size" class= active)
+    .drop-wrap 
+      input.dropdown-toggle(data-dropdownRoom-button id="rooms" value=value)
+      img(src=require('Images/expand_more.svg') class=classImg data-dropdownRoom-button)
+    .dropdown-menu.rooms  
+        ul 
+          li 
+            div 
+              h3 спальни
+            .dropdown-button
+              button(type="button" id="dropdown-oneLiRoom-minus" class=class1)
+                p -
+              h3#calcRoom1=oneLi
+              button(type="button" id="dropdown-oneLiRoom-plus")
+                p +
+          li 
+            div 
+              h3 кровати
+            .dropdown-button 
+              button(type="button" id="dropdown-TwoLiRoom-minus" class=class2)
+                p -
+              h3#calcRoom2=twoLi
+              button(type="button" id="dropdown-TwoLiRoom-plus")
+                p +
+          li 
+            div 
+              h3 ванные комнаты
+            .dropdown-button 
+              button(type="button" id="dropdown-ThreeLiRoom-minus" class="non-active")
+                p -
+              h3#calcRoom3 0
+              button(type="button" id="dropdown-ThreeLiRoom-plus")
+                p +

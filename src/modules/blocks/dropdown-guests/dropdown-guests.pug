@@ -1,0 +1,40 @@
+//- dropdown для выбора количества гостей
+mixin dropdownGuest(active, classImg='check-mark', value="Сколько гостей", oneLi=0, twoLi=0, reset, class1='non-active', class2='non-active')
+  form(data-dropdown class="dropdown" class= active)
+    .drop-wrap 
+      input.dropdown-toggle(data-dropdown-button id="visitors" value=value)
+      img(src=require('Images/expand_more.svg') class=classImg data-dropdown-button)
+    .dropdown-menu.guests 
+        ul 
+          li 
+            div 
+              h3 взрослые
+            .dropdown-button
+              button(type="button" id="dropdown-oneLi-minus" class=class1)
+                p -
+              h3#calc1= oneLi
+              button(type="button" id="dropdown-oneLi-plus")
+                p +
+          li 
+            div 
+              h3 дети
+            .dropdown-button 
+              button(type="button" id="dropdown-TwoLi-minus" class=class2)
+                p -
+              h3#calc2= twoLi
+              button(type="button" id="dropdown-TwoLi-plus")
+                p +
+          li 
+            div 
+              h3 младенцы
+            .dropdown-button 
+              button(type="button" id="dropdown-ThreeLi-minus" class="non-active")
+                p -
+              h3#calc3 0
+              button(type="button" id="dropdown-ThreeLi-plus")
+                p +
+          li 
+            button(type="button")
+              h3(id='dropdown-reset' style=reset) очистить
+            button(type="button")
+              h3#dropdown-apply применить

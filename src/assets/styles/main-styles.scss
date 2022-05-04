@@ -17,6 +17,8 @@ input {
   color: $mainFontColor;
 }
 input {
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+  text-overflow: ellipsis; /* Добавляем многоточие */
   height: 44px;
   width: 320px;
   padding: 0px 15px;
@@ -107,26 +109,29 @@ a {
   // width: 320px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  // justify-content: flex-end;
 }
 .dropdown {
   position: absolute;
   background-color: $mainBackground;
   width: 320px;
+  height: 44px;
 
-  img {
+  .check-mark {
     position: absolute;
-    right: 5%;
-    // padding-right: 6px;
+    right: 14px;
+    padding: 2px;
     transform: rotate(0deg);
     transition: transform 200ms ease-in-out;
+    background-color: #fff;
   }
 
   &.active {
-    img {
+    .check-mark {
       transform: rotate(180deg);
       transition: transform 200ms ease-in-out;
     }
+
     input {
       border: 1px solid rgba(31, 32, 65, 0.5);
       color: rgba(31, 32, 65, 0.75);
@@ -134,50 +139,77 @@ a {
     }
   }
 }
+
 .dropdown-menu {
   z-index: 1;
   width: 320px;
-  height: 0px;
-  border: 0px solid rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px;
+  // height: 0px;
+  // border: 0px solid rgba(31, 32, 65, 0.5);
+  // border-radius: 0px 0px 4px 4px;
   overflow: hidden;
   left: 0;
+
   top: calc(100% - 0px);
   background-color: $mainBackground;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-1px);
-  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
-    height 200ms ease-in-out, border 200ms ease-in-out;
+  // transform: translateY(-1px);
+  transition: opacity 200ms ease-in-out, border 200ms ease-in-out;
   li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4px 5px 5px 14px;
+    margin: 4px 7px 5px 14px;
   }
-  li:last-child {
-    justify-content: space-between;
+
+  #dropdown-reset {
+    display: none;
+  }
+}
+
+.check-menu {
+  z-index: 1;
+  width: 320px;
+  color: $mainFontColor05;
+  overflow: hidden;
+  left: 0;
+
+  top: calc(100% - 0px);
+  background-color: $mainBackground;
+  // box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  opacity: 0;
+  pointer-events: none;
+  // transform: translateY(-1px);
+  transition: opacity 200ms ease-in-out, border 200ms ease-in-out;
+  li {
     display: flex;
-    margin: 20px 0px 0px 0px;
-    align-items: flex-end;
-    h3 {
-      color: $purple;
-      margin-left: 8px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 7px 6px 0px;
+    input {
+      margin-left: 2px;
     }
   }
+
   #dropdown-reset {
     display: none;
   }
 }
 .dropdown.active > .dropdown-menu {
   opacity: 1;
-  height: 159px;
   border: 1px solid rgba(31, 32, 65, 0.5);
-  transform: translateY(-1px);
+  border-top-width: 0px;
+  // transform: translateY(-1px);
   pointer-events: auto;
-  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
-    height 200ms ease-in-out, border 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  position: absolute;
+}
+
+.dropdown.active > .check-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 200ms ease-in-out;
   position: absolute;
 }
 .dropdown-toggle,
@@ -186,8 +218,8 @@ a {
   background-color: $mainBackground;
 
   &:focus {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    border-radius: 4px 4px 0px 0px;
+    // border: 1px solid rgba(31, 32, 65, 0.5);
+    // border-radius: 4px 4px 0px 0px;
   }
 }
 .dropdown-toggle__short {
@@ -207,7 +239,7 @@ a {
     height: 30px;
     // margin-left: 12px;
     margin-top: 2px;
-    border: 1px solid rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
     // &.active {
     // }
     &.non-active {
@@ -245,33 +277,6 @@ a {
     // width: 150px;
     display: inline-block;
   }
-}
-.calendar {
-  width: 100px;
-  z-index: 1;
-  height: 0px;
-  border: 0px solid rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px;
-  overflow: hidden;
-  left: 0;
-  top: calc(100% - 0px);
-  background-color: $mainBackground;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-1px);
-  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
-    height 200ms ease-in-out, border 200ms ease-in-out;
-}
-.date-dropdown.active > .calendar {
-  opacity: 1;
-  height: 159px;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  transform: translateY(-1px);
-  pointer-events: auto;
-  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
-    height 200ms ease-in-out, border 200ms ease-in-out;
-  position: absolute;
 }
 
 .enter-button {

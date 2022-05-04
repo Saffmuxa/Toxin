@@ -104,7 +104,8 @@ let dropdownApply = document.getElementById("dropdown-apply");
 let dropdownReset = document.getElementById("dropdown-reset");
 
 let visitors = document.getElementById("visitors");
-dropdownApply.onclick = function () {
+
+function dropClick() {
   let calcAll = Number(calc1.innerHTML) + Number(calc2.innerHTML);
   let babyCount = "...";
   if (Number(calc3.innerHTML) == 1) {
@@ -138,7 +139,8 @@ dropdownApply.onclick = function () {
   } else {
     dropdownReset.style.display = "none";
   }
-};
+}
+dropdownApply.onclick = dropClick;
 
 // очистка дропдауна
 dropdownReset.onclick = function () {
