@@ -1,3 +1,13 @@
+include ../modules/blocks/expand-checkbox/expand-checkbox
+include ../modules/blocks/checkbox-buttons/checkbox-buttons
+include ../modules/blocks/dropdown-guests/dropdown-guests
+include ../modules/blocks/dropdown-rooms/dropdown-rooms
+include ../modules/blocks/masked-text-field/masked-text-field
+
+include ../modules/blocks/radio-buttons/radio-buttons
+include ../modules/blocks/text-field/text-field
+include ../modules/blocks/subscription/subscription
+
 //- Круглое лого и надпись Toxin
 mixin toxinLogo 
   include ../modules/blocks/toxinLogo/toxinLogo
@@ -18,36 +28,17 @@ mixin copyright
 
 mixin linkSocial
   include ../modules/blocks/social-links/social-links
-
-    
-//- Input для подписки    
-mixin subscriptionField
-  form.subscribtion
-    input(type="text" placeholder="Email") 
-    button(type="submit")
-      img(src=require('Images/arrow_forward.svg'))
-
-//- Email input
-mixin textField
-  form.text
-    input(type="text" placeholder="Email") 
-
           
 //- dropdown для меню header'a
-mixin dropdownWord(...items)
-    .dropdown-el-menu
+mixin dropdownHeader(...items)
+    .header__dropdown-menu
       ul
         each item in items
           li 
             a(target='_blank' href='//google.com')= item
-          
-//- input с датой рождения           
-mixin birthDate 
-  input(type="text" class="date-field" value="ДД.ММ.ГГГГ") 
-
 //- input dropdown date
 mixin drophDate 
-  
+  h3.elements__title_main-text masked text field
   form.date-dropdown(data-dropdown)
     .date-dropdown_input()
       input.dropdown-toggle(type="date" value="дд.мм.гггг" data-dropdown-button)

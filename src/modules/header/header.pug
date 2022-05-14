@@ -1,26 +1,26 @@
 header
   .header-wrap
-    div.header-block._left
-      a(target='_blank' href='//google.com')
-        +toxinLogo 
-    nav.header-block._right
-      ul.header-block._nav 
+    a.header__logo.header-block(target='_blank' href='//google.com')
+      +toxinLogo 
+    nav.header__links.header-block 
+      ul.header__nav.header-block 
         li 
           a(target='_blank' href='//google.com') О нас
-        li.dropdown-el(data-dropdown) 
-          button(class="dropdown-el-toggle" data-dropdown-button) Услуги
-            img(src=require('Images/expand_more.svg'))
-          +dropdownWord('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
+        li.header__dropdown(data-dropdown) 
+          button.header__btn( data-dropdown-button) Услуги
+            img.check-mark(src=require('Images/expand_more.svg'))
+          +dropdownHeader('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
         li 
           a(target='_blank' href='//google.com') Вакансии
         li 
           a(target='_blank' href='//google.com') Новости
-        li.dropdown-el(data-dropdown) 
-          button(class="dropdown-el-toggle" data-dropdown-button) Соглашения
-            img(src=require('Images/expand_more.svg'))
-          +dropdownWord('Соглашения-0', "Соглашения-1", "Соглашения-2")
-
-      .header-block._login
+        li.header__dropdown(data-dropdown) 
+          button.header__btn(data-dropdown-button) Соглашения
+            img.check-mark(src=require('Images/expand_more.svg'))
+          +dropdownHeader('Соглашения-0', "Соглашения-1", "Соглашения-2")
+      ul.header__login.header-block
+        li
           +enterButton('войти')
+        li
           +registerButton('зарегистрироваться')
 

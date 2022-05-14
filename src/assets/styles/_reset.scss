@@ -167,6 +167,18 @@ button,
 input {
   line-height: normal;
 }
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  // width: 21px;
+  // height: 21px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 // Table
 table {

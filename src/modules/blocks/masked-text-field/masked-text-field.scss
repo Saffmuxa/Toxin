@@ -1,0 +1,152 @@
+// @import "../../../modules/blocks/select/select.scss";
+
+// // .guests {
+// //   li {
+// //     display: flex;
+// //     justify-content: space-between;
+// //     align-items: center;
+// //     margin: 4px 6px 5px 14px;
+// //   }
+// //   li:last-child {
+// //     justify-content: space-between;
+// //     display: flex;
+// //     margin: 20px 0px 10px 0px;
+// //     align-items: flex-end;
+// //     h3 {
+// //       color: $purple;
+// //       margin-left: 8px;
+// //     }
+// //   }
+// //   #dropdown-reset {
+// //     display: none;
+// //   }
+// // }
+// // .dropdown-guests__form {
+// //   position: absolute;
+// //   background-color: $mainBackground;
+// //   width: 320px;
+// //   height: 44px;
+// //   .check-mark {
+// //     position: absolute;
+// //   }
+// // }
+// // .dropdown-guests__input-wrap {
+// //   // height: 44px;
+// //   // width: 320px;
+// //   display: flex;
+// //   align-items: center;
+// //   // justify-content: flex-end;
+// // }
+
+// .dropdown {
+//   position: relative;
+// }
+// .js-dropdown__input_active {
+//   border: 1px solid rgba(31, 32, 65, 0.5);
+//   border-radius: 4px 4px 0px 0px;
+// }
+// .dropdown__controls {
+//   position: relative;
+// }
+// .arrow::after {
+//   position: absolute;
+//   top: 0;
+//   right: 10px;
+//   content: "expand_more";
+//   color: rgb(31 32 65 / 50%);
+//   font-family: "Material Icons";
+//   font-family: $materialFont;
+//   font-size: 24px;
+//   font-weight: 400;
+//   line-height: 44px;
+//   transform: rotate(0deg);
+//   transition: transform $aniTime ease-in-out;
+// }
+// .js-dropdown__arrow_active::after {
+//   transform: rotate(180deg);
+//   transition: transform $aniTime ease-in-out;
+// }
+// .dropdown__menu {
+//   position: absolute;
+//   z-index: 10;
+//   width: 100%;
+//   padding: 2px 6px 0px 14px;
+//   border-radius: 0px 0px 4px 4px;
+//   overflow: hidden;
+//   background-color: $mainBackground;
+//   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+//   border: 1px solid rgba(31, 32, 65, 0.5);
+//   border-top-width: 0px;
+//   display: none;
+// }
+// .js-dropdown__menu_active {
+//   display: block;
+//   animation: fadeIn $aniTime;
+// }
+// .dropdown__down-btns {
+//   padding-top: 5px;
+//   justify-content: space-between;
+//   display: flex;
+//   margin: 6px 0px 8px 0px;
+//   align-items: center;
+//   button {
+//     padding: 0px;
+//   }
+//   h3 {
+//     color: $purple;
+//   }
+// }
+
+// .js-dropdown__btn_hidden {
+//   display: none;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// // border: 1px solid rgba(31, 32, 65, 0.5);
+// // border-radius: 4px 4px 0px 0px;
+
+// // .dropdown-menu {
+// //   z-index: 1;
+// //   width: 320px;
+// //   // height: 0px;
+// //   // border: 0px solid rgba(31, 32, 65, 0.5);
+// //   border-radius: 0px 0px 4px 4px;
+// //   overflow: hidden;
+// //   left: 0;
+
+// //   top: calc(100% - 0px);
+// //   background-color: $mainBackground;
+// //   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+// //   opacity: 0;
+// //   pointer-events: none;
+// //   // transform: translateY(-1px);
+// //   transition: opacity 200ms ease-in-out, border 200ms ease-in-out;
+// //   li {
+// //     display: flex;
+// //     justify-content: space-between;
+// //     align-items: center;
+// //     margin: 4px 7px 5px 14px;
+// //   }
+
+// //   #dropdown-reset {
+// //     display: none;
+// //   }
+// // }
+
+// .dropdown.active > .dropdown-menu {
+//   opacity: 1;
+//   border: 1px solid rgba(31, 32, 65, 0.5);
+//   border-top-width: 0px;
+//   // transform: translateY(-1px);
+//   pointer-events: auto;
+//   transition: opacity 200ms ease-in-out;
+//   position: absolute;
+// }

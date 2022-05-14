@@ -1,30 +1,28 @@
 extends ../layout
 
 append script
-  script(src=require('../../modules/blocks/dropdown-guests/dropdown-guests.js'))
-  script(src=require('../../modules/blocks/dropdown-rooms/dropdown-rooms.js'))
-  script(src=require('../../modules/blocks/expandable-checkbox-list/dropdown-checkbox.js'))
+  script(src=require('./ui.js'))
+  //- script(src=require('../../modules/blocks/dropdown-rooms/dropdown-rooms.js'))
+  //- script(src=require('../../modules/blocks/expandable-checkbox-list/dropdown-checkbox.js'))
 
 append style
     link(rel='stylesheet' href=require('./ui.scss'))
 
 
 include ../mixins
-include ../../modules/blocks/expandable-checkbox-list/expandable-checkbox-list
-include ../../modules/blocks/dropdown-guests/dropdown-guests
-include ../../modules/blocks/dropdown-rooms/dropdown-rooms
+
+
 block content
   a(href='index.html')
       button.to-home < Home 
   .wrapper
       h2.ui-info Color & Type
-      article.block.colors
+      article.colors.ui-block
         include ./ui-parts/colors
       h2.ui-info Form Elements
-      article.block.elements
+      article.elements.ui-block
         include ./ui-parts/elements
-    
       h2.ui-info Headers & Footers
       +headImgGrey
-      article.block.headers-footers
+      article.headers-footers
         include ./ui-parts/headersAndFooters

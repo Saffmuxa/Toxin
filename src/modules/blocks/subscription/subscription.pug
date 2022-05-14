@@ -1,0 +1,9 @@
+//- Input для подписки    
+mixin subscription({title, id})
+  .subscription
+    if (title)
+      label.subscription__label(for=id)=title
+    form.subscription__controls
+      input.subscription__input(type="email" placeholder="Email" id=id required) 
+      button.subscription__btn(type="submit") arrow_forward
+        //- img(src=require('Images/arrow_forward.svg'))

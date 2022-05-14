@@ -1,34 +1,25 @@
 +headImg 
-.elements-grid
-  section.fields-dropdowns
-      .text-field
-        .line-text
-          div
-              h3.line-text_main-text Text Field
-          div
-              h3.line-text_minor-text.__up Default
-        +textField
-      .text-field_two
-        .line-text
-          div
-              h3.line-text_main-text Text Field
-          div
-              h3.line-text_minor-text Hover / Focus
-        form.focus-hover
-          input(type="text" placeholder="Email" value="This is pretty awesome")     
-      .text-field_three
-        .line-text
-          h3.line-text_main-text Dropdown
-        
-        form.dropdown(data-dropdown)
-            +dropdownGuest
-      .text-field_four 
-        .line-text
-          h3.line-text_main-text masked text field
-        +birthDate 
-      .date-dropdown-wrap 
+.elements__sections 
+  section.elements__dropdowns-field
+      .elements__text-field
+        h3.elements__title_minor-text.up-text Default
+        +textField({
+          type:'email',  
+          placeholder: 'Email'       })
+
+      .elements__focus
+        h3.elements__title_minor-text Hover / Focus
+        +textField({
+          title: 'Text Field', 
+          value:'This is pretty awesome', 
+           })
+      .elements__guests.js-main__guest-dropdown
+        +dropdownGuest({title: 'dropdown', id: 'guests'})
+      .elements__input-data
+        +maskedTxtField({title: 'masked text field', placeholder: 'ДД.ММ.ГГГГ'})
+      .elements__two-dates
           .left-dd
-              h3.line-text_main-text.line-text date Dropdown
+              h3.field-title date Dropdown
                   //- +drophDate 
               form.date-dropdown(data-dropdown)
                   .date-dropdown_input()
@@ -36,110 +27,101 @@
                       img(src=require('Images/expand_more.svg') data-dropdown-button)
 
           .right-dd
-              h3.line-text_main-text.line-text date Dropdown
+              h3.field-title date Dropdown
                   //- +drophDate 
               form.date-dropdown(data-dropdown)
                   .date-dropdown_input()
                       input.dropdown-toggle__short(type="text" value="19.08.2019" data-dropdown-button)
                       img(src=require('Images/expand_more.svg') data-dropdown-button)
 
-      .text-field_four 
-        h3.line-text_main-text.line-text filter date dropdown
+      .elements__range-dates
+        h3.field-title filter date dropdown
         form.date-dropdown(data-dropdown)
           .date-dropdown_input 
             input.dropdown-toggle__mid(type="text" value="19 авг - 23 авг" data-dropdown-button)
             img(src=require('Images/expand_more.svg') data-dropdown-button)
 
-      .text-field_four   
-        h3.line-text_main-text.line-text subscription text field
-        +subscriptionField
+      .elements__subscription
+        +subscription({title: 'subscription text field', id: 'email'})
 
  
-  .apartment 
-    .text-field_two 
-      .line-text.mid-size
-        div
-          h3.line-text_main-text dropdown
-        div
-          h3.line-text_minor-text Default
-      +dropdownRooms('', 'check-markUI', value="2 спальни, 2 кровати...", 2, 2, '', '')
-    .line-text.mid-size
-      div
-        h3.line-text_main-text dropdown
-      div
-        h3.line-text_minor-text expanded
-    +dropdownRooms('active', 'check-markUI', "2 спальни, 2 кровати...", 2, 2, '', '')
-  .guests-empty
-      h3.line-text_main-text.line-text dropdown
-      //- +dropdownGuestsUIActive
-      +dropdownGuest('active', 'check-markUI')
-  .guests
-      h3.line-text_main-text.line-text dropdown
-      +dropdownGuest('active', 'check-markUI', '3 гостя', 2, 1, 'display: block', '', '')
-  .checkboxs
-    .checkbox1
-      +checkBoxList({
-          name: 'expandable checkbox list',
-          open: '',
-          id: 'checkbox',
-          closing: false,
-          items: [{id: 'breakfast',
-                  checked: false,
-                  text:'Завтрак'
-                  },
-                  {id: 'table',
-                  checked: false,
-                  text:'Письменный стол',
-                  },
-                  {id: 'baby-chair',
-                  checked: false,
-                  text:'Стул для кормления',
-                  },
-                  {id: 'baby-bed',
-                  checked: false,
-                  text:'Кроватка',
-                  },
-                  {id: 'tv',
-                  checked: false,
-                  text:'Телевизор',
-                  },
-                  {id: 'shampoo',
-                  checked: false,
-                  text:'Шампунь',
-                  }],
-        })
+  section.elements__apartment
+    .elements__rooms.js-main__rooms-dropdown
+      h3.elements__title_minor-text Default
+      +dropdownRooms({
+        title: 'dropdown', id: 'rooms',
+        buttons:false, sharp:true, values: [2,2,0]})  
+    .elements__rooms.js-main__rooms-dropdown
+      h3.elements__title_minor-text expanded
+      +dropdownRooms({
+        title: 'dropdown', buttons:false, sharp:true, open: true, values: [2,2,0]})
+
+  .guests-empty.js-main__guest-dropdown
+    +dropdownGuest({title: 'dropdown', open: true})
+  .guests.js-main__guest-dropdown
+    +dropdownGuest({title: 'dropdown', open: true, values: [2,1,0]           })
+
+  section.elements__checkboxes-field
+    .elements__checkbox1.js-main__checkBox-dropdown
+      +checkBoxMenu({title:'expandable checkbox list',
+                    items: 
+                   [{name:'Завтрак', id:'breakfast'}, 
+                    {name:'Письменный стол', id:'table'},
+                    {name:'Стул для кормления', id:'chair'},
+                    {name:'Кроватка', id:'bed'},
+                    {name:'Телевизор', id:'tv'},
+                    {name:'Шампунь', id:'shampoo'},]})
+
+    .elements__checkbox2.js-main__checkBox-dropdown
+          +checkBoxMenu({title:'expandable checkbox list',
+                    open:true,
+                    items: 
+                   [{name:'Завтрак', id:'breakfast', checked:false}, 
+                    {name:'Письменный стол', id:'table', checked:true},
+                    {name:'Стул для кормления', id:'chair', checked:true},
+                    {name:'Кроватка', id:'bed', checked:true},
+                    {name:'Телевизор', id:'tv', checked:false},
+                    {name:'Шампунь', id:'shampoo', checked:false},]})
+
+  section.elements__radio-toggle-field  
+    +checkBoxMenu({title:'Checkbox Buttons',
+                    open:true,
+                    tight: true,
+                    items: 
+                   [{name:'Можно курить', id:'smoke', checked:false}, 
+                    {name:'Можно с питомцами', id:'pets', checked:true},
+                    {name:'Можно пригласить гостей (до 10 человек)', id:'party', checked:true},
+                    ]})
    
-    .checkbox2
-      +checkBoxList({
-        name: 'expandable checkbox list',
-        open: 'active',
-        id: 'checkbox',
-        closing: false,
-        items: [{id: 'breakfast',
-                checked: false,
-                text:'Завтрак'
-                },
-                {id: 'table',
-                checked: true,
-                text:'Письменный стол',
-                },
-                {id: 'baby-chair',
-                checked: true,
-                text:'Стул для кормления',
-                },
-                {id: 'baby-bed',
-                checked: true,
-                text:'Кроватка',
-                },
-                {id: 'tv',
-                checked: false,
-                text:'Телевизор',
-                },
-                {id: 'shampoo',
-                checked: false,
-                text:'Шампунь',
-                }],
-      })
-      
+    //- +checkBoxButtons({
+    //-         name: 'Checkbox Buttons',
+    //-         id: 'checkboxButtons',
+    //-         items: [{id: 'smoke',
+    //-                 checked: false,
+    //-                 text:'Можно курить'
+    //-                 },
+    //-                 {id: 'pets',
+    //-                 checked: true,
+    //-                 text:'Можно с питомцами',
+    //-                 },
+    //-                 {id: 'party',
+    //-                 checked: true,
+    //-                 text: 'Можно пригласить гостей (до 10 человек)',
+    //-                 },
+    //-                 ],
+    //-       })
+    +radioButtons({
+            name: 'Radio Buttons',
+            id: 'radioButtons',
+            items: [{id: 'male',
+                    checked: false,
+                    text:'Мужчина'
+                    },
+                    {id: 'female',
+                    checked: true,
+                    text:'Женщина',
+                    },                    
+                    ],
+          })
 
       //- +checkBoxList('active', "expandable checkbox list", true, false, true)

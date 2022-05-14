@@ -1,74 +1,97 @@
-@import "../../../modules/blocks/dropdown-guests/dropdown-guests.scss";
+@import "../../../modules/blocks/dropdown/dropdown.scss";
+@import "../../../modules/blocks/checkbox/checkbox.scss";
+
 @import "../../../modules/blocks/dropdown-rooms/dropdown-rooms.scss";
-@import "../../../modules/blocks/expandable-checkbox-list/expandable-checkbox-list.scss";
+@import "../../../modules/blocks/expand-checkbox/expand-checkbox.scss";
+@import "../../../modules/blocks/checkbox-buttons/checkbox-buttons.scss";
+@import "../../../modules/blocks/radio-buttons/radio-buttons.scss";
+@import "../../../modules/blocks/subscription/subscription.scss";
 
-.date-dropdown-wrap {
-  display: flex;
-  justify-content: space-between;
-  width: 320px;
-  height: 104px;
-  .left-dd,
-  .right-dd {
-    width: 150px;
-    overflow: hidden;
+.elements {
+  &__sections {
+    margin: auto;
+    max-width: 1158px;
+    display: grid;
+    grid-template-columns: 320px minmax(6px, 126px) 320px minmax(6px, 72px) 320px;
+    grid-template-rows: 30px 636px 98px 270px 41px 280px 80px 180px;
   }
-}
-
-.elements-grid {
-  margin: auto;
-  max-width: 1158px;
-  display: grid;
-  grid-template-columns: 320px minmax(6px, 126px) 322px minmax(6px, 70px) 319px;
-  grid-template-rows: 32px 636px 97px 270px 39px 280px 80px 180px;
-}
-.fields-dropdowns {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  // display: flex;
-  // justify-content: space-between;
-  // flex-direction: column;
-}
-.line-text {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 23px;
-  .line-text_minor-text {
-    color: rgba(31, 32, 65, 0.5);
-    font-weight: 400;
-
-    &.__up {
-      margin-bottom: 6px;
+  &__dropdowns-field {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  &__text-field {
+    height: 85px;
+  }
+  &__focus {
+    height: 84px;
+    input {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      color: rgba(31, 32, 65, 0.75);
+      font-size: 13.6px;
     }
   }
-}
-.focus-hover {
-  input {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    color: rgba(31, 32, 65, 0.75);
-    font-size: 13.5px;
-    // border-radius: 4px 4px 0px 0px;
+  &__guests {
+    height: 87px;
+  }
+  &__input-data {
+    height: 104px;
+  }
+  &__two-dates {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 104px;
+    .left-dd,
+    .right-dd {
+      width: 150px;
+      overflow: hidden;
+    }
+  }
+  &__range-dates {
+    height: 105px;
+  }
+  &__subscription {
+    height: 105px;
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 23px;
+    &_minor-text {
+      color: rgba(31, 32, 65, 0.5);
+      font-weight: 400;
+      position: absolute;
+      margin-left: 195px;
+      &.up-text {
+        margin-bottom: 6px;
+      }
+    }
+  }
+  &__apartment {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  &__rooms {
+    height: 84px;
+  }
+  &__checkboxes-field {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+  &__checkbox1 {
+    height: 63px;
+    // position: relative;
+  }
+  &__radio-toggle-field {
+    grid-column: 3/4;
+    grid-row: 2/3;
   }
 }
-
-.text-field {
-  height: 85px;
-  // width: 321px;
-}
-.text-field_two {
-  height: 84px;
-}
-.text-field_three {
-  height: 86px;
-}
-.text-field_four {
-  height: 105px;
+.line-text_main-text {
+  // height: 23px;
 }
 
-.apartment {
-  grid-column: 1/2;
-  grid-row: 4/5;
-}
 .guests-empty {
   grid-column: 3/4;
   grid-row: 4/5;
@@ -78,10 +101,6 @@
   grid-row: 4/5;
 }
 
-.checkboxs {
-  grid-column: 1/2;
-  grid-row: 6/7;
-}
 .dropdown {
   .check-markUI {
     position: absolute;
@@ -102,8 +121,4 @@
       background-color: #fff;
     }
   }
-}
-
-.checkbox1 {
-  height: 65px;
 }

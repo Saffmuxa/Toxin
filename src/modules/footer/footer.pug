@@ -1,10 +1,10 @@
 footer
   .footer-wrap
-        .footer-brand
+        .footer__brand
             h3 
               +toxinLogo 
             p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer-navi
+        .footer__nav
             h3 Навигация
             ul 
               li 
@@ -15,7 +15,7 @@ footer
                 a(target='_blank' href='//google.com') Служба поддержки  
               li 
                 a(target='_blank' href='//google.com') Услуги 
-        .footer-about
+        .footer__about
             h3 о нас
             ul 
               li 
@@ -26,7 +26,7 @@ footer
                 a(target='_blank' href='//google.com') Вакансии 
               li 
                 a(target='_blank' href='//google.com') Инвесторы
-        .footer-link
+        .footer__link
             h3 Служба поддержки
             ul 
               li 
@@ -35,16 +35,16 @@ footer
                 a(target='_blank' href='//google.com') Сообщества 
               li 
                 a(target='_blank' href='//google.com') Связь с нами 
-        .footer-subscribe
+        .footer__subscribe
             h3 Подписка
             ul 
                 li 
                   p Получайте специальные предложения и новости сервиса
                 li
-                    +subscriptionField
+                    +subscription({id: 'subscription-email'})
                         
-  .footer-shadow 
-  .footer-wrap._end               
+  .footer_shadow 
+  .footer__end               
     +copyright
     +linkSocial
    

@@ -1,26 +1,24 @@
 header
   .header-wrap
-    div.header-block._left
+    div.header__logo.header-block
       a(target='_blank' href='//google.com')
         +toxinLogo 
-    nav.header-block._right
-      ul.header-block._nav 
+    nav.header__links.header-block 
+      ul.header__nav.header-block 
         li 
           a(target='_blank' href='//google.com') О нас
-        li.dropdown-el(data-dropdown) 
-          button(class="dropdown-el-toggle" data-dropdown-button) Услуги
-            img(src=require('Images/expand_more.svg') class="more-img")
-          +dropdownWord('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
+        li.header__dropdown(data-dropdown) 
+          button.header__btn(data-dropdown-button) Услуги
+            img(src=require('Images/expand_more.svg') class="check-mark")
+          +dropdownHeader('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
         li 
           a(target='_blank' href='//google.com') Вакансии
         li 
           a(target='_blank' href='//google.com') Новости
-        li.dropdown-el(data-dropdown) 
-          button(class="dropdown-el-toggle" data-dropdown-button) Соглашения
-            img(src=require('Images/expand_more.svg') class="more-img")
-          +dropdownWord('Соглашения-0', "Соглашения-1", "Соглашения-2")
-
-      .header-block._login
-         .account 
+        li.header__dropdown(data-dropdown) 
+          button.header__btn(data-dropdown-button) Соглашения
+            img(src=require('Images/expand_more.svg') class="check-mark")
+          +dropdownHeader('Соглашения-0', "Соглашения-1", "Соглашения-2")
+      .header__account
             a(target='_blank' href='//google.com') Юлий Цезарь 
 

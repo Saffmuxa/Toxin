@@ -1,0 +1,8 @@
+//- ввод даты
+mixin maskedTxtField({title='', placeholder = '', id=''})
+      if (title)
+        label.masked-text__label(for=id)=title   
+      form.masked-text__controls
+        input.masked-text__input(inputmode="numeric", placeholder=placeholder)
+
+

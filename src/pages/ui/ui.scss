@@ -9,9 +9,10 @@ body {
 .to-home {
   font-size: 1.5rem;
   cursor: pointer;
-
   border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 12%;
+  border-radius: 10%;
+  width: 140px;
+  height: 36px;
 }
 .ui-info {
   color: rgba(31, 32, 65, 0.5);
@@ -24,6 +25,16 @@ body {
   padding: 30px;
   margin-bottom: 32px;
 }
-.block.elements {
-  max-width: 1440px;
+.colors {
+  height: 900px;
+}
+.elements {
+  // height: 900px;
+}
+.headers-footers {
+  height: 1350px;
+}
+.ui-block {
+  background-color: $mainBackground;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }

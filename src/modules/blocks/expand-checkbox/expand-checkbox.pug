@@ -1,0 +1,10 @@
+include ../checkbox/checkbox.pug
+mixin checkBoxMenu({title, open, tight, items}={})
+  .checkbox__wrapper
+    .checkbox__name-wrap
+      form.checkbox__form.js-checkbox__form(class=tight ? '' : 'arrow', class=open ? 'js-checkbox__form_active' : '')
+        h3(class=tight ? 'checkbox__title_tight' : 'checkbox__title')=title
+    ul.checkbox__menu.js-checkbox__menu(class=open ? 'js-checkbox__menu_active' : '')
+        each item in items 
+          - const {name, id, checked} = item;
+            +checkboxElem(name, id, checked)

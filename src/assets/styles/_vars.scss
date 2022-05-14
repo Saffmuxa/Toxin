@@ -1,13 +1,14 @@
 $mainFont: "Montserrat", Arial, sans-serif;
-
+$materialFont: "Material Icons";
 // Size
 $mainFontSize: 0.875rem; //14px от 16 браузерных
 $mainFontWeight: 400;
 $mainLineHeight: 24px;
 $mainFontStyle: normal;
+$mainFontColorActive: rgba(31, 32, 65, 1);
 $mainFontColor: rgba(31, 32, 65, 0.75);
 $mainFontColor05: rgba(31, 32, 65, 0.5);
-$mainFontColorActive: rgba(31, 32, 65, 1);
+$mainFontColor025: rgba(31, 32, 65, 0.25);
 
 $maxWidth: 1440px; //вариант 1920px
 $smDesktopWidth: 980px;
@@ -20,6 +21,7 @@ $mainColor: #1f2041;
 $green: #6fcf97;
 $purple: #bc9cff;
 $mainBackground: #ffffff;
+$gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 
 // Neutral Color
 $neutral-primary: #303133;
@@ -27,8 +29,5 @@ $neutral-regular: #606266;
 $neutral-secondary: #909399;
 $neutral-placeholder: #c0c4cc;
 
-// Border Color
-$border-base: #dcdfe6;
-$border-light: #e4e7ed;
-$border-lighter: #ebeef5;
-$border-lightex: #f2f6fc;
+// Animation time
+$aniTime: 300ms;

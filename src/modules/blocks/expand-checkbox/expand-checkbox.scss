@@ -1,0 +1,40 @@
+.checkbox {
+  &__wrapper {
+    width: 266px;
+  }
+  &__title {
+    height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  &__title_tight {
+    padding: 5px 0px 14px 0px;
+  }
+  &__menu {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 2px 0px;
+    position: relative;
+    overflow: hidden;
+    background-color: $mainBackground;
+
+    flex-direction: column;
+
+    display: none;
+  }
+  &__name-wrap {
+    position: relative;
+  }
+}
+
+.js-checkbox__form_active::after {
+  transform: rotate(180deg);
+  transition: transform $aniTime ease-in-out;
+}
+
+.js-checkbox__menu_active {
+  display: flex;
+  row-gap: 10px;
+  animation: fadeIn $aniTime;
+}

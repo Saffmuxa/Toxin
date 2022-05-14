@@ -1,0 +1,15 @@
+//- checkbox для выбора количества разрешений к номеру
+mixin checkBoxButtons(options={})
+  - const {name = '', id = 'checkbox',  items = []} = options;
+  .checkbox-button
+        h3.field-titlee=name
+        form.checkbox-menu
+          ul 
+            each item in items
+              - const {id = '', checked = false, text = ''} = item;
+                li.checkbox
+                  input(type='checkbox' id=id checked=checked )
+                  label(for=id)=text
+
+            
+

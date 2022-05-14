@@ -1,0 +1,7 @@
+mixin select(name, value=0, min=0, max=7)
+    li.select__controls
+      h3= name
+      .select__value
+        button.select__btn.select__btn-minus.js-select__btn-minus(type='button')
+        input.select__input.js-select__input(type='number', min=min, max=max, value=value, readonly='')
+        button.select__btn.select__btn-plus.js-select__btn-plus(type='button') 

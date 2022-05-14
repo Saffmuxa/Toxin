@@ -1,13 +1,9 @@
 @import "../../../modules/header/header.scss";
 @import "../../../modules/footer/footer.scss";
 @import "../../../modules/blocks/toxinLogo/toxinLogo.scss";
-@import "../../../modules/blocks/social-links/cosial-links.scss";
+@import "../../../modules/blocks/social-links/social-links.scss";
 @import "../../../modules/logo-links/logo-links.scss";
-.block.headers-footers {
-  max-width: $maxWidth;
-  height: 1350px;
-  background-color: rgba(31, 32, 65, 0);
-}
+
 header,
 footer {
   margin-bottom: 40px !important;

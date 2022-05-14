@@ -17,11 +17,10 @@ input {
   color: $mainFontColor;
 }
 input {
-  overflow: hidden; /* Обрезаем всё за пределами блока */
-  text-overflow: ellipsis; /* Добавляем многоточие */
+  line-height: 24px;
   height: 44px;
-  width: 320px;
-  padding: 0px 15px;
+  width: 100%;
+  padding: 0px 14px;
   background-color: rgba(31, 32, 65, 0);
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
@@ -58,13 +57,15 @@ h2 {
   line-height: 23px;
   color: rgba(31, 32, 65, 1);
 }
-h3 {
+h3,
+label {
   font-weight: 700;
   font-size: 0.75rem; //12px при 16 браузерных
   line-height: 15px;
   text-transform: uppercase;
   color: rgba(31, 32, 65, 1);
 }
+
 a {
   color: rgba(31, 32, 65, 0.5);
   font-weight: normal;
@@ -104,114 +105,27 @@ a {
     margin: 0px 7px 4px 0px;
   }
 }
-.drop-wrap {
-  height: 44px;
-  // width: 320px;
-  display: flex;
-  align-items: center;
-  // justify-content: flex-end;
-}
-.dropdown {
-  position: absolute;
-  background-color: $mainBackground;
-  width: 320px;
-  height: 44px;
 
+.check-mark {
+  right: 14px;
+  padding: 2px;
+  transform: rotate(0deg);
+  transition: transform 200ms ease-in-out;
+  background-color: #fff;
+}
+.active {
   .check-mark {
-    position: absolute;
-    right: 14px;
-    padding: 2px;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transition: transform 200ms ease-in-out;
-    background-color: #fff;
   }
 
-  &.active {
-    .check-mark {
-      transform: rotate(180deg);
-      transition: transform 200ms ease-in-out;
-    }
-
-    input {
-      border: 1px solid rgba(31, 32, 65, 0.5);
-      color: rgba(31, 32, 65, 0.75);
-      border-radius: 4px 4px 0px 0px;
-    }
+  input {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    color: rgba(31, 32, 65, 0.75);
+    border-radius: 4px 4px 0px 0px;
   }
 }
 
-.dropdown-menu {
-  z-index: 1;
-  width: 320px;
-  // height: 0px;
-  // border: 0px solid rgba(31, 32, 65, 0.5);
-  // border-radius: 0px 0px 4px 4px;
-  overflow: hidden;
-  left: 0;
-
-  top: calc(100% - 0px);
-  background-color: $mainBackground;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  opacity: 0;
-  pointer-events: none;
-  // transform: translateY(-1px);
-  transition: opacity 200ms ease-in-out, border 200ms ease-in-out;
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4px 7px 5px 14px;
-  }
-
-  #dropdown-reset {
-    display: none;
-  }
-}
-
-.check-menu {
-  z-index: 1;
-  width: 320px;
-  color: $mainFontColor05;
-  overflow: hidden;
-  left: 0;
-
-  top: calc(100% - 0px);
-  background-color: $mainBackground;
-  // box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  opacity: 0;
-  pointer-events: none;
-  // transform: translateY(-1px);
-  transition: opacity 200ms ease-in-out, border 200ms ease-in-out;
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px 7px 6px 0px;
-    input {
-      margin-left: 2px;
-    }
-  }
-
-  #dropdown-reset {
-    display: none;
-  }
-}
-.dropdown.active > .dropdown-menu {
-  opacity: 1;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-top-width: 0px;
-  // transform: translateY(-1px);
-  pointer-events: auto;
-  transition: opacity 200ms ease-in-out;
-  position: absolute;
-}
-
-.dropdown.active > .check-menu {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 200ms ease-in-out;
-  position: absolute;
-}
 .dropdown-toggle,
 .dropdown-toggle__mid,
 .dropdown-toggle__short {
@@ -228,25 +142,7 @@ a {
 .dropdown-toggle__mid {
   max-width: 267px;
 }
-.dropdown-button {
-  display: flex;
-  align-items: center;
-  width: 92px;
-  justify-content: space-between;
-  button {
-    border-radius: 22px;
-    width: 30px;
-    height: 30px;
-    // margin-left: 12px;
-    margin-top: 2px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    // &.active {
-    // }
-    &.non-active {
-      opacity: 0.38;
-    }
-  }
-}
+
 .date-field {
   color: rgba(31, 32, 65, 0.25);
   text-transform: uppercase;
@@ -300,5 +196,26 @@ a {
   h3 {
     color: #ffffff;
     padding: 0px 12px;
+  }
+}
+.arrow::after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  content: "expand_more";
+  color: rgb(31 32 65 / 50%);
+  font-family: $materialFont;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 44px;
+  transform: rotate(0deg);
+  transition: transform $aniTime ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
