@@ -24,8 +24,11 @@ header {
 .header__login {
 }
 .header__nav {
-  width: 446px;
+  display: flex;
+  column-gap: 21px;
+  flex-direction: row;
   .header__btn {
+    // position: absolute;
     padding-left: 0px;
     padding-right: 0px;
     color: rgba(31, 32, 65, 0.5);
@@ -51,56 +54,18 @@ header {
     margin-right: 4px;
   }
 }
-.header__dropdown-menu {
-  z-index: 2;
-  min-width: 160px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+.nav-arrow::after {
   position: absolute;
-  border-radius: 4px 4px;
-  margin-top: 44px;
-  background-color: $mainBackground;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-4px);
-  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out,
-    border 200ms ease-in-out;
-  li {
-    display: flex;
-    justify-content: space-around;
-    margin: 8px 0px;
-  }
-}
-.header__dropdown-menu::before {
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  border: 15px solid;
-  border-color: transparent transparent rgba(31, 32, 65, 0.25) transparent;
-}
-.header__dropdown {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-}
-.active {
-  .header__btn {
-    color: rgba(31, 32, 65, 1);
-  }
-}
-.header__dropdown.active > .header__btn + .header__dropdown-menu {
-  opacity: 1;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  transform: translateY(0px);
-  pointer-events: auto;
-  position: absolute;
+  top: 0;
+  content: "expand_more";
+  color: rgb(31 32 65 / 50%);
+  font-family: $materialFont;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+  transform: rotate(0deg);
+  transition: transform $aniTime ease-in-out;
 }
 
 .header__account {

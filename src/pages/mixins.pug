@@ -1,13 +1,12 @@
 include ../modules/blocks/expand-checkbox/expand-checkbox
-include ../modules/blocks/checkbox-buttons/checkbox-buttons
+//- include ../modules/blocks/checkbox-buttons/checkbox-buttons
 include ../modules/blocks/dropdown-guests/dropdown-guests
 include ../modules/blocks/dropdown-rooms/dropdown-rooms
 include ../modules/blocks/masked-text-field/masked-text-field
-
 include ../modules/blocks/radio-buttons/radio-buttons
 include ../modules/blocks/text-field/text-field
 include ../modules/blocks/subscription/subscription
-
+include ../modules/blocks/dropdown-nav/dropdown-nav
 //- Круглое лого и надпись Toxin
 mixin toxinLogo 
   include ../modules/blocks/toxinLogo/toxinLogo
@@ -29,13 +28,8 @@ mixin copyright
 mixin linkSocial
   include ../modules/blocks/social-links/social-links
           
-//- dropdown для меню header'a
-mixin dropdownHeader(...items)
-    .header__dropdown-menu
-      ul
-        each item in items
-          li 
-            a(target='_blank' href='//google.com')= item
+
+
 //- input dropdown date
 mixin drophDate 
   h3.elements__title_main-text masked text field

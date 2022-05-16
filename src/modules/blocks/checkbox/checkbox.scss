@@ -20,6 +20,20 @@
     border: 1px solid $mainFontColor025;
     border-radius: 4px;
     background-color: #fff;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      top: 5px;
+      left: 5px;
+      transform: rotate(0deg) scale(0);
+      border: 2px solid;
+      border-bottom: transparent;
+      border-left: transparent;
+      border-image: $gradient;
+      border-image-slice: 1;
+    }
   }
   &__input_hidden {
     height: 20px;
@@ -28,18 +42,7 @@
     border-color: $purple;
 
     &::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 6px;
-      top: 5px;
-      left: 5px;
-      transform: rotate(135deg);
-      border: 2px solid;
-      border-bottom: transparent;
-      border-left: transparent;
-      border-image: $gradient;
-      border-image-slice: 1;
+      animation: check 0.1s ease forwards;
     }
   }
 
@@ -52,5 +55,11 @@
     line-height: 18px;
     color: $mainFontColor05;
     text-transform: none;
+    cursor: pointer;
+  }
+}
+@keyframes check {
+  100% {
+    transform: rotate(135deg) scale(1);
   }
 }

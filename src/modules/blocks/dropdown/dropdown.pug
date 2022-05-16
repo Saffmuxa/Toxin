@@ -1,6 +1,6 @@
 include ../select/select.pug
 //- dropdown для выбора количества гостей
-mixin dropdown({title='', placeholder = '', id, sharp, items, open = false, buttons = true})
+mixin dropdown({title='', placeholder, id, sharp, items, open = false, buttons = true})
     .dropdown
       if (title)
         label.dropdown__label(for=id)=title   

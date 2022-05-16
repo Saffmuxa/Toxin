@@ -1,43 +1,45 @@
-const path = require('path');
+const path = require("path");
 const PugPlugin = require("pug-plugin");
 const CssUrlRelativePlugin = require("css-url-relative-plugin");
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
 
 const isProduction = false;
 module.exports = {
-  mode: 'production',
-  devtool: isProduction ? false : 'source-map',
+  mode: "production",
+  devtool: isProduction ? false : "source-map",
 
   resolve: {
     // aliases used in the code example
     alias: {
-      Images: path.join(__dirname, 'src/assets/images/'),
-      Styles: path.join(__dirname, 'src/assets/styles/'),
+      Images: path.join(__dirname, "src/assets/images/"),
+      Styles: path.join(__dirname, "src/assets/styles/"),
     },
   },
 
   output: {
-    path: path.join(__dirname, 'public'),
-    publicPath: '',
-    filename: 'assets/js/[name].js',
+    path: path.join(__dirname, "public"),
+    publicPath: "",
+    filename: "assets/js/[name].js",
+    clean: true,
   },
 
   entry: {
-    index: './src/pages/home/index.pug?' + JSON.stringify({ title: 'Homepage' }),
+    index:
+      "./src/pages/home/index.pug?" + JSON.stringify({ title: "Homepage" }),
     aboutHtml: {
-      import: './src/pages/about/index.pug?' + JSON.stringify({ title: 'About' }),
-      filename: 'about.html',
+      import:
+        "./src/pages/about/index.pug?" + JSON.stringify({ title: "About" }),
+      filename: "about.html",
     },
     UIHtml: {
-      import: './src/pages/ui/ui.pug?' + JSON.stringify({ title: 'UI' }),
-      filename: 'ui.html',
+      import: "./src/pages/ui/ui.pug?" + JSON.stringify({ title: "UI" }),
+      filename: "ui.html",
     },
     // mainPage: {
     //         import: './src/pages/home/index.pug?' + JSON.stringify({ title: 'Homepage' }),
     //         filename: "./pages/index.html",
     //       },
-          
   },
 
   plugins: [
@@ -49,7 +51,9 @@ module.exports = {
         PugPlugin.extractHtml(),
         PugPlugin.extractCss({
           //verbose: true,
-          filename: isProduction ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
+          filename: isProduction
+            ? "assets/css/[name].css"
+            : "assets/css/[name].[contenthash:8].css",
         }),
       ],
     }),
@@ -61,15 +65,17 @@ module.exports = {
         test: /\.pug$/,
         loader: PugPlugin.loader, // the pug-loader is already included in the PugPlugin
         options: {
-          method: 'render',
+          method: "render",
         },
       },
       // image resources processing via require() in pug
       {
         test: /\.(png|jpg|jpeg|ico|svg)/,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: isProduction ? 'assets/img/[name][ext]' : 'assets/img/[name][contenthash:8][ext]',
+          filename: isProduction
+            ? "assets/img/[name][ext]"
+            : "assets/img/[name][contenthash:8][ext]",
 
           // filename: 'assets/img/[name].[hash][ext]',
         },
@@ -77,25 +83,28 @@ module.exports = {
       {
         test: /\.(ttf|otf|eot|woff(2)?)/,
         type: "asset/resource",
-                // include: path.resolve(__dirname, "./src/assets/fonts"),
+        // include: path.resolve(__dirname, "./src/assets/fonts"),
         generator: {
-          filename: isProduction ? 'assets/fonts/[name][ext]' : 'assets/fonts/[name][contenthash:8][ext]',
+          filename: isProduction
+            ? "assets/fonts/[name][ext]"
+            : "assets/fonts/[name][contenthash:8][ext]",
 
-        // filename: "assets/fonts/[name][ext]",
-        
-                  // filename: "assets/img/[name].[hash][ext]",
-                },},
+          // filename: "assets/fonts/[name][ext]",
+
+          // filename: "assets/img/[name].[hash][ext]",
+        },
+      },
       // style loader for webpack entry and processing via require() in pug
       {
         test: /\.(css|sass|scss)$/,
         use: [
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {},
           },
           // Add browser prefixes and minify CSS.
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
                 plugins: [autoprefixer(), cssnano()],
@@ -104,7 +113,7 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {},
           },
         ],
@@ -112,7 +121,7 @@ module.exports = {
 
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        loader: "html-loader",
         options: {
           // disable processing of resources in static HTML, leave as is
           sources: false,
@@ -130,7 +139,7 @@ module.exports = {
   },
 
   performance: {
-    hints: isProduction ? 'error' : 'warning',
+    hints: isProduction ? "error" : "warning",
     // in development mode may be the size of css and js more times bigger than in production
     maxEntrypointSize: isProduction ? 1024000 : 4096000,
     maxAssetSize: isProduction ? 1024000 : 4096000,
@@ -138,7 +147,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
       watch: true,
     },
     port: 9000,

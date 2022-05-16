@@ -1,14 +1,14 @@
 //- выбор пола
-mixin radioButtons(options={})
-  - const {name = '', id = 'radio',  items = []} = options;
-  form.radio-button.sml-size
-        h3.field-title=name
-        ul.radio 
+mixin radioButtons({title, text, name, id, checked, radioName, radioId = 'radio',  items}={})
+  form.radio-button
+    if (title)
+      label.radio-button__title(for=id)=title 
+        ul.radio-button__options(id=id)
           each item in items
-            - const {id = '', checked = false, text = ''} = item;
-              li
-                input(type='radio' id=id checked=checked name='radio')
-                label(for=id)=text
-
+            - const {radioId, checked = false, radioName='genders', text = ''} = item;
+              li.radio-button__li(id=radioId)
+                label.radio-button__label
+                  input.radio-button__input_hidden(type='radio' id=radioId checked=checked name=radioName)
+                  span.radio-button__box     
+                  span.radio-button__name= text
             
-

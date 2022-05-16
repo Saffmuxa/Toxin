@@ -1,0 +1,11 @@
+//- dropdown для меню header'a
+mixin dropdownHeader({title='Соглашения', target, href, name, items}={})
+  li.header__dropdown.js-main__header-dropdown
+    button.header__btn.nav-arrow.js-header__btn=title
+    .header__dropdown-menu.js-header__menu
+      ul
+        each item in items
+          - const {target="_blank", href='//google.com', name} = item;
+            li.header__dropdown-li
+              a(target=target href=href)= name
+

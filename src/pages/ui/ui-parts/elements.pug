@@ -84,7 +84,8 @@
                     {name:'Шампунь', id:'shampoo', checked:false},]})
 
   section.elements__radio-toggle-field  
-    +checkBoxMenu({title:'Checkbox Buttons',
+    .elements__checkbox 
+      +checkBoxMenu({title:'Checkbox Buttons',
                     open:true,
                     tight: true,
                     items: 
@@ -92,33 +93,16 @@
                     {name:'Можно с питомцами', id:'pets', checked:true},
                     {name:'Можно пригласить гостей (до 10 человек)', id:'party', checked:true},
                     ]})
-   
-    //- +checkBoxButtons({
-    //-         name: 'Checkbox Buttons',
-    //-         id: 'checkboxButtons',
-    //-         items: [{id: 'smoke',
-    //-                 checked: false,
-    //-                 text:'Можно курить'
-    //-                 },
-    //-                 {id: 'pets',
-    //-                 checked: true,
-    //-                 text:'Можно с питомцами',
-    //-                 },
-    //-                 {id: 'party',
-    //-                 checked: true,
-    //-                 text: 'Можно пригласить гостей (до 10 человек)',
-    //-                 },
-    //-                 ],
-    //-       })
-    +radioButtons({
-            name: 'Radio Buttons',
+    .elements__radio
+      +radioButtons({
+            title: 'Radio Buttons',
             id: 'radioButtons',
-            items: [{id: 'male',
-                    checked: false,
+            items: [{radioId: 'male',
+                    checked: true,
                     text:'Мужчина'
                     },
-                    {id: 'female',
-                    checked: true,
+                    {radioId: 'female',
+                    checked: false,
                     text:'Женщина',
                     },                    
                     ],

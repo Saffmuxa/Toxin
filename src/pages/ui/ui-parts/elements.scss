@@ -1,9 +1,9 @@
 @import "../../../modules/blocks/dropdown/dropdown.scss";
 @import "../../../modules/blocks/checkbox/checkbox.scss";
-
+@import "../../../modules/blocks/dropdown-nav/dropdown-nav.scss";
 @import "../../../modules/blocks/dropdown-rooms/dropdown-rooms.scss";
 @import "../../../modules/blocks/expand-checkbox/expand-checkbox.scss";
-@import "../../../modules/blocks/checkbox-buttons/checkbox-buttons.scss";
+// @import "../../../modules/blocks/checkbox-buttons/checkbox-buttons.scss";
 @import "../../../modules/blocks/radio-buttons/radio-buttons.scss";
 @import "../../../modules/blocks/subscription/subscription.scss";
 
@@ -52,6 +52,7 @@
   }
   &__subscription {
     height: 105px;
+    width: 267px;
   }
   &__title {
     display: flex;
@@ -86,6 +87,9 @@
   &__radio-toggle-field {
     grid-column: 3/4;
     grid-row: 2/3;
+  }
+  &__checkbox {
+    height: 171px;
   }
 }
 .line-text_main-text {

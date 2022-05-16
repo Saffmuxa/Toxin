@@ -4,21 +4,27 @@ header
       a(target='_blank' href='//google.com')
         +toxinLogo 
     nav.header__links.header-block 
-      ul.header__nav.header-block 
+      ul.header__nav
         li 
           a(target='_blank' href='//google.com') О нас
-        li.header__dropdown(data-dropdown) 
-          button.header__btn(data-dropdown-button) Услуги
-            img(src=require('Images/expand_more.svg') class="check-mark")
-          +dropdownHeader('Услуги-0', 'Услуги-1', 'Услуги-2', 'Услуги-3')
+        +dropdownHeader({title:'Услуги',
+                  items:
+                   [{name:'Первое'},
+                    {name:'Второе'},
+                    {name:'Третье'},
+                    {name:'Четвертое'},
+                    {name:'Пятое'}]})        
         li 
           a(target='_blank' href='//google.com') Вакансии
         li 
           a(target='_blank' href='//google.com') Новости
-        li.header__dropdown(data-dropdown) 
-          button.header__btn(data-dropdown-button) Соглашения
-            img(src=require('Images/expand_more.svg') class="check-mark")
-          +dropdownHeader('Соглашения-0', "Соглашения-1", "Соглашения-2")
+        +dropdownHeader({title:'Соглашения',
+                  items:
+                   [{name:'Первое'},
+                    {name:'Второе'},
+                    {name:'Третье'},
+                    {name:'Четвертое'},
+                    {name:'Пятое'}]})      
       .header__account
             a(target='_blank' href='//google.com') Юлий Цезарь 
 
