@@ -15,4 +15,3 @@ const likeSet = ({ currentTarget }) => {
 likeBtn.forEach((targets) => {
   targets.addEventListener("click", likeSet);
 });
-mm;
