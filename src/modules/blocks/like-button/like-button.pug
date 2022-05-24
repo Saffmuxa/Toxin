@@ -1,0 +1,8 @@
+//- выбор пола
+mixin likeButton({title, id, count, liked=false}={})
+  form.like.js-like__form
+    button.js-like__btn(type='button' id=id)(class=liked ? 'like__btn_liked' : 'like__btn_not-liked')
+          span.like__heart
+          span.like__count.js-like__count=count
+
+            

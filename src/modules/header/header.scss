@@ -55,19 +55,6 @@ header {
   }
 }
 
-.nav-arrow::after {
-  position: absolute;
-  top: 0;
-  content: "expand_more";
-  color: rgb(31 32 65 / 50%);
-  font-family: $materialFont;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 26px;
-  transform: rotate(0deg);
-  transition: transform $aniTime ease-in-out;
-}
-
 .header__account {
   border-left: 1px solid rgba(31, 32, 65, 0.1);
   height: 33px;

@@ -3,7 +3,13 @@
 @import "../../../modules/blocks/dropdown-nav/dropdown-nav.scss";
 @import "../../../modules/blocks/dropdown-rooms/dropdown-rooms.scss";
 @import "../../../modules/blocks/expand-checkbox/expand-checkbox.scss";
-// @import "../../../modules/blocks/checkbox-buttons/checkbox-buttons.scss";
+@import "../../../modules/blocks/airDatepicker/airDatepicker.scss";
+@import "../../../modules/blocks/datepicker/datepicker.scss";
+@import "../../../modules/blocks/masked-text-field/masked-text-field.scss";
+@import "../../../modules/blocks/toggle-buttons/toggle-buttons.scss";
+@import "../../../modules/blocks/like-button/like-button.scss";
+@import "../../../modules/blocks/rate/rate.scss";
+
 @import "../../../modules/blocks/radio-buttons/radio-buttons.scss";
 @import "../../../modules/blocks/subscription/subscription.scss";
 
@@ -49,6 +55,7 @@
   }
   &__range-dates {
     height: 105px;
+    width: 267px;
   }
   &__subscription {
     height: 105px;
@@ -63,10 +70,10 @@
       color: rgba(31, 32, 65, 0.5);
       font-weight: 400;
       position: absolute;
-      margin-left: 195px;
-      &.up-text {
-        margin-bottom: 6px;
-      }
+      margin-top: 5px;
+      // &.up-text {
+      //   margin-bottom: 6px;
+      // }
     }
   }
   &__apartment {
@@ -91,9 +98,41 @@
   &__checkbox {
     height: 171px;
   }
+  &__radio {
+    height: 91px;
+  }
+  &__toggle {
+    height: 129px;
+  }
+  &__like-buttons {
+    height: 93px;
+    .like-buttons__content {
+      display: flex;
+      margin-top: 12px;
+      column-gap: 10px;
+    }
+  }
+  &__rate-btn {
+    height: 90px;
+    .rate-btn__content {
+      display: flex;
+      margin-top: 12px;
+      column-gap: 40px;
+    }
+  }
 }
-.line-text_main-text {
-  // height: 23px;
+.text-filed__default-text {
+  margin-left: 263px;
+  margin-top: 3px;
+}
+.text-filed__hover-text {
+  margin-left: 223px;
+}
+.dropdown__default-text {
+  margin-left: 208px;
+}
+.dropdown__expanded-text {
+  margin-left: 195px;
 }
 
 .guests-empty {

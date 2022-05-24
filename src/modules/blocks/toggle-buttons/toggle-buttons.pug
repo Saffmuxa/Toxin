@@ -1,0 +1,14 @@
+//- выбор пола
+mixin toggleButtons({title, text, name, id, checked, toggleName, toggleId = 'toggle',  items}={})
+  form.toggle-button
+    if (title)
+      label.toggle-button__title(for=id)=title 
+    ul.toggle-button__options(id=id)
+          each item in items
+            - const {toggleId, checked = false, toggleName='specials', text = ''} = item;
+              li.toggle-button__li(id=toggleId)
+                label.toggle-button__label
+                  input.toggle-button__input_hidden(type='checkbox' id=toggleId checked=checked name=toggleName)
+                  span.toggle-button__box     
+                  span.toggle-button__name= text
+            

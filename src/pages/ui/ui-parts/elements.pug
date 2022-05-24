@@ -2,13 +2,13 @@
 .elements__sections 
   section.elements__dropdowns-field
       .elements__text-field
-        h3.elements__title_minor-text.up-text Default
+        h3.elements__title_minor-text.text-filed__default-text Default
         +textField({
           type:'email',  
           placeholder: 'Email'       })
 
       .elements__focus
-        h3.elements__title_minor-text Hover / Focus
+        h3.elements__title_minor-text.text-filed__hover-text Hover / Focus
         +textField({
           title: 'Text Field', 
           value:'This is pretty awesome', 
@@ -16,43 +16,23 @@
       .elements__guests.js-main__guest-dropdown
         +dropdownGuest({title: 'dropdown', id: 'guests'})
       .elements__input-data
-        +maskedTxtField({title: 'masked text field', placeholder: 'ДД.ММ.ГГГГ'})
+        +maskedTxtField({title: 'masked text field', value: ''})
       .elements__two-dates
-          .left-dd
-              h3.field-title date Dropdown
-                  //- +drophDate 
-              form.date-dropdown(data-dropdown)
-                  .date-dropdown_input()
-                      input.dropdown-toggle__short(type="text" value="ДД.ММ.ГГГГ" data-dropdown-button)
-                      img(src=require('Images/expand_more.svg') data-dropdown-button)
-
-          .right-dd
-              h3.field-title date Dropdown
-                  //- +drophDate 
-              form.date-dropdown(data-dropdown)
-                  .date-dropdown_input()
-                      input.dropdown-toggle__short(type="text" value="19.08.2019" data-dropdown-button)
-                      img(src=require('Images/expand_more.svg') data-dropdown-button)
-
+        +datePicker({calendarId: 'two-dates', leftTitle: 'date Dropdown', rightTitle: 'date Dropdown', rightValue: '19.08.2019', datePickerId: 'date-picker-first', type: 'two-input'})
       .elements__range-dates
-        h3.field-title filter date dropdown
-        form.date-dropdown(data-dropdown)
-          .date-dropdown_input 
-            input.dropdown-toggle__mid(type="text" value="19 авг - 23 авг" data-dropdown-button)
-            img(src=require('Images/expand_more.svg') data-dropdown-button)
-
+        +datePicker({calendarId: 'range-dates', title: 'filter date dropdown', value: '19 авг - 23 авг', datePickerId: 'date-picker-second', type: ''})
       .elements__subscription
         +subscription({title: 'subscription text field', id: 'email'})
 
  
   section.elements__apartment
     .elements__rooms.js-main__rooms-dropdown
-      h3.elements__title_minor-text Default
+      h3.elements__title_minor-text.dropdown__default-text Default
       +dropdownRooms({
         title: 'dropdown', id: 'rooms',
         buttons:false, sharp:true, values: [2,2,0]})  
     .elements__rooms.js-main__rooms-dropdown
-      h3.elements__title_minor-text expanded
+      h3.elements__title_minor-text.dropdown__expanded-text expanded
       +dropdownRooms({
         title: 'dropdown', buttons:false, sharp:true, open: true, values: [2,2,0]})
 
@@ -107,5 +87,36 @@
                     },                    
                     ],
           })
-
-      //- +checkBoxList('active', "expandable checkbox list", true, false, true)
+    .elements__toggle
+      +toggleButtons({
+            title: 'Toggle',
+            id: 'toggleButtons',
+            items: [{toggleId: 'yesToggle',
+                    checked: true,
+                    text:'Получать спецпредложения'
+                    },
+                    {toggleId: 'noToggle',
+                    checked: false,
+                    text:'Получать спецпредложения',
+                    },                    
+                    ],
+          })
+    .elements__like-buttons
+      label.like-buttons__title like button 
+      .like-buttons__content
+          +likeButton({
+                id: 'likeButton1',
+                count: 2,
+              })
+          +likeButton({
+                id: 'likeButton2',
+                count: 12,
+                liked: true,
+              })
+    .elements__rate-btn 
+      label.rate-btn__title rate button
+      .rate-btn__content
+        +rateBtn(4)
+        +rateBtn(5)
+      //- i.subscription__btn expand_more
+      //- i.subscription__btn arrow_forward

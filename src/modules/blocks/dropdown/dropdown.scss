@@ -4,6 +4,7 @@
   position: relative;
   &__input_sharp {
     border-radius: 4px 4px 0px 0px;
+    padding-right: 40px;
   }
 }
 .js-dropdown__input_active {
@@ -20,7 +21,7 @@
 }
 .dropdown__menu {
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   width: 100%;
   padding: 4px 6px 7px 14px;
   border-radius: 0px 0px 4px 4px;

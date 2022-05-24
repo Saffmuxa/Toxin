@@ -71,6 +71,7 @@ module.exports = {
       // image resources processing via require() in pug
       {
         test: /\.(png|jpg|jpeg|ico|svg)/,
+        exclude: [/fonts/],
         type: "asset/resource",
         generator: {
           filename: isProduction
@@ -81,7 +82,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(ttf|otf|eot|woff(2)?)/,
+        test: /\.(ttf|otf|eot|svg|woff(2)?)/,
+        exclude: [/images/],
         type: "asset/resource",
         // include: path.resolve(__dirname, "./src/assets/fonts"),
         generator: {

@@ -12,6 +12,7 @@ const initDropdown = ({ dropdownEl, onChangeTextValue = null }) => {
   const resetBtn = dropdownEl.querySelector(".js-dropdown__btn_reset");
   const applyBtn = dropdownEl.querySelector(".js-dropdown__btn_apply");
   const dropdownArrow = dropdownEl.querySelector(".js-dropdown__input-wrap");
+
   // обновление значений selectNum при нажатии кнопок +-
   const state = {};
   const setState = () => {
@@ -28,7 +29,14 @@ const initDropdown = ({ dropdownEl, onChangeTextValue = null }) => {
     dropdownInput.classList.toggle("js-dropdown__input_active");
     dropdownArrow.classList.toggle("js-dropdown__arrow_active");
   };
-  applyBtn?.addEventListener("click", toggleDropdownMenu);
+  const babyesDetect = () => {
+    toggleDropdownMenu();
+    if ((state.values[0] === 0) & (state.values[2] > 0)) {
+      const message = "Младенцы не могут быть размещены без взрослых";
+      alert(message);
+    }
+  };
+  applyBtn?.addEventListener("click", babyesDetect);
   // dropdownInputWrapper.addEventListener("click", toggleDropdownMenu);
 
   //закрывает дроп меню при мисклике + меняет класс инпута + переворот стрелки
@@ -117,6 +125,7 @@ const initDropdown = ({ dropdownEl, onChangeTextValue = null }) => {
     toggleDropdownMenu();
     document.addEventListener("click", onClickDropdownOutside);
   };
+
   dropdownInputWrapper.addEventListener("click", onClickDropdown);
 };
 export { initDropdown };

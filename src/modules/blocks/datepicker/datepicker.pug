@@ -1,0 +1,20 @@
+include ../masked-text-field/masked-text-field
+
+mixin datePicker({calendarId, title, leftTitle, rightTitle, value, leftValue, rightValue, datePickerId, type='',})   
+  .calendar(id=calendarId)
+    if (type==="two-input")
+      .calendar__inputs
+        .calendar__input.js-calendar__input
+           +maskedTxtField({title: leftTitle})
+        .calendar__input.js-calendar__input
+          +maskedTxtField({title: rightTitle, value: rightValue})
+      .calendar__menu.js-calendar__menu(class=open ? 'js-calendar__menu_active' : '', id=datePickerId) 
+      //- input(id=datePickerId)
+
+    else
+      .calendar__field.js-calendar__input
+          +maskedTxtField({title: title, value: value})
+      .calendar__menu.js-calendar__menu(class=open ? 'js-calendar__menu_active' : '', id=datePickerId) 
+
+
+      //- .airdatepicker(id=datePickerId) 

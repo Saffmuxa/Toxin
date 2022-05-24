@@ -1,0 +1,7 @@
+
+mixin rateBtn(rateNum)
+  - const totalStars = 5;
+    form.rate-btn
+        - for(let i = 1; i <= totalStars; i++)
+          - const iconName = i <= rateNum ? "star" : "star_border";
+            i.rate-btn__icon= iconName  
