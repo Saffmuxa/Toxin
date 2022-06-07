@@ -1,0 +1,11 @@
+mixin registerButton({text, link, hover=false, arrow=false}={})
+  form.button-form(action=link)
+    button(type="submit" class="register-button" class=hover ? 'reg-btn-hover' : '' class=arrow ? 'btn-arrow' : '') 
+      h3= text
+mixin enterButton({text, link, hover=false}={})
+  form.button-form(action=link)
+    button(type="submit" class='enter-button' class=hover ? 'btn-hover' : '') 
+      h3= text
+mixin textButton({text, active=false}={})
+  button(type="button" class="text-button" class=active ? 'btn-active' : '')
+    h3= text

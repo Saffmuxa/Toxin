@@ -1,0 +1,27 @@
+.bullet-list__form {
+  margin-bottom: 13px;
+}
+.bullet-list__ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 260px;
+}
+.bullet-list__text {
+  position: relative;
+  padding-left: 20px;
+  display: block;
+}
+.bullet-list__text::before {
+  content: "circle";
+  font-family: $materialFont;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  color: $mainFontColor025;
+  position: absolute;
+  left: 0;
+}
+.bullet-list__label {
+  display: flex;
+}

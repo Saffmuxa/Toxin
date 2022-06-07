@@ -9,24 +9,29 @@
 @import "../../../modules/blocks/toggle-buttons/toggle-buttons.scss";
 @import "../../../modules/blocks/like-button/like-button.scss";
 @import "../../../modules/blocks/rate/rate.scss";
-
+@import "../../../modules/blocks/buttons/buttons.scss";
 @import "../../../modules/blocks/radio-buttons/radio-buttons.scss";
 @import "../../../modules/blocks/subscription/subscription.scss";
-
+@import "../../../modules/blocks/range-slider/range-slider.scss";
+@import "../../../modules/blocks/pagination/pagination.scss";
+@import "../../../modules/blocks/rich-checkbox/rich-checkbox.scss";
+@import "../../../modules/blocks/bullet-list/bullet-list.scss";
+@import "../../../modules/blocks/additionally/additionally.scss";
+@import "../../../modules/blocks/comment/comment.scss";
 .elements {
   &__sections {
     margin: auto;
     max-width: 1158px;
     display: grid;
     grid-template-columns: 320px minmax(6px, 126px) 320px minmax(6px, 72px) 320px;
-    grid-template-rows: 30px 636px 98px 270px 41px 280px 80px 180px;
+    grid-template-rows: 31px 636px 97px 270px 40px 280px 100px 291px;
   }
   &__dropdowns-field {
     grid-column: 1/2;
     grid-row: 2/3;
   }
   &__text-field {
-    height: 85px;
+    height: 84px;
   }
   &__focus {
     height: 84px;
@@ -46,7 +51,7 @@
     display: flex;
     justify-content: space-between;
     width: 320px;
-    height: 104px;
+    height: 105px;
     .left-dd,
     .right-dd {
       width: 150px;
@@ -81,14 +86,14 @@
     grid-row: 4/5;
   }
   &__rooms {
-    height: 84px;
+    height: 83px;
   }
   &__checkboxes-field {
     grid-column: 1/2;
     grid-row: 6/7;
   }
   &__checkbox1 {
-    height: 63px;
+    height: 65px;
     // position: relative;
   }
   &__radio-toggle-field {
@@ -96,7 +101,7 @@
     grid-row: 2/3;
   }
   &__checkbox {
-    height: 171px;
+    height: 170px;
   }
   &__radio {
     height: 91px;
@@ -105,7 +110,7 @@
     height: 129px;
   }
   &__like-buttons {
-    height: 93px;
+    height: 92px;
     .like-buttons__content {
       display: flex;
       margin-top: 12px;
@@ -119,6 +124,72 @@
       margin-top: 12px;
       column-gap: 40px;
     }
+  }
+  &__slider-buttons {
+    grid-column: 5/6;
+    grid-row: 2/3;
+
+    .elements__range-slider {
+      height: 87px;
+      width: 266px;
+      margin-top: 1px;
+    }
+
+    .buttons__register-btns {
+      margin-top: 11px;
+      margin-left: 1px;
+      height: 44px;
+      display: flex;
+      column-gap: 19px;
+    }
+    .buttons__enter-btns {
+      margin-top: 30px;
+      height: 44px;
+      display: flex;
+      column-gap: 20px;
+    }
+    .buttons__text-btns {
+      margin-top: 17px;
+      height: 44px;
+      display: flex;
+      column-gap: 21px;
+    }
+    .buttons__pay-btn {
+      margin-top: 15px;
+      height: 44px;
+      // display: flex;
+      // column-gap: 20px;
+    }
+    // .elements__pagination {
+    //   margin-top: 35px;
+    // }
+  }
+  &__pagination {
+    margin-top: 41px;
+    .pagination__title {
+      margin-bottom: 16px;
+
+      display: block;
+    }
+  }
+  &__rich-checkbox-field {
+    grid-column: 3/4;
+    grid-row: 6/7;
+    margin-top: 10px;
+  }
+  &__bullet-list {
+    grid-column: 5/6;
+    grid-row: 6/7;
+    margin-top: 15px;
+  }
+  &__additionally {
+    grid-column: 1/2;
+    grid-row: 8/9;
+  }
+  &__comment {
+    margin-top: 12px;
+    grid-column: 3/6;
+    grid-row: 8/9;
   }
 }
 .text-filed__default-text {

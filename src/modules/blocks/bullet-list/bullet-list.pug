@@ -1,0 +1,10 @@
+mixin bulletList({title='', items}={})
+      form.bullet-list__form
+        h3.bullet-list__title=title
+      ul.bullet-list__ul
+        each item in items
+          - const {text} = item;
+            li.bullet-list__li
+              //- .bullet-list__label
+                span.bullet-list__box circle
+              span.bullet-list__text= text

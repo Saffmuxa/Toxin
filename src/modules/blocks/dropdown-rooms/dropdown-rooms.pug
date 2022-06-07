@@ -1,12 +1,12 @@
 //- dropdown для выбора количества комнат
 include ../dropdown/dropdown.pug
-mixin dropdownRooms({title='', id='', values=[], placeholder='Сколько комнат', sharp=true, open=false, buttons}={})
+mixin dropdownRooms({title='', id='', values=[], placeholder='Сколько комнат', sharp=true, open=false, style, buttons}={})
   .dropdown-rooms
     -
       const items=[{ name: 'спальни', value: 0 }, { name: 'кровати', value: 0 }, { name: 'ванные комнаты', value: 0 }];
       if(values) {
         values.forEach((value, index) => items[index].value = value)
       }
-    +dropdown({title, placeholder, sharp, id, items, buttons, open: open})
+    +dropdown({title, placeholder, sharp, style, id, items, buttons, open: open})
 
 

@@ -6,8 +6,6 @@ const initDatePicker = (datePickerId, settings = {}) => {
 
   const calendar = new AirDatepicker(containerEl, {
     range: true,
-    // position: "bottom center",
-    // startDate: new Date(2019, 7, 10),
     minDate: new Date(),
 
     buttons: [
@@ -36,24 +34,25 @@ const initDatePicker = (datePickerId, settings = {}) => {
   calendar.update(newOpts);
 };
 
-const initCalendar = (calendarId, datePickerId, type = "") => {
+const initCalendar = (calendarId, datePickerId, type, open) => {
   const calendarEl = document.getElementById(calendarId);
   const calendarMenu = calendarEl.querySelector(".js-calendar__menu");
   const dateInputs = calendarEl.querySelectorAll(".js-calendar__input");
   const inputElements = calendarEl.querySelectorAll("input");
   const datePickerToogle = () => {
-    calendarMenu.classList.toggle("js-calendar__menu_active");
+    if (open ? "" : calendarMenu.classList.toggle("js-calendar__menu_active"));
   };
 
   const clickOut = () => {
-    // calendarMenu.addEventListener("click", (event) => {
-    //   event.stopPropagation();
-    // });
-    document.addEventListener("click", (event) => {
-      if (!calendarEl.contains(event.target)) {
-        calendarMenu.classList.remove("js-calendar__menu_active");
-      }
-    });
+    if (
+      open
+        ? ""
+        : document.addEventListener("click", (event) => {
+            if (!calendarEl.contains(event.target)) {
+              calendarMenu.classList.remove("js-calendar__menu_active");
+            }
+          })
+    );
   };
 
   dateInputs.forEach((field) => {

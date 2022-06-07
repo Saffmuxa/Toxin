@@ -1,0 +1,10 @@
+.cards {
+  &__content {
+    display: grid;
+    grid-template-columns: 140px 380px 40px 380px 40px 320px 140px;
+    grid-template-rows: 1000px;
+  }
+  &__datepicker {
+    grid-column: 6/7;
+  }
+}

@@ -1,0 +1,10 @@
+mixin comment({name, date, text, avatarSrc, alt, like}={})
+  .comment__wrapper
+    .comment__avatar-like
+      img.comment__img(src=require(avatarSrc) alt=alt)
+      - const {id, count, liked} = like
+        +likeButton({id, count, liked})
+    .comment__info
+          h3.comment__name=name
+          span.comment__date=date 
+          span.comment__text=text  

@@ -23,7 +23,7 @@
   position: absolute;
   z-index: 5;
   width: 100%;
-  padding: 4px 6px 7px 14px;
+  padding: 5px 6px 7px 14px;
   border-radius: 0px 0px 4px 4px;
   overflow: hidden;
   background-color: $mainBackground;
@@ -40,7 +40,8 @@
 }
 .dropdown__down-btns {
   // padding-top: 5px;
-  justify-content: space-between;
+  justify-content: flex-end;
+  column-gap: 144px;
   display: flex;
   margin-top: 10px;
   align-items: center;

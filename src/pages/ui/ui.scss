@@ -2,37 +2,34 @@
 @import "./ui-parts/colors.scss";
 @import "./ui-parts/elements.scss";
 @import "./ui-parts/headersAndFooters.scss";
-
+@import "./ui-parts/cards.scss";
 body {
-  background-color: rgba(31, 32, 65, 0.25);
+  background-color: rgba(229, 229, 229, 1);
 }
-.to-home {
-  font-size: 1.5rem;
-  cursor: pointer;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 10%;
-  width: 140px;
-  height: 36px;
-}
-.ui-info {
-  color: rgba(31, 32, 65, 0.5);
-  margin: 5px;
-}
-.head-container {
-  padding: 30px;
-}
-.head-container_grey {
-  padding: 30px;
-  margin-bottom: 32px;
-}
-.colors {
-  height: 900px;
-}
-.elements {
-  // height: 900px;
-}
-.headers-footers {
-  height: 1350px;
+.ui {
+  &__to-home {
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 10%;
+    width: 140px;
+    height: 36px;
+    position: absolute;
+  }
+  &__info {
+    color: rgba(31, 32, 65, 0.5);
+    margin: 5px;
+  }
+
+  &__colors {
+    height: 900px;
+  }
+
+  &__headers-footers,
+  &__cards {
+    height: 1350px;
+    background-color: rgba(244, 244, 246, 1);
+  }
 }
 .ui-block {
   background-color: $mainBackground;

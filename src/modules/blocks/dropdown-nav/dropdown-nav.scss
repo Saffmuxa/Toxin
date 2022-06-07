@@ -61,10 +61,10 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;
-  transform: rotate(0deg);
+  transform: rotateX(0deg);
   transition: transform $aniTime ease-in-out;
 }
 
 .js-header__btn_active::after {
-  transform: rotate(180deg);
+  transform: rotateX(180deg);
 }

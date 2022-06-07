@@ -1,6 +1,10 @@
-mixin checkboxElem(name, id, checked=false)
-  li.checkbox-li(id=id)
-    label.checkbox-li__label
-      input.checkbox-li__input_hidden(type='checkbox', checked=checked)
-      span.checkbox-li__box
-      span.checkbox-li__name= name
+include ../checkbox/checkbox.pug
+mixin rich-checkbox({title, open, tight, items}={})
+  .checkbox__wrapper
+    .checkbox__name-wrap
+      form.checkbox__form.js-checkbox__form(class=tight ? '' : 'arrow', class=open ? 'js-checkbox__form_active' : '')
+        h3(class=tight ? 'checkbox__title_tight' : 'checkbox__title')=title
+    ul.checkbox__menu.js-checkbox__menu(class=open ? 'js-checkbox__menu_active' : '')
+        each item in items 
+          - const {name, text, id, checked} = item;
+            +richCheckboxElem(name, text, id, checked)

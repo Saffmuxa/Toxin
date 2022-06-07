@@ -1,22 +1,24 @@
 include ../select/select.pug
 //- dropdown для выбора количества гостей
-mixin dropdown({title='', placeholder, id, sharp, items, open = false, buttons = true})
+mixin dropdown({title='', placeholder, id, sharp, style, items, open = false, buttons = true})
     .dropdown
       if (title)
         label.dropdown__label(for=id)=title   
       form.dropdown__controls.arrow(class=open ? 'js-dropdown__arrow_active' : '', class="js-dropdown__input-wrap")
         input(id=id, class=sharp ? 'dropdown__input_sharp' : 'dropdown__input', class=open ? 'js-dropdown__input js-dropdown__input_active' : 'js-dropdown__input', placeholder=placeholder, readonly)
-      ul.dropdown__menu.js-dropdown__menu(class=open ? 'js-dropdown__menu_active' : '') 
+      ul.dropdown__menu.js-dropdown__menu(style=style, class=open ? 'js-dropdown__menu_active' : '') 
             each item in items
               - const {name, value, min, max} = item;
                 +select(name, value, min, max)
             if (buttons)
                   li.dropdown__down-btns  
-                    .dropdown__reset
-                      button.js-dropdown__btn_reset(type="button")
-                        h3 очистить
-                    .dropdown__apply
-                      button.js-dropdown__btn_apply(type="button")
+                    .dropdown__reset.js-dropdown__btn_reset
+                      +textButton({text:'очистить'})
+                      //- button.js-dropdown__btn_reset(type="button")
+                        //- h3 очистить
+                    .dropdown__apply.js-dropdown__btn_apply
+                      +textButton({text:'применить'})
+                      //- button.js-dropdown__btn_apply(type="button")
                         h3 применить
 
 

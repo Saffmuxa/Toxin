@@ -9,15 +9,11 @@ const initGuestDropdown = (dropdownEl) => {
   ];
   //меняем окончания гостей в зависимости от их количества
   const onChangeTextValue = (values) => {
-    console.log(values);
     const guestCount = values[0] + values[1];
     const babyCount = values[2];
     const textArray = [guestCount, babyCount].map((count, index) =>
       words(count, wordsDeclensions[index])
     );
-    // if (guestCount === 0) {
-    //   alert("Младенцы не могут быть размещены без взрослых");
-    // }
     //убираем пустые элементы, чтобы не оторбажать запятую
     const removedEmptyText = textArray.filter((item) => item !== "");
     //при нескольких элементах - разделяем запятой

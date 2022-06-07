@@ -1,6 +1,6 @@
 .like {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
 
   &__heart::before {
     font-family: $materialFont;
@@ -26,6 +26,28 @@
     color: $mainFontColor025;
   }
 
+  // &__btn_liked-alt {
+  //   padding: 5px 11px 4px 4px;
+  //   font-size: 10px;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   width: 40px;
+  //   height: 20px;
+  //   // transform: translate(25%, 25%);
+  //   border: 1px solid $purple;
+  //   border-radius: 10px;
+  //   color: $purple;
+  //   .like__heart::before {
+  //     // font-family: $materialFont;
+  //     content: "favorite";
+  //     background: $gradient;
+  //     -webkit-background-clip: text;
+  //     -webkit-text-fill-color: transparent;
+  //     background-clip: text;
+  //   }
+  // }
+
   &__btn_liked {
     padding: 5px 11px 4px 4px;
     font-size: 10px;
@@ -34,10 +56,11 @@
     align-items: center;
     width: 40px;
     height: 20px;
-    // transform: translate(25%, 25%);
-    border: 1px solid $purple;
-    border-radius: 10px;
     color: $purple;
+    // height: 100%;
+    background: linear-gradient(#fff, #fff) padding-box, $gradient border-box;
+    border: 1px solid transparent;
+    border-radius: 22px;
     .like__heart::before {
       // font-family: $materialFont;
       content: "favorite";

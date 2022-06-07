@@ -2,7 +2,7 @@ extends ../layout
 
 append script
   script(src=require('./ui.js'))
-  script(src=require('../../modules/blocks/airDatepicker/airDatepicker.js'))
+  //- script(src=require('../../modules/blocks/airDatepicker/airDatepicker.js'))
   script(src=require('../../modules/blocks/datepicker/datepicker.js'))
   //- script(src=require('../../modules/blocks/expandable-checkbox-list/dropdown-checkbox.js'))
 
@@ -15,15 +15,17 @@ include ../mixins
 
 block content
   a(href='index.html')
-      button.to-home < Home 
+      button.ui__to-home < Home 
   .wrapper
-      h2.ui-info Color & Type
-      article.colors.ui-block
+      h2.ui__info Color & Type
+      article.ui__colors.ui-block
         include ./ui-parts/colors
-      h2.ui-info Form Elements
-      article.elements.ui-block
+      h2.ui__info Form Elements
+      article.ui__elements.ui-block
         include ./ui-parts/elements
-      h2.ui-info Headers & Footers
-      +headImgGrey
-      article.headers-footers
+      h2.ui__info Cards
+      article.ui__cards
+        include ./ui-parts/cards
+      h2.ui__info Headers & Footers
+      article.ui__headers-footers
         include ./ui-parts/headersAndFooters

@@ -1,65 +1,19 @@
-.checkbox-li {
-  //   padding-bottom: 2px;
-  &__label {
-    display: flex;
-    line-height: 18px;
-    &:hover {
-      .checkbox-li__box {
-        border-color: $purple;
-      }
-      .checkbox-li__name {
-        color: $mainFontColor;
-      }
-    }
-  }
-  &__box {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border: 1px solid $mainFontColor025;
-    border-radius: 4px;
-    background-color: #fff;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 6px;
-      top: 5px;
-      left: 5px;
-      transform: rotate(0deg) scale(0);
-      border: 2px solid;
-      border-bottom: transparent;
-      border-left: transparent;
-      border-image: $gradient;
-      border-image-slice: 1;
-    }
-  }
-  &__input_hidden {
-    height: 20px;
-  }
-  &__input_hidden:checked + &__box {
-    border-color: $purple;
-
-    &::before {
-      animation: check 0.1s ease forwards;
-    }
-  }
-
-  &__name {
-    max-width: 192px;
-    margin-top: 1px;
-    word-wrap: break-word;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: $mainFontColor05;
-    text-transform: none;
-    cursor: pointer;
-  }
+.rich-checkbox-li__name {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: none;
+  color: $mainFontColor;
 }
-@keyframes check {
-  100% {
-    transform: rotate(135deg) scale(1);
-  }
+.checkbox-li__text-section {
+  display: flex;
+  flex-direction: column;
+  width: 223px;
+}
+.rich-checkbox-li__text {
+  font-size: 12px;
+  color: $mainFontColor05;
+  line-height: 14px;
+  font-weight: 400;
+  text-transform: none;
 }

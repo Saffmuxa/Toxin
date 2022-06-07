@@ -10,46 +10,14 @@ include ../modules/blocks/text-field/text-field
 include ../modules/blocks/subscription/subscription
 include ../modules/blocks/dropdown-nav/dropdown-nav
 include ../modules/blocks/rate/rate
-//- Круглое лого и надпись Toxin
-mixin toxinLogo 
-  include ../modules/blocks/toxinLogo/toxinLogo
-
-//- Цветной лого для UI
-mixin headImg
-  .head-container
-    img(src=require('Images/GroupBlack.svg')) 
-
-//- ЧБ лого для UI
-mixin headImgGrey
-  .head-container_grey
-    img(src=require('Images/GroupBlack.svg')) 
-
-//- copyright
-mixin copyright
-  include ../modules/blocks/copyright/copyright
-
-mixin linkSocial
-  include ../modules/blocks/social-links/social-links
-          
-
-
-//- input dropdown date
-mixin drophDate 
-  h3.elements__title_main-text masked text field
-  form.date-dropdown(data-dropdown)
-    .date-dropdown_input()
-      input.dropdown-toggle(type="date" value="дд.мм.гггг" data-dropdown-button)
-      img(src=require('Images/expand_more.svg') data-dropdown-button)
-    .calendar 
-        p 123
-
-
-mixin enterButton(text)
-  button(type="button" class="enter-button") 
-    h3= text
-mixin registerButton(text)
-  button(type="button" class="register-button") 
-    h3= text
-mixin actionButton
-  button(type="button" class="non-active")
-//- mixin dropdownCalendar 
+include ../modules/blocks/pagination/pagination
+include ../modules/blocks/buttons/buttons
+include ../modules/blocks/range-slider/range-slider
+include ../modules/blocks/rich-checkbox/rich-checkbox
+include ../modules/blocks/bullet-list/bullet-list
+include ../modules/blocks/additionally/additionally
+include ../modules/blocks/comment/comment
+include ../modules/blocks/head-grey/head-grey
+include ../modules/blocks/toxinLogo/toxinLogo
+include ../modules/blocks/social-links/social-links
+include ../modules/blocks/copyright/copyright

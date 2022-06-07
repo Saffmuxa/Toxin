@@ -24,9 +24,7 @@ header
                     {name:'Третье'},
                     {name:'Четвертое'},
                     {name:'Пятое'}]})      
-      ul.header__login.header-block
-        li
-          +enterButton('войти')
-        li
-          +registerButton('зарегистрироваться')
+      .header__login.header-block
+          +enterButton({text:'войти', link: "https://www.google.com/"})
+          +registerButton({text:'зарегистрироваться', link: "https://www.google.com/"})
 

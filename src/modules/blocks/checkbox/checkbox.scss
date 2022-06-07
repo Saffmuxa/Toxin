@@ -58,6 +58,19 @@
     cursor: pointer;
   }
 }
+
+.checkbox-li__text-section {
+  display: flex;
+  flex-direction: column;
+}
+.rich-checkbox-li__text {
+  font-size: 12px;
+  color: $mainFontColor05;
+  line-height: 14px;
+  font-weight: 400;
+  text-transform: none;
+}
+
 @keyframes check {
   100% {
     transform: rotate(135deg) scale(1);

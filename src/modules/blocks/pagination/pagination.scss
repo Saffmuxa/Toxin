@@ -1,0 +1,58 @@
+.pagination {
+  padding-left: 1px;
+  &__buttons {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  &__text {
+    padding-left: 6px;
+  }
+}
+.js-pagination {
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 400;
+    &_active {
+      color: white;
+      background: $gradient;
+      font-weight: 700;
+    }
+  }
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+  &__btn-next {
+    transition: opacity 0.4s;
+    color: white;
+    background: $gradientGreen;
+    font-family: $materialFont;
+    font-size: 24px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+.btn-disabled {
+  transition: opacity 0.4s;
+  color: white;
+  background: $gradientGreen;
+  font-family: $materialFont;
+  font-size: 24px;
+  opacity: 0.5;
+  pointer-events: none;
+  //   cursor: default;
+  &:hover {
+    opacity: 0.5;
+  }
+}

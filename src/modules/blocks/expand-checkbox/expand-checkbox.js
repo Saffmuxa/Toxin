@@ -10,7 +10,6 @@ const initCheckBox = (checkBoxEl) => {
 
   const outsideClick = (event) => {
     if (!checkBoxEl.contains(event.target)) {
-      console.log("mimo");
       menuEl.classList.remove("js-checkbox__menu_active");
       formEl.classList.remove("js-checkbox__form_active");
     }
