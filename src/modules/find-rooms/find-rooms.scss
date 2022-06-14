@@ -1,0 +1,14 @@
+.find-rooms {
+  padding: 40px 30px 30px 30px;
+  display: grid;
+  grid-template-rows: 75px 85px 100px 44px;
+
+  height: 374px;
+  width: 380px;
+  background-color: white;
+  &__button {
+    > .button-form > .register-button > h3 {
+      margin-right: 4px;
+    }
+  }
+}

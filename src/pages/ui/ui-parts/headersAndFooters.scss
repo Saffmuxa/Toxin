@@ -5,7 +5,11 @@
 @import "../../../modules/logo-links/logo-links.scss";
 @import "../../../modules/blocks/head-grey/head-grey.scss";
 
-header,
-footer {
-  margin-bottom: 40px !important;
+.headers-and-footers {
+  padding-top: 33px;
+  &__header-2,
+  &__footer,
+  &__logo-links {
+    padding-top: 40px;
+  }
 }

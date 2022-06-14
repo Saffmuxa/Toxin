@@ -1,5 +1,4 @@
 import AirDatepicker from "air-datepicker";
-
 const initDatePicker = (datePickerId, settings = {}) => {
   const { clickOutHandler, newOpts = {} } = settings;
   const containerEl = document.getElementById(datePickerId);
@@ -7,7 +6,7 @@ const initDatePicker = (datePickerId, settings = {}) => {
   const calendar = new AirDatepicker(containerEl, {
     range: true,
     minDate: new Date(),
-
+    moveToOtherMonthsOnSelect: false,
     buttons: [
       {
         content: "очистить",
@@ -17,7 +16,10 @@ const initDatePicker = (datePickerId, settings = {}) => {
       {
         content: "Применить",
         attrs: { type: "button" },
-        onClick: () => clickOutHandler(),
+        className: "js-datepicker-apply",
+        onClick: () => {
+          clickOutHandler();
+        },
       },
     ],
     dateFormat(date) {
@@ -33,16 +35,18 @@ const initDatePicker = (datePickerId, settings = {}) => {
 
   calendar.update(newOpts);
 };
-
 const initCalendar = (calendarId, datePickerId, type, open) => {
   const calendarEl = document.getElementById(calendarId);
   const calendarMenu = calendarEl.querySelector(".js-calendar__menu");
   const dateInputs = calendarEl.querySelectorAll(".js-calendar__input");
   const inputElements = calendarEl.querySelectorAll("input");
   const datePickerToogle = () => {
-    if (open ? "" : calendarMenu.classList.toggle("js-calendar__menu_active"));
+    if (
+      open
+        ? calendarMenu.classList.toggle("js-calendar__menu_active")
+        : calendarMenu.classList.toggle("js-calendar__menu_active")
+    );
   };
-
   const clickOut = () => {
     if (
       open
@@ -66,7 +70,6 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
       firstInputEl.value = firstDate ?? "";
       lastInputdEl.value = lastDate ?? "";
     };
-
     const dateFormat = (date) => {
       return date.toLocaleString("ru", {
         year: "numeric",
@@ -74,7 +77,6 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
         month: "2-digit",
       });
     };
-
     initDatePicker(datePickerId, {
       clickOutHandler: datePickerToogle,
       newOpts: { onSelect, dateFormat },
@@ -82,7 +84,10 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
   } else {
     const onSelect = ({ date, formattedDate, datePicker }) => {
       const inputElement = inputElements[0];
-      const formattedDateValue = formattedDate.join(" - ");
+      const oneDate = formattedDate.map((formattedDateRep) =>
+        formattedDateRep.replace(".", "")
+      );
+      const formattedDateValue = oneDate.join(" - ");
       inputElement.value = formattedDateValue;
     };
 
@@ -94,7 +99,8 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
     });
   }
 
-  clickOut();
+  calendarMenu.addEventListener("click", clickOut);
 };
 
 export { initCalendar };
+// export { days };

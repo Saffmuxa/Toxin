@@ -5,6 +5,7 @@ import { initDropdownHeader } from "../../modules/blocks/dropdown-nav/dropdown-n
 import { initCalendar } from "../../modules/blocks/datepicker/datepicker";
 import { initRangeSlider } from "../../modules/blocks/range-slider/range-slider";
 import { initPagination } from "../../modules/blocks/pagination/pagination";
+import { initRoomInfo } from "../../modules/room-info/room-info";
 
 import "../../modules/blocks/like-button/like-button";
 
@@ -32,10 +33,9 @@ dropdownHeader.forEach((dropdownHeaderEl) => {
 
 initCalendar("two-dates-cal", "date-picker-first", "two-input");
 initCalendar("range-dates-cal", "date-picker-second");
-// const cardsCalendar = document.querySelectorAll(".js-main__cards-calendar");
-// cardsCalendar.forEach((calendarEl) => {
-//   initCalendar(calendarEl);
-// });
+initCalendar("cards-two-dates-cal", "date-picker-cards-first", "two-input");
+// initCalendar("two-dates-cal-room-info", "date-picker-room-info", "two-input");
+
 initCalendar("cardsDate", "date-picker-cards", "", true);
 
 initRangeSlider("js-range-slider", [5000, 10000], 100, {
@@ -43,4 +43,12 @@ initRangeSlider("js-range-slider", [5000, 10000], 100, {
   max: 15500,
 });
 
-// initPagination(1, 2);
+const roomInfoCard = document.querySelectorAll(".js-main__room-info");
+roomInfoCard.forEach((roomInfo, firstDateClass, secondDateClass, price) => {
+  initRoomInfo(
+    roomInfo,
+    ".js-left-data-room-info",
+    ".js-right-data-room-info",
+    9990
+  );
+});

@@ -23,7 +23,7 @@
   position: absolute;
   z-index: 5;
   width: 100%;
-  padding: 5px 6px 7px 14px;
+  padding: 3px 6px 7px 14px;
   border-radius: 0px 0px 4px 4px;
   overflow: hidden;
   background-color: $mainBackground;
@@ -35,7 +35,7 @@
 .js-dropdown__menu_active {
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 4px;
   animation: fadeIn $aniTime;
 }
 .dropdown__down-btns {
@@ -43,7 +43,7 @@
   justify-content: flex-end;
   column-gap: 144px;
   display: flex;
-  margin-top: 10px;
+  margin-top: 11px;
   align-items: center;
   button {
     padding: 0px;

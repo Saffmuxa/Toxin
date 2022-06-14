@@ -1,13 +1,13 @@
 include ../masked-text-field/masked-text-field
 
-mixin datePicker({calendarId, title, open, leftTitle, rightTitle, value, leftValue, rightValue, datePickerId, type='',})   
+mixin datePicker({calendarId, title, open, leftTitle, rightTitle, value, leftValue, rightValue, firstDateClass, secondDateClass, datePickerId, type='',})   
   .calendar(id=calendarId)
     if (type==="two-input")
       .calendar__inputs
         .calendar__input.js-calendar__input
-           +maskedTxtField({title: leftTitle})
+          +maskedTxtField({title: leftTitle, value: leftValue, classDirection: firstDateClass})
         .calendar__input.js-calendar__input
-          +maskedTxtField({title: rightTitle, value: rightValue})
+          +maskedTxtField({title: rightTitle, value: rightValue, classDirection: secondDateClass})
       .calendar__menu.js-calendar__menu(class=open ? 'js-calendar__menu_active' : '', id=datePickerId) 
       //- input(id=datePickerId)
 
@@ -16,5 +16,5 @@ mixin datePicker({calendarId, title, open, leftTitle, rightTitle, value, leftVal
           +maskedTxtField({title: title, value: value})
       .calendar__menu.js-calendar__menu(class=open ? 'js-calendar__menu_active' : '', id=datePickerId) 
     
-    else 
+    if (type==="none")
       .calendar__menu.js-calendar__menu(class=open ? 'js-calendar__menu_active' : '', id=datePickerId) 

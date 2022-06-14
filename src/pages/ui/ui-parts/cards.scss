@@ -1,10 +1,19 @@
+@import "../../../modules/find-rooms/find-rooms.scss";
+@import "../../../modules/room-info/room-info.scss";
 .cards {
   &__content {
+    padding-top: 42px;
     display: grid;
     grid-template-columns: 140px 380px 40px 380px 40px 320px 140px;
     grid-template-rows: 1000px;
   }
   &__datepicker {
     grid-column: 6/7;
+  }
+  &__find-rooms {
+    grid-column: 2/3;
+  }
+  &__room-info {
+    grid-column: 4/5;
   }
 }

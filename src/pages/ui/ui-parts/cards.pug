@@ -1,4 +1,13 @@
 +headImgGrey
 .cards__content
-  .cards__datepicker.js-main__cards-calendar
-    +datePicker({calendarId: 'cardsDate', open:true, datePickerId: 'date-picker-cards'})
+  .cards__find-rooms
+    +findRooms
+  .cards__room-info 
+    +roomInfo({num: '888', 
+              luxe: true, 
+              price: 9990, 
+              date: 4,
+              })
+
+  .cards__datepicker
+    +datePicker({calendarId: 'cardsDate', open:true, datePickerId: 'date-picker-cards', type: 'none'})

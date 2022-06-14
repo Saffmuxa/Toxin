@@ -14,8 +14,8 @@
     z-index: 10;
     width: 320px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    margin-top: 5px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    // margin-top: 2px;
+    border: 1px solid rgb(199, 199, 207);
     border-radius: 4px;
     overflow: hidden;
   }
@@ -47,7 +47,7 @@
 
 .air-datepicker-nav {
   height: 53px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 .air-datepicker-body--day-names {
   margin: 8px 0px;

@@ -24,7 +24,7 @@
     max-width: 1158px;
     display: grid;
     grid-template-columns: 320px minmax(6px, 126px) 320px minmax(6px, 72px) 320px;
-    grid-template-rows: 31px 636px 97px 270px 40px 280px 100px 291px;
+    grid-template-rows: 31px 636px 97px 270px 41px 280px 100px 291px;
   }
   &__dropdowns-field {
     grid-column: 1/2;
@@ -86,14 +86,14 @@
     grid-row: 4/5;
   }
   &__rooms {
-    height: 83px;
+    height: 84px;
   }
   &__checkboxes-field {
     grid-column: 1/2;
     grid-row: 6/7;
   }
   &__checkbox1 {
-    height: 65px;
+    height: 64px;
     // position: relative;
   }
   &__radio-toggle-field {

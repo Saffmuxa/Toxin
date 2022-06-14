@@ -3,11 +3,12 @@ const PugPlugin = require("pug-plugin");
 const CssUrlRelativePlugin = require("css-url-relative-plugin");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const isProduction = false;
 module.exports = {
-  mode: "production",
-  devtool: isProduction ? false : "source-map",
+  mode: isProduction ? "production" : "development",
+  devtool: isProduction ? "" : "source-map",
 
   resolve: {
     // aliases used in the code example
@@ -18,9 +19,9 @@ module.exports = {
   },
 
   output: {
+    filename: "assets/js/[name].js",
     path: path.join(__dirname, "public"),
     publicPath: "",
-    filename: "assets/js/[name].js",
     clean: true,
   },
 
@@ -57,6 +58,7 @@ module.exports = {
         }),
       ],
     }),
+    new CleanWebpackPlugin(),
   ],
 
   module: {
