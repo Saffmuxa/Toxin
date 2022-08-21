@@ -1,6 +1,0 @@
-//- Email input
-mixin textField({title = 'Text Field', id = '',  value='', type='text', placeholder, name})
-  .text-field
-    if (title)
-      label.text-field__label(for=id)=title
-    input.text-field__input(type=type, placeholder=placeholder id=id name=name value=value) 

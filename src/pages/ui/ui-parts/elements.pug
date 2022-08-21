@@ -3,26 +3,20 @@
   section.elements__dropdowns-field
       .elements__text-field
         h3.elements__title_minor-text.text-filed__default-text Default
-        +textField({
-          type:'email',  
-          placeholder: 'Email'       })
-
+        +maskedTxtField({title: 'TEXT FIELD',  type:'email', placeholder: 'Email', name: 'email' })
       .elements__focus
         h3.elements__title_minor-text.text-filed__hover-text Hover / Focus
-        +textField({
-          title: 'Text Field', 
-          value:'This is pretty awesome', 
-           })
+        +maskedTxtField({title: 'TEXT FIELD',  value:'This is pretty awesome' })
       .elements__guests.js-main__guest-dropdown
         +dropdownGuest({title: 'dropdown', id: 'guests'})
       .elements__input-data
-        +maskedTxtField({title: 'masked text field', value: ''})
+        +maskedTxtField({title: 'masked text field', value: '', js:true})
       .elements__two-dates
-        +datePicker({calendarId: 'two-dates-cal', leftTitle: 'date Dropdown', rightTitle: 'date Dropdown', rightValue: '19.08.2019', datePickerId: 'date-picker-first', type: 'two-input'})
+        +datePicker({calendarId: 'two-dates-cal', leftTitle: 'date Dropdown', rightTitle: 'date Dropdown', rightValueDate: '19.08.2019', datePickerId: 'date-picker-first', type: 'two-input'})
       .elements__range-dates
         +datePicker({calendarId: 'range-dates-cal', title: 'filter date dropdown', value: '19 авг - 23 авг', datePickerId: 'date-picker-second', type: 'range-dates'})
       .elements__subscription
-        +subscription({title: 'subscription text field', id: 'email'})
+        +maskedTxtField({title: 'subscription text field', name: "email", type: 'email', placeholder: 'Email', readonly:false, button:true, required:true})
 
  
   section.elements__apartment
@@ -79,11 +73,11 @@
       +radioButtons({
             title: 'Radio Buttons',
             id: 'radioButtons',
-            items: [{radioId: 'male',
+            items: [{radioId: 'maleElem',
                     checked: true,
                     text:'Мужчина'
                     },
-                    {radioId: 'female',
+                    {radioId: 'femaleElem',
                     checked: false,
                     text:'Женщина',
                     },                    
@@ -158,7 +152,7 @@
   section.elements__comment
     +comment({name: 'Мурад Сарафанов', 
               date: "5 дней назад", 
-              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", avatarSrc, 
+              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 
               avatarSrc: 'Images/avatar.png',
               alt: "avatar",
               like: {id: "10", count: 12, liked: true}})

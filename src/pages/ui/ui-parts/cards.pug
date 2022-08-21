@@ -1,13 +1,36 @@
 +headImgGrey
 .cards__content
-  .cards__find-rooms
-    +findRooms
-  .cards__room-info 
-    +roomInfo({num: '888', 
-              luxe: true, 
-              price: 9990, 
-              date: 4,
-              })
-
-  .cards__datepicker
-    +datePicker({calendarId: 'cardsDate', open:true, datePickerId: 'date-picker-cards', type: 'none'})
+  .cards__first-column
+    .cards__find-rooms
+      +findRooms
+    .cards__registration
+      +registration
+  .cards__second-column    
+    .cards__room-info 
+      +roomInfo({num: '888', 
+                luxe: true, 
+                price: 9990, 
+                date: 4,
+                leftValueDate: '19.08.2019',
+                rightValueDate: '23.08.2019'
+                })
+    .cards__login
+        +login
+  .cards__third-column
+    .cards__datepicker
+      +datePicker({calendarId: 'cardsDate', open:true, datePickerId: 'date-picker-cards', type: 'none'})
+    .cards__slider-first-card 
+      +sliderCard({num: 888, 
+                  active: true,
+                  luxe: true, 
+                  price: 9990,
+                  rate: 5,
+                  reviewsCount: 145, 
+                  imgsSrc: ['Images/room1.png', 'Images/room1.png', 'Images/room1.png', 'Images/room1.png']})
+    .cards__slider-second-card 
+      +sliderCard({num: 840, 
+                  luxe: false, 
+                  rate: 4,
+                  price: 9990,
+                  reviewsCount: 65, 
+                  imgsSrc: ['Images/room2.png', 'Images/room2.png', 'Images/room2.png', 'Images/room2.png']})

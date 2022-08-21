@@ -7,9 +7,19 @@
 
 .headers-and-footers {
   padding-top: 33px;
-  &__header-2,
-  &__footer,
+
   &__logo-links {
-    padding-top: 40px;
+    margin: 40px 0px;
+  }
+
+  &__header-1,
+  &__header-2 {
+    height: 70px;
+    position: relative;
+    width: 1440px;
+    margin: auto;
+  }
+  &__header-2 {
+    margin: 40px 0px;
   }
 }

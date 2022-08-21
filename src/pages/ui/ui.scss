@@ -28,7 +28,7 @@ body {
   &__headers-footers,
   &__cards {
     height: 1350px;
-    background-color: rgba(244, 244, 246, 1);
+    background-color: $greyBG;
   }
 }
 .ui-block {

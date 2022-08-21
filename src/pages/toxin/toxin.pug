@@ -1,0 +1,19 @@
+extends ../layout
+
+append style
+  link(rel='stylesheet' href=require('./toxin.scss'))
+append script
+  script(src=require('./toxin.js'))
+//- include ../mixins
+block content
+  //- h1 Hello World!
+
+  include ../../modules/header/header
+  main.toxin__main-content
+      .toxin__wrapper
+        .toxin__find-window
+          +findRooms({classReg: "js-register-sbmt-button"})
+        span.toxin__info Лучшие номера для вашей работы, отдыха и просто вдохновения
+  include ../../modules/footer/footer
+   
+   

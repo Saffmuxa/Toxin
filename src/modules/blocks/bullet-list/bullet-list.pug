@@ -1,6 +1,7 @@
-mixin bulletList({title='', items}={})
-      form.bullet-list__form
-        h3.bullet-list__title=title
+mixin bulletList({title, items}={})
+      if (title)
+        .bullet-list__form
+          h3.bullet-list__title=title
       ul.bullet-list__ul
         each item in items
           - const {text} = item;

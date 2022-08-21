@@ -1,5 +1,8 @@
 @import "../../../modules/find-rooms/find-rooms.scss";
 @import "../../../modules/room-info/room-info.scss";
+@import "../../../modules/registration/registration.scss";
+@import "../../../modules/slider-card/slider-card.scss";
+@import "../../../modules/login/login.scss";
 .cards {
   &__content {
     padding-top: 42px;
@@ -7,13 +10,33 @@
     grid-template-columns: 140px 380px 40px 380px 40px 320px 140px;
     grid-template-rows: 1000px;
   }
-  &__datepicker {
-    grid-column: 6/7;
-  }
-  &__find-rooms {
+  &__first-column {
     grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    // grid-row: 1/2;
   }
-  &__room-info {
+  &__third-column {
+    grid-column: 6/7;
+    row-gap: 39px;
+    display: flex;
+    flex-direction: column;
+    // grid-row: 1/2;
+  }
+  &__second-column {
     grid-column: 4/5;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    // grid-row: 1/2;
   }
+  &__datepicker {
+    height: 370px;
+  }
+  // &__registration {
+  //   grid-column: 2/3;
+  //   grid-row: 1/2;
+  //   margin-top: 10px;
+  // }
 }

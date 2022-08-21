@@ -1,0 +1,11 @@
+mixin numPriceRoom({num, luxe=false, price}={})
+    .num-and-price__title 
+      .num-and-price__number
+        span.num-and-price__number_small №
+        h1.num-and-price__number_main=num
+        if (luxe) 
+          span.num-and-price__number_luxe люкс
+      .num-and-price__price 
+        - const priceName = price.toLocaleString()+"₽";
+        span.num-and-price__price-count=priceName
+        span.num-and-price__price-text в сутки

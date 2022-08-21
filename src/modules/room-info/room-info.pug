@@ -1,4 +1,4 @@
-mixin roomInfo({num, luxe=false, price, date, discount=true, services=0, additionalServices=300}={})
+mixin roomInfo({num, luxe=false, price, leftValueDate, rightValueDate, date, discount=true, services=0, additionalServices=300}={})
   .room-info.js-main__room-info
     .room-info__title 
       .room-info__number
@@ -17,8 +17,8 @@ mixin roomInfo({num, luxe=false, price, date, discount=true, services=0, additio
                   leftId: "leftCal", 
                   firstDateClass: "js-left-data-room-info", 
                   secondDateClass:"js-right-data-room-info", 
-                  leftValue: '19.08.2019', 
-                  rightValue: '23.08.2019', 
+                  leftValueDate: leftValueDate, 
+                  rightValueDate: rightValueDate, 
                   datePickerId: 'date-picker-room-info', 
                   type: 'two-input'})
     .room-info__guests-dropdown.js-main__guest-dropdown
@@ -39,19 +39,21 @@ mixin roomInfo({num, luxe=false, price, date, discount=true, services=0, additio
           if (discount) 
             span.room-info__discount скидка 
             span.room-info__discount-price.js-room-info__discount-price
-          button.room-info__discount-button i
+          .room-info__discount-button
+            +prompt('Какая то подсказка1')
         .room-info__services-price
           span=services.toLocaleString()+"₽"
       .room-info__additional-services
         .room-info__additional-discount-info
           span.room-info__additional-service-charge Сбор за дополнительные услуги 
-          button.room-info__discount-button i
+          .room-info__discount-button
+            +prompt('Какая то подсказка2')
+          //- button.room-info__discount-button i
         .room-info__services-price
           span.js-room-info__additional-services
     .room-info__total   
       h2 Итого
       span.room-info__dotted 
-      //- - const priceTotal = (date*price-Math.ceil(date*price*0.05452)+additionalServices).toLocaleString()+"₽";
       h2.js-room-info__total-price totalPrice
     .room-info__button 
       +registerButton({text:'забронировать', arrow:true})

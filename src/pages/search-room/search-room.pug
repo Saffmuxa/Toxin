@@ -1,0 +1,142 @@
+extends ../layout
+
+append style
+  link(rel='stylesheet' href=require('./search-room.scss'))
+append script
+  script(src=require('./search-room.js'))
+//- include ../mixins
+block content
+  //- h1 Hello World!
+
+  include ../../modules/header/header
+  main.search-room__main-content
+    .search-room__wrapper
+      .search-room__options
+        +datePicker({calendarId: 'range-dates-cal', title: 'даты пребывания в отеле', datePickerId: 'date-picker-second', type: 'range-dates'})
+        .js-main__guest-dropdown
+          +dropdownGuest({title: 'гости', id: 'guests'})
+        +rangeSlider('js-range-slider', "диапазон цены")
+        span.search-room__range-slider_info Стоимость за сутки пребывания в номере
+        +checkBoxMenu({title:'правила дома',
+                    open:true,
+                    tight: true,
+                    items: 
+                   [{name:'Можно курить', id:'smoke', checked:false}, 
+                    {name:'Можно с питомцами', id:'pets', checked:true},
+                    {name:'Можно пригласить гостей (до 10 человек)', id:'party', checked:true},
+                    ]})
+        +rich-checkbox({title:'доступность',
+                    open:true,
+                    tight: true,
+                    items: 
+                   [{name:'Широкий коридор', text: "Ширина коридоров в номере <br> не менее 91 см.", id:'width', checked:false}, 
+                    {name:'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.', id:'helper', checked:false},
+                                        ]})
+        .js-main__rooms-dropdown
+          +dropdownRooms({title: 'удобства номера', id: 'rooms', style: 'z-index: 10',
+        buttons:false, sharp:true, values: [2,2,0]})  
+        .js-main__checkBox-dropdown
+          +checkBoxMenu({title:'дополнительные удобства', 
+                    style: 'z-index: 10',
+                    items: 
+                   [{name:'Завтрак', id:'breakfast'}, 
+                    {name:'Письменный стол', id:'table', checked:true},
+                    {name:'Стул для кормления', id:'chair', checked:true},
+                    {name:'Кроватка', id:'bed', checked:true},
+                    {name:'Телевизор', id:'tv'},
+                    {name:'Шампунь', id:'shampoo'},]})
+      .search-room__selected-rooms
+        span.search-room__title Номера, которые мы для вас подобрали
+        .search-room__rooms
+          +sliderCard({num: 888, 
+                  active: true,
+                  luxe: true, 
+                  price: 9990,
+                  clickable: true,
+                  rate: 5,
+                  reviewsCount: 145, 
+                  imgsSrc: ['Images/room1.png', 'Images/room1.png', 'Images/room1.png', 'Images/room1.png']})
+          +sliderCard({num: 840, 
+                  active: false,
+                  luxe: false, 
+                  price: 9900,
+                  rate: 4,
+                  reviewsCount: 65, 
+                  imgsSrc: ['Images/room2.png', 'Images/room2.png', 'Images/room2.png', 'Images/room2.png']})
+          +sliderCard({num: 980, 
+                  active: false,
+                  luxe: true, 
+                  price: 8500,
+                  rate: 3,
+                  reviewsCount: 35, 
+                  imgsSrc: ['Images/room3.png', 'Images/room3.png', 'Images/room3.png', 'Images/room3.png']})
+          +sliderCard({num: 856, 
+                  active: false,
+                  luxe: false, 
+                  price: 7300,
+                  rate: 5,
+                  reviewsCount: 19, 
+                  imgsSrc: ['Images/room4.png', 'Images/room4.png', 'Images/room4.png', 'Images/room4.png']})
+          +sliderCard({num: 740, 
+                  active: false,
+                  luxe: false, 
+                  price: 6000,
+                  rate: 4,
+                  reviewsCount: 44, 
+                  imgsSrc: ['Images/room5.png', 'Images/room5.png', 'Images/room5.png', 'Images/room5.png']})
+          +sliderCard({num: 982, 
+                  active: false,
+                  luxe: false, 
+                  price: 5800,
+                  rate: 3,
+                  reviewsCount: 56, 
+                  imgsSrc: ['Images/room6.png', 'Images/room6.png', 'Images/room6.png', 'Images/room6.png']})
+          +sliderCard({num: 678, 
+                  active: false,
+                  luxe: false, 
+                  price: 5500,
+                  rate: 5,
+                  reviewsCount: 45, 
+                  imgsSrc: ['Images/room7.png', 'Images/room7.png', 'Images/room7.png', 'Images/room7.png']})
+          +sliderCard({num: 450, 
+                  active: false,
+                  luxe: false, 
+                  price: 5300,
+                  rate: 4,
+                  reviewsCount: 39, 
+                  imgsSrc: ['Images/room8.png', 'Images/room8.png', 'Images/room8.png', 'Images/room8.png']})
+          +sliderCard({num: 350, 
+                  active: false,
+                  luxe: false, 
+                  price: 5000,
+                  rate: 3,
+                  reviewsCount: 77, 
+                  imgsSrc: ['Images/room9.png', 'Images/room9.png', 'Images/room9.png', 'Images/room9.png']})
+          +sliderCard({num: 666, 
+                  active: false,
+                  luxe: false, 
+                  price: 5000,
+                  rate: 5,
+                  reviewsCount: 25, 
+                  imgsSrc: ['Images/room10.png', 'Images/room10.png', 'Images/room10.png', 'Images/room10.png']})
+          +sliderCard({num: 444, 
+                  active: false,
+                  luxe: false, 
+                  price: 6000,
+                  rate: 3,
+                  reviewsCount: 15, 
+                  imgsSrc: ['Images/room11.png', 'Images/room11.png', 'Images/room11.png', 'Images/room11.png']})
+          +sliderCard({num: 352, 
+                  active: false,
+                  luxe: false, 
+                  price: 5000,
+                  rate: 3,
+                  reviewsCount: 55, 
+                  imgsSrc: ['Images/room12.png', 'Images/room12.png', 'Images/room12.png', 'Images/room12.png']})
+        .search-room__pagination
+          +pagination(170, 12)
+    .search-room__line
+
+  include ../../modules/footer/footer
+   
+   

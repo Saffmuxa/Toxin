@@ -1,0 +1,44 @@
+.num-and-price {
+  &__title {
+    // margin: 15px 0px;
+    // height: 34px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 16px;
+    align-items: center;
+    grid-row: 1/2;
+    width: 100%;
+  }
+  &__number {
+    align-items: baseline;
+    display: flex;
+    color: $mainFontColorActive;
+    margin-bottom: 3px;
+    margin-left: 4px;
+  }
+  &__number_main {
+    font-size: 19px;
+  }
+  &__number_small {
+    font-weight: bold;
+    margin-right: 4px;
+  }
+  &__number_luxe {
+    margin-left: 8px;
+    font-weight: bold;
+    color: $purple;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__price-text {
+    color: $mainFontColor05;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  &__price-count {
+    font-weight: bold;
+    color: $mainFontColor05;
+  }
+}

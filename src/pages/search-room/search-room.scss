@@ -1,0 +1,81 @@
+@import "../../assets/styles/_vars.scss";
+@import "../../modules/find-rooms/find-rooms.scss";
+@import "../../modules/blocks/dropdown/dropdown.scss";
+@import "../../modules/blocks/dropdown-rooms/dropdown-rooms.scss";
+@import "../../modules/blocks/airDatepicker/airDatepicker.scss";
+@import "../../modules/blocks/datepicker/datepicker.scss";
+@import "../../modules/blocks/range-slider/range-slider.scss";
+@import "../ui/ui-parts/headersAndFooters.scss";
+@import "../../modules/blocks/buttons/buttons.scss";
+@import "../../modules/blocks/checkbox/checkbox.scss";
+@import "../../modules/blocks/expand-checkbox/expand-checkbox.scss";
+@import "../../modules/blocks/rich-checkbox/rich-checkbox.scss";
+@import "../../modules/blocks/dropdown-nav/dropdown-nav.scss";
+@import "../../modules/blocks/masked-text-field/masked-text-field.scss";
+@import "../../modules/slider-card/slider-card.scss";
+@import "../../modules/blocks/rate/rate.scss";
+@import "../../modules/blocks/pagination/pagination.scss";
+
+.search-room {
+  &__main-content {
+    // height: 900px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-image: url(../../assets/images/landing.png);
+  }
+  &__options {
+    // background-color: $white;
+    display: grid;
+    grid-template-rows: 85px 95px 58px 43px 160px 175px 84px auto;
+    grid-column: 1/2;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 266px 61px auto;
+    padding-top: 95px;
+    height: 100%;
+    position: relative;
+    max-width: 1160px;
+    margin: auto;
+    height: 100%;
+  }
+  &__find-window {
+    position: absolute;
+    top: 140px;
+    left: 140px;
+  }
+  &__range-slider_info {
+    color: $mainFontColor05;
+    font-size: 12px;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    color: $mainFontColorActive;
+  }
+  &__selected-rooms {
+    grid-column: 3/4;
+    padding-top: 8px;
+  }
+  &__rooms {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 10px;
+  }
+  &__pagination {
+    // padding-top: 40px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  &__line {
+    border-bottom: 1px solid $mainFontColor025;
+    // max-width: 1440px;
+    margin: auto;
+    padding-top: 71px;
+  }
+}

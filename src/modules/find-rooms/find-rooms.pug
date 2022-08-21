@@ -1,9 +1,9 @@
-mixin findRooms
-    .find-rooms 
-        h1 Найдём номера под ваши пожелания
-        .find-rooms__datepicker
-            +datePicker({calendarId: 'cards-two-dates-cal', leftTitle: 'прибытие', rightTitle: 'выезд', datePickerId: 'date-picker-cards-first', type: 'two-input'})
-        .find-rooms__guests-dropdown.js-main__guest-dropdown
-            +dropdownGuest({title: 'гости', id: 'guests-cards'})
-        .find-rooms__button 
-            +registerButton({text:'подобрать номер', arrow:true})
+mixin findRooms({link=false, classReg}={})
+  form.find-rooms.js-form
+      h1 Найдём номера под ваши пожелания
+      .find-rooms__datepicker
+        +datePicker({calendarId: 'cards-two-dates-cal', leftTitle: 'прибытие', rightTitle: 'выезд', datePickerId: 'date-picker-cards-first', type: 'two-input', required:true})
+      .find-rooms__guests-dropdown.js-main__guest-dropdown
+        +dropdownGuest({title: 'гости', value: '123', id: 'guests-cards'})
+      .find-rooms__button 
+        +registerButton({text:'подобрать номер', arrow:true, link, classReg})

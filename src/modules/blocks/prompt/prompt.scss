@@ -1,0 +1,54 @@
+.prompt {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid $mainFontColor025;
+  font-size: 12px;
+  color: $mainFontColor025;
+
+  &::before {
+    content: "i";
+  }
+
+  &::after {
+    position: absolute;
+    height: 10px;
+    bottom: calc(100% - 5px);
+    visibility: hidden;
+    content: "";
+    border-top-color: $greyBG;
+    border: 5px solid transparent;
+    border-bottom-width: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: all $aniTime;
+  }
+}
+
+.prompt__text {
+  position: absolute;
+  opacity: 0;
+  transition: all $aniTime;
+  padding: 6px;
+  color: $mainFontColor;
+  bottom: calc(100% + 5px);
+  white-space: nowrap;
+  pointer-events: none;
+  background: $greyBG;
+  border-radius: 22px;
+}
+
+.prompt:hover > .prompt__text {
+  visibility: visible;
+  opacity: 1;
+  transition: all $aniTime;
+}

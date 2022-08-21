@@ -1,0 +1,95 @@
+@import "../../assets/styles/_vars.scss";
+// @import "../../modules/find-rooms/find-rooms.scss";
+@import "../../modules/blocks/dropdown/dropdown.scss";
+// @import "../../modules/blocks/dropdown-rooms/dropdown-rooms.scss";
+@import "../../modules/blocks/airDatepicker/airDatepicker.scss";
+@import "../../modules/blocks/datepicker/datepicker.scss";
+// @import "../../modules/blocks/range-slider/range-slider.scss";
+@import "../ui/ui-parts/headersAndFooters.scss";
+@import "../../modules/blocks/buttons/buttons.scss";
+// @import "../../modules/blocks/checkbox/checkbox.scss";
+// @import "../../modules/blocks/expand-checkbox/expand-checkbox.scss";
+// @import "../../modules/blocks/rich-checkbox/rich-checkbox.scss";
+@import "../../modules/blocks/dropdown-nav/dropdown-nav.scss";
+@import "../../modules/blocks/masked-text-field/masked-text-field.scss";
+// @import "../../modules/slider-card/slider-card.scss";
+@import "../../modules/blocks/rate/rate.scss";
+@import "../../modules/room-info/room-info.scss";
+@import "../../modules/blocks/additionally/additionally.scss";
+@import "../../modules/blocks/comment/comment.scss";
+@import "../../modules/blocks/like-button/like-button.scss";
+@import "../../modules/blocks/bullet-list/bullet-list.scss";
+// @import "../../modules/blocks/pagination/pagination.scss";
+
+.room {
+  &__main-content {
+    // max-width: 1440px;
+  }
+  &__wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+  &__img-wrap {
+    display: grid;
+    grid-template-columns: 981px auto;
+    grid-template-rows: 242.5px 242.5px;
+    overflow: hidden;
+    padding-top: 70px;
+    height: 100%;
+    position: relative;
+
+    height: 100%;
+  }
+  &__img-1 {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__img-2 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    transform: scale(-1, 1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__img-3 {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__details {
+    display: grid;
+    grid-template-columns: 780px auto;
+    grid-template-rows: 305px 335px;
+    padding: 68px 68px 0px 139px;
+  }
+  &__info {
+    grid-row: 1/3;
+    grid-column: 2/3;
+  }
+  &__bullet-list {
+    display: grid;
+    grid-template-columns: 361px 345px;
+    grid-template-rows: 230px;
+  }
+  &__additionally-title,
+  &__comments-title {
+    padding-bottom: 21px;
+  }
+  &__bullet-list-title {
+    padding-bottom: 20px;
+  }
+  &__line {
+    border-bottom: 1px solid $mainFontColor025;
+    // max-width: 1440px;
+    margin: auto;
+  }
+}
+.title-right {
+  padding-left: 20px;
+}

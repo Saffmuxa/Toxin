@@ -1,8 +1,8 @@
 //- ввод даты
-mixin maskedTxtField({title='', value='ДД.ММ.ГГГГ',  placeholder='ДД.ММ.ГГГГ', type='text', classDirection, readonly=true}={})
+mixin maskedTxtField({title='', value='',  placeholder='ДД.ММ.ГГГГ', type, classDirection, inputmode, readonly, button=false, required=false, name, js, id=''}={})
       if (title)
         label.masked-text__label=title   
-      form.masked-text__controls
-        input.masked-text__input(placeholder=placeholder, class=classDirection, type=type, value=value, readonly=readonly)
-
-
+      .masked-text__controls(for=id ? id : undefined)
+        input.masked-text__input(name=name, placeholder=placeholder, class=classDirection, class=js ? "js-masked-text__input" : "", type=type,  id=id ? id : undefined, inputmode=inputmode, value=value, readonly=readonly, required=required)
+        if (button)
+          button.masked-text__btn(type="submit") arrow_forward

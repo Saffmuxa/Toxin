@@ -1,0 +1,153 @@
+@import "../blocks/num-and-price-room/num-and-price-room.scss";
+.js-slider-card__img_clickable {
+  cursor: pointer;
+}
+.slider-card {
+  &__wrap {
+    position: relative;
+    height: 258px;
+    width: 270px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: $white;
+  }
+  &__img-wrapper {
+    // height: 151px;
+    // width: 270px;
+    // overflow: hidden;
+    // width: 270px;
+    display: flex;
+    position: relative;
+    right: 0;
+    transition: all ease 600ms;
+  }
+  &__img {
+    // object-fit: contain;
+    // height: 100%;
+    // width: 100%;
+    // width: 270px;
+    // object-fit: cover; // contain
+    // width: 270px;
+    // position: absolute;
+    // bottom: 0px;
+    // left: 0px;
+    // height: 151px;
+  }
+  &__imgg {
+    width: 270px;
+    overflow: hidden;
+    height: 151px;
+    position: relative;
+  }
+  &__info {
+    padding-top: 13px;
+    height: 54px;
+    display: flex;
+    width: 270px;
+    align-items: center;
+  }
+  &__border {
+    padding-top: 1px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    width: 85%;
+    margin: auto;
+  }
+  &__btn-and-img {
+    display: flex;
+    position: relative;
+  }
+  &__btn-and-img:hover {
+    .slider-card__btn-next,
+    .slider-card__btn-prev {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+  }
+
+  &__btn-next {
+    opacity: 0;
+    transition: all 0.3s;
+    height: 100%;
+    // background-color: rgba(205, 92, 92, 0);
+    position: absolute;
+    // top: 42%;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    .slider-card__btn-icon {
+      transform: rotate(-90deg);
+    }
+  }
+  &__btn-prev {
+    opacity: 0;
+    transition: all 0.3s;
+    // background-color: rgba(205, 92, 92, 0);
+    height: 100%;
+    // transform: rotate(90deg);
+    position: absolute;
+    z-index: 10;
+    // top: 39%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    // box-shadow: inset 10px 10px 20px rgba(31, 32, 65, 0.5);
+  }
+  &__pagination {
+    position: absolute;
+    z-index: 99;
+    right: 15px;
+    top: 128px;
+    display: flex;
+    // // user-select: none;
+    // grid-column-gap: 4px;
+
+    column-gap: 4px;
+  }
+  &__btn-active {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  &__pagination_bullet {
+    display: block;
+    width: 7.5px;
+    height: 7.5px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  &__pagination_active {
+    background-color: $white;
+  }
+  &__comments {
+    color: $mainFontColor05;
+    cursor: pointer;
+  }
+  &__num-comments {
+    font-weight: bold;
+  }
+  &__rate {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+  }
+  &__btn-icon {
+    font-family: $materialFont;
+    font-style: normal;
+    color: $white;
+    font-size: 24px;
+    line-height: 24px;
+    display: block;
+    transform: rotate(90deg);
+  }
+}

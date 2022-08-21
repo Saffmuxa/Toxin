@@ -6,7 +6,10 @@ import { initCalendar } from "../../modules/blocks/datepicker/datepicker";
 import { initRangeSlider } from "../../modules/blocks/range-slider/range-slider";
 import { initPagination } from "../../modules/blocks/pagination/pagination";
 import { initRoomInfo } from "../../modules/room-info/room-info";
+import { maskedInputEl } from "../../modules/blocks/masked-text-field/masked-text-field";
+import { initSliderCard } from "../../modules/slider-card/slider-card";
 
+// import Inputmask from "inputmask";
 import "../../modules/blocks/like-button/like-button";
 
 const guestDropdown = document.querySelectorAll(".js-main__guest-dropdown");
@@ -52,3 +55,20 @@ roomInfoCard.forEach((roomInfo, firstDateClass, secondDateClass, price) => {
     9990
   );
 });
+const sliderCard = document.querySelectorAll(".js-slider-card");
+sliderCard.forEach((sliderCard) => {
+  initSliderCard(sliderCard);
+});
+
+// const maskedInputElements = document.querySelectorAll(".jss");
+// maskedInputElements.forEach((element) => new MaskedField(element));
+// console.log(maskedInputElements);
+// console.log(element);
+// const maskedInputEl = document.querySelectorAll(".jss");
+// console.log(maskedInputEl);
+// var im = new Inputmask({
+//   alias: "datetime",
+//   inputFormat: "dd/mm/yyyy",
+//   outputFormat: "ddmmyyyy",
+// });
+// im.mask(maskedInputEl);

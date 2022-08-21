@@ -41,11 +41,7 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
   const dateInputs = calendarEl.querySelectorAll(".js-calendar__input");
   const inputElements = calendarEl.querySelectorAll("input");
   const datePickerToogle = () => {
-    if (
-      open
-        ? calendarMenu.classList.toggle("js-calendar__menu_active")
-        : calendarMenu.classList.toggle("js-calendar__menu_active")
-    );
+    calendarMenu.classList.toggle("js-calendar__menu_active");
   };
   const clickOut = () => {
     if (
@@ -98,8 +94,7 @@ const initCalendar = (calendarId, datePickerId, type, open) => {
       },
     });
   }
-
-  calendarMenu.addEventListener("click", clickOut);
+  clickOut();
 };
 
 export { initCalendar };

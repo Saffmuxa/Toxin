@@ -1,0 +1,33 @@
+.registration {
+  box-shadow: 0 0px 25px rgb(0 0 0 / 20%);
+
+  &__wrap {
+    border-radius: 4px;
+
+    background-color: $white;
+    width: 380px;
+    height: 646px;
+    //   margin-top: 2px;
+    padding: 40px 30px 30px 30px;
+    display: grid;
+    grid-template-rows: 48px 99px 49px 85px 121px 55px 45px 103px;
+  }
+  &__sing-up {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+  &__service-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+  &__enter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__enter-btn {
+    height: 44px;
+  }
+}

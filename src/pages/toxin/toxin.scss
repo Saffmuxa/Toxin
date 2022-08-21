@@ -1,0 +1,38 @@
+@import "../../assets/styles/_vars.scss";
+@import "../../modules/find-rooms/find-rooms.scss";
+@import "../../modules/blocks/dropdown/dropdown.scss";
+@import "../../modules/blocks/airDatepicker/airDatepicker.scss";
+@import "../../modules/blocks/datepicker/datepicker.scss";
+
+@import "../ui/ui-parts/headersAndFooters.scss";
+@import "../../modules/blocks/buttons/buttons.scss";
+@import "../../modules/blocks/dropdown-nav/dropdown-nav.scss";
+@import "../../modules/blocks/masked-text-field/masked-text-field.scss";
+
+.toxin {
+  &__main-content {
+    height: 900px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/images/landing.png);
+  }
+  &__info {
+    width: 300px;
+    position: absolute;
+    bottom: 20px;
+    right: 134px;
+    text-align: right;
+  }
+  &__wrapper {
+    height: 100%;
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+  }
+  &__find-window {
+    position: absolute;
+    top: 140px;
+    left: 140px;
+  }
+}

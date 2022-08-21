@@ -1,0 +1,27 @@
+mixin sliderCard({num, luxe=false, rate, price, imgsSrc, reviewsCount, clickable=false, active}={})
+  .slider-card__wrap.js-slider-card
+    .slider-card__pagination 
+        span.slider-card__pagination_bullet.slider-card__pagination_active.js-slider-card__pagination_bullet
+        span.slider-card__pagination_bullet.js-slider-card__pagination_bullet
+        span.slider-card__pagination_bullet.js-slider-card__pagination_bullet
+        span.slider-card__pagination_bullet.js-slider-card__pagination_bullet 
+    .slider-card__btn-and-img
+      button.slider-card__btn-prev.js-slider-card__btn-prev(type="button")(class=active ? 'slider-card__btn-active' : '')
+        i.slider-card__btn-icon expand_more
+      .slider-card__img-wrapper.js-slider-card__img-wrapper
+        each imgSrc in imgsSrc
+          .slider-card__imgg
+            img.slider-card__img.js-slider-card__img(src=require(imgSrc), alt="комната отеля", class=clickable ? 'js-slider-card__img_clickable' : '')
+        //- .slider-card__pagination.js_slider-card__pagination
+      
+      button.slider-card__btn-next.js-slider-card__btn-next(type="button")(class=active ? 'slider-card__btn-active' : '')
+        i.slider-card__btn-icon expand_more
+    .slider-card__info
+      +numPriceRoom({num, luxe, price})
+    .slider-card__border 
+    
+    .slider-card__rate 
+      +rateBtn(rate)
+      a.slider-card__comments
+        span.slider-card__num-comments=reviewsCount + " "
+        span Отзывов

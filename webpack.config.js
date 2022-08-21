@@ -8,12 +8,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const isProduction = false;
 module.exports = {
   mode: isProduction ? "production" : "development",
-  devtool: isProduction ? "" : "source-map",
+  devtool: isProduction ? false : "source-map",
 
   resolve: {
     // aliases used in the code example
     alias: {
       Images: path.join(__dirname, "src/assets/images/"),
+      // Imagess: path.resolve(__dirname, "src/assets/images/"),
       Styles: path.join(__dirname, "src/assets/styles/"),
     },
   },
@@ -37,10 +38,22 @@ module.exports = {
       import: "./src/pages/ui/ui.pug?" + JSON.stringify({ title: "UI" }),
       filename: "ui.html",
     },
-    // mainPage: {
-    //         import: './src/pages/home/index.pug?' + JSON.stringify({ title: 'Homepage' }),
-    //         filename: "./pages/index.html",
-    //       },
+    mainPage: {
+      import:
+        "./src/pages/toxin/toxin.pug?" + JSON.stringify({ title: "Toxin" }),
+      filename: "toxin.html",
+    },
+    searchRoom: {
+      import:
+        "./src/pages/search-room/search-room.pug?" +
+        JSON.stringify({ title: "Search Room" }),
+      filename: "search-room.html",
+    },
+    room1: {
+      import:
+        "./src/pages/room1/room1.pug?" + JSON.stringify({ title: "room1" }),
+      filename: "room1.html",
+    },
   },
 
   plugins: [
@@ -146,7 +159,7 @@ module.exports = {
     hints: isProduction ? "error" : "warning",
     // in development mode may be the size of css and js more times bigger than in production
     maxEntrypointSize: isProduction ? 1024000 : 4096000,
-    maxAssetSize: isProduction ? 1024000 : 4096000,
+    maxAssetSize: isProduction ? 3024000 : 6096000,
   },
 
   devServer: {

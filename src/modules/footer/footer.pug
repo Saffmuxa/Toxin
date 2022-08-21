@@ -41,7 +41,9 @@ footer
                 li 
                   p Получайте специальные предложения и новости сервиса
                 li
-                    +subscription({id: 'subscription-email'})
+                  +maskedTxtField({type: 'email', placeholder: 'Email', name: 'email', readonly:false, button:true, required:true})
+
+                    //- +subscription({id: 'subscription-email'})
                         
   .footer_shadow 
   .footer__end               

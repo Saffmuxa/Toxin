@@ -9,7 +9,6 @@ initCalendar(
   false
 );
 
-console.log(initCalendar);
 const initRoomInfo = (roomInfo, firstDateClass, secondDateClass, price) => {
   const peopleCount = roomInfo.querySelector(".js-dropdown__input");
   const additionalServices = roomInfo.querySelector(

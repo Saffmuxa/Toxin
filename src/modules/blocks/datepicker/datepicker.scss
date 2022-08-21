@@ -9,6 +9,10 @@
   &__input {
     width: 150px;
   }
+  &__input,
+  &__field {
+    margin-bottom: 6px;
+  }
   &__menu {
     position: absolute;
     z-index: 10;
@@ -43,6 +47,11 @@
 }
 .js-calendar__menu_active {
   display: block;
+  animation: calendar $aniTime;
+  position: absolute;
+  z-index: 100;
+  background-color: $white;
+  // left: 100%;
 }
 
 .air-datepicker-nav {
@@ -197,4 +206,13 @@
 .air-datepicker-cell.-range-to-,
 .air-datepicker-cell.-range-from- {
   border: none;
+}
+
+@keyframes calendar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

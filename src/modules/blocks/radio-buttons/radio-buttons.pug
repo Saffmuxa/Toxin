@@ -3,7 +3,7 @@ mixin radioButtons({title, text, name, id, checked, radioName, radioId = 'radio'
   form.radio-button
     if (title)
       label.radio-button__title(for=id)=title 
-        ul.radio-button__options(id=id)
+    ul.radio-button__options(id=id)
           each item in items
             - const {radioId, checked = false, radioName='genders', text = ''} = item;
               li.radio-button__li(id=radioId)

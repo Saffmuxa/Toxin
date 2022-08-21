@@ -1,0 +1,33 @@
+.login {
+  box-shadow: 0 0px 25px rgb(0 0 0 / 20%);
+
+  &__wrap {
+    background-color: $white;
+    width: 380px;
+    height: 358px;
+    border-radius: 4px;
+
+    padding: 40px 30px 30px 30px;
+    display: grid;
+    grid-template-rows: 48px 119px 54px 85px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+  // &__enter-btn {}
+  &__service-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+  &__enter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__enter-btn {
+    height: 44px;
+  }
+}

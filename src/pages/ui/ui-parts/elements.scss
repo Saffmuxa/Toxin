@@ -11,7 +11,6 @@
 @import "../../../modules/blocks/rate/rate.scss";
 @import "../../../modules/blocks/buttons/buttons.scss";
 @import "../../../modules/blocks/radio-buttons/radio-buttons.scss";
-@import "../../../modules/blocks/subscription/subscription.scss";
 @import "../../../modules/blocks/range-slider/range-slider.scss";
 @import "../../../modules/blocks/pagination/pagination.scss";
 @import "../../../modules/blocks/rich-checkbox/rich-checkbox.scss";
@@ -122,7 +121,7 @@
     .rate-btn__content {
       display: flex;
       margin-top: 12px;
-      column-gap: 40px;
+      column-gap: 20px;
     }
   }
   &__slider-buttons {

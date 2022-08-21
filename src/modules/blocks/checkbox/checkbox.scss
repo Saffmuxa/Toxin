@@ -3,6 +3,7 @@
   &__label {
     display: flex;
     line-height: 18px;
+    cursor: pointer;
     &:hover {
       .checkbox-li__box {
         border-color: $purple;
