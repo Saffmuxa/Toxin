@@ -15,7 +15,8 @@
   }
   &__options {
     display: flex;
-    justify-content: space-between;
+    gap: 21px;
+    // justify-content: space-between;
     margin-top: 8px;
   }
   &__name {

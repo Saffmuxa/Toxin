@@ -1,0 +1,17 @@
+extends ../layout
+
+append style
+  link(rel='stylesheet' href=require('./reg-page.scss'))
+append script
+  //- script(src=require('./chart.js'))
+  script(src=require('./reg-page.js'))
+//- include ../mixins
+block content
+  //- h1 Hello World!
+
+  include ../../modules/header/header
+  main.reg-page__main-content
+      .reg-page__wrapper
+        .reg-page__find-window
+          +registration({regText: "зарегистрироваться", typeBtn: "submit"})
+  include ../../modules/footer/footer

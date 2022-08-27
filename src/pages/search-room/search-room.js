@@ -84,28 +84,28 @@ dateInfo.forEach((element) => {
 });
 calendarInput.getElementsByTagName("input")[0].value =
   dateArr[0] + " - " + dateArr[1];
-console.log(guestsInfo[1]);
+// console.log(guestsInfo[1]);
+console.log(guestsInfo);
 
 let i = 1;
-while (i < guestsInfo[0]) {
+while (i <= guestsInfo[0]) {
   guestsDropBtns[0].click();
   i++;
+  console.log(i);
 }
 let ii = 1;
-while (ii < guestsInfo[1]) {
+while (ii <= guestsInfo[1]) {
   guestsDropBtns[1].click();
   ii++;
 }
 let iii = 1;
-while (iii < guestsInfo[2]) {
+while (iii <= guestsInfo[2]) {
   guestsDropBtns[2].click();
   iii++;
 }
 
-guestsDropBtns[0].click();
-console.log(guestsDropBtns[0]);
-
-console.log(guestsInfo);
+// guestsDropBtns[0].click();
+// console.log(guestsDropBtns[0]);
 
 // sessionStorage.setItem("guests", guestsArr);
 const sliderCard = document.querySelectorAll(".js-slider-card");

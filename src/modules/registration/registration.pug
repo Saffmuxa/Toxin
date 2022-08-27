@@ -1,39 +1,41 @@
-mixin registration
+mixin registration({regText, typeBtn}={})
   form.registration
     .registration__wrap
       .registration__title 
         h1 Регистрация аккаунта
-      .registration__sing-up
-        +maskedTxtField({title:'', placeholder:'Имя', name: "name", readonly:false, required:true})
-        +maskedTxtField({title:'', placeholder:'Фамилия', name: "surname", readonly:false, required:true})
+      form.registration__form
+        .registration__sing-up
+          +maskedTxtField({title:'', placeholder:'Имя', name: "name", readonly:false, required:true})
+          +maskedTxtField({title:'', placeholder:'Фамилия', name: "surname", readonly:false, required:true})
+        
+        .registration__born-date
+          +maskedTxtField({title:'дата рождения', placeholder:'ДД.ММ.ГГГГ', name:"birthdate", id: 'birthdate', inputmode:"numeric", js:true, readonly:false, required:true})
+        .registration__service-info 
+          .registration__service-name 
+            +maskedTxtField({title:'данные для входа в сервис', placeholder:'Email', name: 'email', type: 'email',readonly:false, required:true})
+          +maskedTxtField({placeholder:'Пароль', name: 'password', type: 'password', readonly:false, required:true})
+        .registration__payment-button 
+          +registerButton({text: regText, arrow:true, typeBtn})
       .registration__gender
-        +radioButtons({
-          
-                  id: 'genderButtons',
-                  items: [{radioId: 'male',
-                          checked: true,
-                          text:'Мужчина'},
-                          {radioId: 'female',
-                          checked: false,
-                          text:'Женщина',},],
-                })
-      .registration__born-date
-        +maskedTxtField({title:'дата рождения', placeholder:'ДД.ММ.ГГГГ', name:"birthdate", id: 'birthdate', inputmode:"numeric", js:true, readonly:false, required:true})
-      .registration__service-info 
-        .registration__service-name 
-          +maskedTxtField({title:'данные для входа в сервис', placeholder:'Email', name: 'email', type: 'email',readonly:false, required:true})
-        +maskedTxtField({placeholder:'Пароль', name: 'password', type: 'password', readonly:false, required:true})
+          +radioButtons({
+            
+                    id: 'genderButtons',
+                    items: [{radioId: 'male',
+                            checked: true,
+                            text:'Мужчина'},
+                            {radioId: 'female',
+                            checked: false,
+                            text:'Женщина',},],
+                  })
       .registration__special-offers
-        +toggleButtons({
-                      id: 'toggleButtons',
-                      items: [{toggleId: 'noToggle',
-                              checked: false,
-                              text:'Получать спецпредложения',
-                              },                    
-                              ],})
-      .registration__payment-button 
-        +registerButton({text:'перейти к оплате', arrow:true})
+          +toggleButtons({
+                        id: 'toggleButtons',
+                        items: [{toggleId: 'noToggle',
+                                checked: false,
+                                text:'Получать спецпредложения',
+                                },                    
+                                ],})
       .registration__enter 
-        p Уже есть аккаунт на Toxin
-        .registration__enter-btn 
-          +enterButton({text:'войти', width100: true})
+          p Уже есть аккаунт на Toxin
+          .registration__enter-btn 
+            +enterButton({text:'войти', width100: true})

@@ -1,0 +1,17 @@
+extends ../layout
+
+append style
+  link(rel='stylesheet' href=require('./sign-in.scss'))
+append script
+  //- script(src=require('./chart.js'))
+  script(src=require('./sign-in.js'))
+//- include ../mixins
+block content
+  //- h1 Hello World!
+
+  include ../../modules/header/header
+  main.sign-in__main-content
+      .sign-in__wrapper
+        .sign-in__find-window
+          +login
+  include ../../modules/footer/footer

@@ -3,6 +3,7 @@ extends ../layout
 append style
   link(rel='stylesheet' href=require('./room1.scss'))
 append script
+  //- script(src=require('./chart.js'))
   script(src=require('./room1.js'))
 //- include ../mixins
 block content
@@ -16,11 +17,22 @@ block content
         img.room__img-2(src=require("../../assets/images/1room1-2.png"))
         img.room__img-3(src=require("../../assets/images/1room1-3-1.png"))
       .room__details
-        .room__additionally
-          h2.room__additionally-title Сведения о номере
-          +additionally({title: "Комфорт", text: "Шумопоглощающие стены", ico: 'insert_emoticon'})
-          +additionally({title: "Удобство", text: "Окно в каждой из спален", ico: 'location_city'})
-          +additionally({title: "Уют", text: "Номер оснащён камином", ico: 'whatshot'})
+        .room__additionally-and-doughnut
+          .room__additionally
+            h2.room__additionally-title Сведения о номере
+            +additionally({title: "Комфорт", text: "Шумопоглощающие стены", ico: 'insert_emoticon'})
+            +additionally({title: "Удобство", text: "Окно в каждой из спален", ico: 'location_city'})
+            +additionally({title: "Уют", text: "Номер оснащён камином", ico: 'whatshot'})
+          .room__doughnut_wrap
+            h2.room__doughnut-title Впечатления от номера
+            .room__doughnut
+              +doughnut-chart
+              ul.room__room-votes-list 
+                        li.room__room-votes-item.room__room-votes-item_color_orange Великолепно
+                        li.room__room-votes-item.room__room-votes-item_color_green Хорошо
+                        li.room__room-votes-item.room__room-votes-item_color_purple Удовлетворительно
+                        li.room__room-votes-item.room__room-votes-item_color_black Разочарован
+
         .room__comments
           h2.room__comments-title Отзывы посетителей номера
           +comment({name: 'Мурад Сарафанов', 
@@ -51,9 +63,9 @@ block content
                   price: 9990, 
                   date: 4,
                   leftValueDate: '19.08.2019',
-                  rightValueDate: '23.08.2019'
+                  rightValueDate: '23.08.2019',
+                  values: [0,0,0]
                   })
-          
     .room__line
 
   include ../../modules/footer/footer

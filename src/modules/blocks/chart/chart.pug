@@ -1,0 +1,6 @@
+mixin doughnut-chart(votesCount=260, values=[0, 65, 65, 130])
+  .doughnut-chart
+    canvas.doughnut-chart__item.js-doughnut-chart__item(data-values=values)
+    span.doughnut-chart__inner
+      span.doughnut-chart__number= votesCount
+      span.doughnut-chart__text голосов

@@ -38,6 +38,7 @@ const initDatePicker = (datePickerId, settings = {}) => {
 const initCalendar = (calendarId, datePickerId, type, open) => {
   const calendarEl = document.getElementById(calendarId);
   const calendarMenu = calendarEl.querySelector(".js-calendar__menu");
+  console.log(calendarMenu);
   const dateInputs = calendarEl.querySelectorAll(".js-calendar__input");
   const inputElements = calendarEl.querySelectorAll("input");
   const datePickerToogle = () => {

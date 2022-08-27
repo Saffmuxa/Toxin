@@ -6,17 +6,19 @@ footer {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   background-color: #ffffff;
   // overflow: visible;
+  position: relative;
 }
 .footer-wrap {
-  max-width: calc($maxWidth - 280px);
+  max-width: calc($maxWidth - 260px);
   margin: auto;
+  padding: 0px 10px;
   display: grid;
   grid-template-columns:
     minmax(150px, 260px) minmax(6px, 40px) minmax(100px, 160px)
     minmax(6px, 40px)
     minmax(90px, 160px) minmax(6px, 40px) minmax(150px, 160px) minmax(6px, 40px)
     minmax(135px, 260px);
-  grid-template-rows: minmax(10px, 100px) auto minmax(10px, 96px);
+  grid-template-rows: 100px auto 97px 72px;
   li {
     margin-top: 14px;
   }
@@ -28,15 +30,31 @@ footer {
     color: rgba(31, 32, 65, 0.75);
   }
 }
-.footer__end {
-  max-width: calc($maxWidth - 280px);
-  height: 70px;
-  margin: 1px auto;
+// .footer__end {
+//   // max-width: calc($maxWidth - 280px);
+//   width: 100%;
+//   height: 70px;
+//   margin: 1px auto;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   // padding: 0px 10px;
+//   // grid-row: 5/6;
+//   // grid-column: 1/10;
+// }
+.footer__copyright {
+  grid-row: 4/5;
+  grid-column: 1/4;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-
+.footer__link-social {
+  grid-row: 4/5;
+  grid-column: 9/10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 .footer__brand {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -66,7 +84,37 @@ footer {
 .footer_shadow {
   background-color: rgba(31, 32, 65, 0.1);
   height: 1px;
+  width: 100%;
   padding: 0px;
+  position: absolute;
+  bottom: 69px;
   // grid-column: 1/10;
   // grid-row: 4/5;
+}
+
+@media all and (max-width: 840px) {
+  footer {
+    background-color: $mainFontColor005;
+  }
+  .footer_shadow,
+  .footer__nav,
+  .footer__about,
+  .footer__link,
+  .footer__subscribe,
+  .footer__brand > p {
+    display: none;
+  }
+  .footer-wrap {
+    height: 367px;
+    max-width: 768px;
+    background-color: $mainBackground;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__link-social {
+    padding-top: 21px;
+  }
 }

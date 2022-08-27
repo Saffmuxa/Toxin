@@ -1,7 +1,7 @@
 import { initDropdownHeader } from "../../modules/blocks/dropdown-nav/dropdown-nav";
 import { initGuestDropdown } from "../../modules/blocks/dropdown-guests/dropdown-guests";
 import { initCalendar } from "../../modules/blocks/datepicker/datepicker";
-import "../../modules/header/header";
+
 const submitBtn = document.querySelector(".js-register-sbmt-button");
 const form = document.querySelectorAll(".js-select__input");
 

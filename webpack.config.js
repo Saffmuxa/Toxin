@@ -54,6 +54,18 @@ module.exports = {
         "./src/pages/room1/room1.pug?" + JSON.stringify({ title: "room1" }),
       filename: "room1.html",
     },
+    signIn: {
+      import:
+        "./src/pages/sign-in/sign-in.pug?" +
+        JSON.stringify({ title: "Sign In" }),
+      filename: "sign-in.html",
+    },
+    Registration: {
+      import:
+        "./src/pages/reg-page/reg-page.pug?" +
+        JSON.stringify({ title: "Registration" }),
+      filename: "reg-page.html",
+    },
   },
 
   plugins: [

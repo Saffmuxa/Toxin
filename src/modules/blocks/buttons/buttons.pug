@@ -1,10 +1,10 @@
-mixin registerButton({text, link, hover=false, arrow=false, classReg}={})
-  .button-form(action=link)
-    button(type="button" class="register-button" class=hover ? 'reg-btn-hover' : '' class=arrow ? 'btn-arrow' : '' class=classReg) 
+mixin registerButton({text, typeBtn="button", link, hover=false, arrow=false, classReg}={})
+  form.button-form(action=link)
+    button(type=typeBtn class="register-button" class=hover ? 'reg-btn-hover' : '' class=arrow ? 'btn-arrow' : '' class=classReg) 
       h3= text
 mixin enterButton({text, link, hover=false, width100=false}={})
-  .button-form(action=link)
-    button(type="submit" class='enter-button' class=hover ? 'btn-hover' : '' class=width100 ? 'btn-w100' : '') 
+  form.button-form(action=link)
+    button(type=typeBtn class='enter-button' class=hover ? 'btn-hover' : '' class=width100 ? 'btn-w100' : '') 
       h3= text
 mixin textButton({text, active=false}={})
   button(type="button" class="text-button" class=active ? 'btn-active' : '')

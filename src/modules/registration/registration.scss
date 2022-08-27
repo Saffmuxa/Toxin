@@ -1,3 +1,4 @@
+// @import "../../modules/blocks/radio-buttons/radio-buttons.scss";
 .registration {
   box-shadow: 0 0px 25px rgb(0 0 0 / 20%);
 
@@ -10,7 +11,7 @@
     //   margin-top: 2px;
     padding: 40px 30px 30px 30px;
     display: grid;
-    grid-template-rows: 48px 99px 49px 85px 121px 55px 45px 103px;
+    grid-template-rows: 48px 99px 50px 84px 121px 55px 45px 103px;
   }
   &__sing-up {
     display: flex;
@@ -29,5 +30,11 @@
   }
   &__enter-btn {
     height: 44px;
+  }
+  &__gender {
+    grid-row: 3/4;
+  }
+  &__special-offers {
+    grid-row: 6/7;
   }
 }

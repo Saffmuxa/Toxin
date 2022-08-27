@@ -1,4 +1,4 @@
-mixin roomInfo({num, luxe=false, price, leftValueDate, rightValueDate, date, discount=true, services=0, additionalServices=300}={})
+mixin roomInfo({num, luxe=false, price="price", leftValueDate, rightValueDate, date, discount=true, services=0, values, additionalServices=300}={})
   .room-info.js-main__room-info
     .room-info__title 
       .room-info__number
@@ -8,7 +8,7 @@ mixin roomInfo({num, luxe=false, price, leftValueDate, rightValueDate, date, dis
           span.room-info__number_luxe люкс
       .room-info__price 
         //- - const priceName = price.toLocaleString()+"₽";
-        span.room-info__price-count.js-room-info__price-count price
+        span.room-info__price-count.js-room-info__price-count= price
         span.room-info__price-text в сутки
     .room-info__datepicker
       +datePicker({calendarId: 'two-dates-cal-room-info', 
@@ -22,11 +22,11 @@ mixin roomInfo({num, luxe=false, price, leftValueDate, rightValueDate, date, dis
                   datePickerId: 'date-picker-room-info', 
                   type: 'two-input'})
     .room-info__guests-dropdown.js-main__guest-dropdown
-      +dropdownGuest({title: 'гости', id: 'guests-room-info', values: [2,1,0] })
+      +dropdownGuest({title: 'гости', id: 'guests-room-info', values: values })
     .room-info__check 
       .room-info__date-price
         .room-info__calc
-          span.js-room-info__price-date-count price 
+          span.js-room-info__price-date-count= price 
           span=" х " 
           span.js-room-info__calc
           span.js-room-info__text-days=" суток"

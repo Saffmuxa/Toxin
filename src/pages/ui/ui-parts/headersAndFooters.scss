@@ -2,13 +2,13 @@
 @import "../../../modules/footer/footer.scss";
 @import "../../../modules/blocks/toxinLogo/toxinLogo.scss";
 @import "../../../modules/blocks/social-links/social-links.scss";
-@import "../../../modules/logo-links/logo-links.scss";
+@import "../../../modules/mobile-footer/mobile-footer.scss";
 @import "../../../modules/blocks/head-grey/head-grey.scss";
 
 .headers-and-footers {
   padding-top: 33px;
 
-  &__logo-links {
+  &__mobile-footer {
     margin: 40px 0px;
   }
 

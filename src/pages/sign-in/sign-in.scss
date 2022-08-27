@@ -1,29 +1,25 @@
 @import "../../assets/styles/_vars.scss";
-@import "../../modules/find-rooms/find-rooms.scss";
-@import "../../modules/blocks/dropdown/dropdown.scss";
-@import "../../modules/blocks/airDatepicker/airDatepicker.scss";
-@import "../../modules/blocks/datepicker/datepicker.scss";
-
+// @import "../../modules/find-rooms/find-rooms.scss";
+// @import "../../modules/blocks/dropdown/dropdown.scss";
+// @import "../../modules/blocks/airDatepicker/airDatepicker.scss";
+// @import "../../modules/blocks/datepicker/datepicker.scss";
+@import "../../modules/login/login.scss";
 @import "../ui/ui-parts/headersAndFooters.scss";
 @import "../../modules/blocks/buttons/buttons.scss";
 @import "../../modules/blocks/dropdown-nav/dropdown-nav.scss";
 @import "../../modules/blocks/masked-text-field/masked-text-field.scss";
 
-.toxin {
+.sign-in {
   &__main-content {
-    height: 830px;
+    height: 702px;
     background-position-y: 100%;
+    // background-position-x: 10%;
+    background-size: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../../assets/images/landing.png);
+    background-image: url(../../assets/images/sign-image.png);
   }
-  &__info {
-    width: 300px;
-    position: absolute;
-    bottom: 20px;
-    right: 134px;
-    text-align: right;
-  }
+
   &__wrapper {
     height: 100%;
     position: relative;
@@ -32,23 +28,24 @@
   }
   &__find-window {
     position: absolute;
-    top: 70px;
-    left: 140px;
+    // top: 243px;
+    // left: 530px;
+    left: 36.8%;
+    top: 24.5%;
   }
 }
+
 @media all and (max-width: 840px) {
-  .toxin__find-window {
+  .sign-in__find-window {
     left: calc(50% - 190px);
   }
-  .toxin__info {
-    right: 6px;
-  }
-  .toxin__main-content {
+
+  .sign-in__main-content {
     min-height: 590px;
   }
 }
 @media all and (max-width: 1440px) {
-  .toxin__main-content {
+  .sign-in__main-content {
     height: 57vw;
     min-height: 530px;
   }

@@ -1,8 +1,8 @@
 header
-  .header-wrap
-    a.header__logo.header-block( href='/')
+  .header__wrap
+    a.header__logo.header__block( href='/')
       +toxinLogo 
-    nav.header__links.header-block 
+    nav.header__links.header__block 
       ul.header__nav
         li 
           a(target='_blank' href='//google.com') О нас
@@ -24,7 +24,24 @@ header
                     {name:'Третье'},
                     {name:'Четвертое'},
                     {name:'Пятое'}]})      
-      .header__login.header-block
-          +enterButton({text:'войти', link: "https://www.google.com/"})
-          +registerButton({text:'зарегистрироваться', link: "https://www.google.com/"})
-
+      .header__login.header__block
+          +enterButton({text:'войти', typeBtn:"submit", link: "sign-in.html"})
+          +registerButton({text:'зарегистрироваться', typeBtn:"submit", link: "reg-page.html"})
+      button.header__burger.js-header__burger
+            span.header__burger-line
+  .header__burger-menu.js-header__burger-menu
+    ul.header__burger-nav
+        li 
+          a(target='_blank' href='//google.com') О нас
+        li
+          a(target='_blank' href='//google.com') Услуги
+        li 
+          a(target='_blank' href='//google.com') Вакансии
+        li 
+          a(target='_blank' href='//google.com') Новости
+        li 
+          a(target='_blank' href='//google.com') Соглашения   
+        li.header__burger-btn 
+          +enterButton({text:'войти', typeBtn:"submit", link: "sign-in.html"})   
+        li.header__burger-btn 
+          +registerButton({text:'зарегистрироваться', typeBtn:"submit", link: "reg-page.html"})

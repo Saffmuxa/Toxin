@@ -4,7 +4,7 @@
     .cards__find-rooms
       +findRooms
     .cards__registration
-      +registration
+      +registration({regText: 'перейти к оплате'})
   .cards__second-column    
     .cards__room-info 
       +roomInfo({num: '888', 
@@ -12,7 +12,8 @@
                 price: 9990, 
                 date: 4,
                 leftValueDate: '19.08.2019',
-                rightValueDate: '23.08.2019'
+                rightValueDate: '23.08.2019',
+                values: [2,1,0]
                 })
     .cards__login
         +login

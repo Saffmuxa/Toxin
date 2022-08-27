@@ -1,0 +1,38 @@
+@import "../../assets/styles/_vars.scss";
+// @import "../../modules/find-rooms/find-rooms.scss";
+// @import "../../modules/blocks/dropdown/dropdown.scss";
+// @import "../../modules/blocks/airDatepicker/airDatepicker.scss";
+// @import "../../modules/blocks/datepicker/datepicker.scss";
+@import "../../modules/blocks/toggle-buttons/toggle-buttons.scss";
+@import "../../modules/blocks/radio-buttons/radio-buttons.scss";
+@import "../../modules/registration/registration.scss";
+@import "../ui/ui-parts/headersAndFooters.scss";
+@import "../../modules/blocks/buttons/buttons.scss";
+@import "../../modules/blocks/dropdown-nav/dropdown-nav.scss";
+@import "../../modules/blocks/masked-text-field/masked-text-field.scss";
+
+.reg-page {
+  &__main-content {
+    height: 754px;
+    // background-position-y: 20%;
+    // background-position-x: 10%;
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/images/sign-image.png);
+  }
+
+  &__wrapper {
+    height: 100%;
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+  }
+  &__find-window {
+    position: absolute;
+    // top: 243px;
+    // left: 530px;
+    left: 37%;
+    top: 11.8%;
+  }
+}
