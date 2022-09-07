@@ -55,6 +55,9 @@
   &__btn-and-img {
     display: flex;
     position: relative;
+    button {
+      padding: 9px;
+    }
   }
   &__btn-and-img:hover {
     .slider-card__btn-next,
@@ -72,7 +75,7 @@
     position: absolute;
     // top: 42%;
     right: 0;
-    z-index: 10;
+    z-index: 5;
     background: linear-gradient(
       to left,
       rgba(0, 0, 0, 0.5) 0%,
@@ -90,7 +93,7 @@
     height: 100%;
     // transform: rotate(90deg);
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     // top: 39%;
     background: linear-gradient(
       to right,
@@ -102,7 +105,7 @@
   }
   &__pagination {
     position: absolute;
-    z-index: 99;
+    z-index: 5;
     right: 15px;
     top: 128px;
     display: flex;

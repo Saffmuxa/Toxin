@@ -12,6 +12,7 @@
 .sign-in {
   &__main-content {
     height: 702px;
+    // min-height: 358px;
     background-position-y: 100%;
     // background-position-x: 10%;
     background-size: 100%;
@@ -30,23 +31,27 @@
     position: absolute;
     // top: 243px;
     // left: 530px;
-    left: 36.8%;
-    top: 24.5%;
-  }
-}
-
-@media all and (max-width: 840px) {
-  .sign-in__find-window {
     left: calc(50% - 190px);
-  }
-
-  .sign-in__main-content {
-    min-height: 590px;
+    top: 24.5%;
   }
 }
 @media all and (max-width: 1440px) {
   .sign-in__main-content {
-    height: 57vw;
-    min-height: 530px;
+    height: 48vw;
+    min-height: 358px;
   }
+  .sign-in__find-window {
+    top: 4.5vw;
+  }
+}
+@media all and (max-width: 840px) {
+  .sign-in__find-window {
+    top: 0;
+  }
+
+  .sign-in__main-content {
+    // height: auto;
+  }
+}
+@media all and (max-width: 480px) {
 }

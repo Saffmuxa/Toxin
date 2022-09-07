@@ -11,41 +11,46 @@ block content
   include ../../modules/header/header
   main.search-room__main-content
     .search-room__wrapper
-      .search-room__options
-        +datePicker({calendarId: 'range-dates-cal', title: 'даты пребывания в отеле', datePickerId: 'date-picker-second', type: 'range-dates'})
-        .js-main__guest-dropdown
-          +dropdownGuest({title: 'гости', id: 'guests'})
-        +rangeSlider('js-range-slider', "диапазон цены")
-        span.search-room__range-slider_info Стоимость за сутки пребывания в номере
-        +checkBoxMenu({title:'правила дома',
-                    open:true,
-                    tight: true,
-                    items: 
-                   [{name:'Можно курить', id:'smoke', checked:false}, 
-                    {name:'Можно с питомцами', id:'pets', checked:true},
-                    {name:'Можно пригласить гостей (до 10 человек)', id:'party', checked:true},
-                    ]})
-        +rich-checkbox({title:'доступность',
-                    open:true,
-                    tight: true,
-                    items: 
-                   [{name:'Широкий коридор', text: "Ширина коридоров в номере <br> не менее 91 см.", id:'width', checked:false}, 
-                    {name:'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.', id:'helper', checked:false},
-                                        ]})
-        .js-main__rooms-dropdown
-          +dropdownRooms({title: 'удобства номера', id: 'rooms', style: 'z-index: 10',
-        buttons:false, sharp:true, values: [2,2,0]})  
-        .js-main__checkBox-dropdown
-          +checkBoxMenu({title:'дополнительные удобства', 
-                    style: 'z-index: 10',
-                    items: 
-                   [{name:'Завтрак', id:'breakfast'}, 
-                    {name:'Письменный стол', id:'table', checked:true},
-                    {name:'Стул для кормления', id:'chair', checked:true},
-                    {name:'Кроватка', id:'bed', checked:true},
-                    {name:'Телевизор', id:'tv'},
-                    {name:'Шампунь', id:'shampoo'},]})
+      
+      .search-room__options.js-search-room__options
+        button.search-room__close-options-btn.js-search-room__close-options-btn
+        .search-room__options-menu
+            +datePicker({calendarId: 'range-dates-cal', title: 'даты пребывания в отеле', datePickerId: 'date-picker-second', type: 'range-dates'})
+            .js-main__guest-dropdown
+              +dropdownGuest({title: 'гости', id: 'guests'})
+            +rangeSlider('js-range-slider', "диапазон цены")
+            span.search-room__range-slider_info Стоимость за сутки пребывания в номере
+            +checkBoxMenu({title:'правила дома',
+                        open:true,
+                        tight: true,
+                        items: 
+                      [{name:'Можно курить', id:'smoke', checked:false}, 
+                        {name:'Можно с питомцами', id:'pets', checked:true},
+                        {name:'Можно пригласить гостей (до 10 человек)', id:'party', checked:true},
+                        ]})
+            +rich-checkbox({title:'доступность',
+                        open:true,
+                        tight: true,
+                        items: 
+                      [{name:'Широкий коридор', text: "Ширина коридоров в номере <br> не менее 91 см.", id:'width', checked:false}, 
+                        {name:'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.', id:'helper', checked:false},
+                                          ]})
+            .js-main__rooms-dropdown
+              +dropdownRooms({title: 'удобства номера', id: 'rooms', style: 'z-index: 10',
+              buttons:false, sharp:true, values: [2,2,0]})  
+            .js-main__checkBox-dropdown
+              +checkBoxMenu({title:'дополнительные удобства', 
+                      style: 'z-index: 10',
+                      items: 
+                    [{name:'Завтрак', id:'breakfast'}, 
+                      {name:'Письменный стол', id:'table', checked:true},
+                      {name:'Стул для кормления', id:'chair', checked:true},
+                      {name:'Кроватка', id:'bed', checked:true},
+                      {name:'Телевизор', id:'tv'},
+                      {name:'Шампунь', id:'shampoo'},]})
       .search-room__selected-rooms
+        button.search-room__filter-btn.js-search-room__filter-btn 
+          h2.search-room__filter-text  открыть фильтр
         span.search-room__title Номера, которые мы для вас подобрали
         .search-room__rooms
           +sliderCard({num: 888, 

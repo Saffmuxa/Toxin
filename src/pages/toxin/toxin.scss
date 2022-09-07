@@ -28,12 +28,19 @@
     height: 100%;
     position: relative;
     max-width: 1440px;
+    min-height: 374px;
     margin: auto;
   }
   &__find-window {
     position: absolute;
     top: 70px;
     left: 140px;
+  }
+}
+@media all and (max-width: 1440px) {
+  .toxin__main-content {
+    height: 57vw;
+    min-height: 530px;
   }
 }
 @media all and (max-width: 840px) {
@@ -47,9 +54,17 @@
     min-height: 590px;
   }
 }
-@media all and (max-width: 1440px) {
+
+@media all and (max-width: 480px) {
+  .toxin__info {
+    display: none;
+  }
+  .toxin__find-window {
+    top: 0;
+  }
+
   .toxin__main-content {
-    height: 57vw;
-    min-height: 530px;
+    height: auto;
+    min-height: auto;
   }
 }

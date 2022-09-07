@@ -6,6 +6,7 @@ import { initRoomDropdown } from "../../modules/blocks/dropdown-rooms/dropdown-r
 import { initCheckBox } from "../../modules/blocks/expand-checkbox/expand-checkbox";
 import { initSliderCard } from "../../modules/slider-card/slider-card";
 import { initPagination } from "../../modules/blocks/pagination/pagination";
+import "../../modules/header/header";
 
 const dropdownHeader = document.querySelectorAll(".js-main__header-dropdown");
 dropdownHeader.forEach((dropdownHeaderEl) => {
@@ -112,3 +113,31 @@ const sliderCard = document.querySelectorAll(".js-slider-card");
 sliderCard.forEach((sliderCard) => {
   initSliderCard(sliderCard);
 });
+const filterMenu = document.querySelector(".js-search-room__options");
+const filterMenuBtn = document.querySelector(".js-search-room__filter-btn");
+const filterMenuClose = document.querySelector(
+  ".js-search-room__close-options-btn"
+);
+// const header = document.getElementsByTagName("header");
+const body = document.getElementsByTagName("body");
+filterMenuBtn.addEventListener("click", () => {
+  filterMenu.classList.toggle("filter-menu__open");
+  setTimeout(() => filterMenu.classList.toggle("is-active"), 30);
+  // setTimeout(() => header[0].classList.toggle("header-fixed"), 30);
+  body[0].classList.toggle("overflow");
+});
+filterMenuClose.addEventListener("click", () => {
+  filterMenu.classList.toggle("is-active");
+  setTimeout(() => filterMenu.classList.toggle("filter-menu__open"), 300);
+  body[0].classList.toggle("overflow");
+  // header[0].classList.toggle("header-fixed");
+});
+// if (burgerMenu.classList.contains("open-burger")) {
+//   burgerMenu.classList.toggle("open-burger__slide");
+//   burger.classList.toggle("is-active");
+//   setTimeout(() => burgerMenu.classList.toggle("open-burger"), 300);
+// } else {
+//   burger.classList.toggle("is-active");
+//   burgerMenu.classList.toggle("open-burger");
+//   setTimeout(() => burgerMenu.classList.toggle("open-burger__slide"), 30);
+// }
