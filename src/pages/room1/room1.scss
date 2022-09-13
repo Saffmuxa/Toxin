@@ -35,7 +35,7 @@
     grid-template-columns: 981px auto;
     grid-template-rows: 242.5px 242.5px;
     overflow: hidden;
-    padding-top: 70px;
+    // padding-top: 70px;
     height: 100%;
     position: relative;
 
@@ -98,7 +98,7 @@
     display: flex;
   }
   &__doughnut_wrap {
-    padding-left: 3.6vw;
+    padding-left: 81px;
   }
   &__doughnut {
     // width: 123px;
@@ -155,6 +155,10 @@ canvas {
   }
 }
 @media all and (max-width: 1300px) {
+  .room__img-wrap {
+    grid-template-columns: 70vw auto;
+    grid-template-rows: 180px 180px;
+  }
   .room__details {
     grid-template-columns: auto;
     grid-template-rows: 540px 335px;
@@ -171,6 +175,9 @@ canvas {
   }
 }
 @media all and (max-width: 900px) {
+  .room__img-wrap {
+    display: none;
+  }
   .room__additionally-and-doughnut {
     flex-direction: column;
     align-items: center;
@@ -202,7 +209,7 @@ canvas {
 }
 @media all and (max-width: 500px) {
   .room__details {
-    padding: 2vw 10px;
+    padding: 0 10px;
     overflow: hidden;
     grid-template-rows: 530px 530px 440px 240px;
   }
