@@ -1,4 +1,4 @@
-## TOXIN
+## TOXIN учебный проект MetaLamp
 
 ## Ссылки
 * Сайт размещен на https://rapid-grass.surge.sh/
