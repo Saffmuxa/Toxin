@@ -40,3 +40,10 @@
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
   }
 }
+@media all and (max-width: 800px) {
+  .comment__info {
+    grid-template-rows: 18px 35px auto;
+    width: 80vw;
+    min-width: 280px;
+  }
+}

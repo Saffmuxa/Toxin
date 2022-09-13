@@ -4,7 +4,7 @@ import { initCalendar } from "../../modules/blocks/datepicker/datepicker";
 import "../../modules/blocks/like-button/like-button";
 import { initRoomInfo } from "../../modules/room-info/room-info";
 import { DoughnutChart } from "../../modules/blocks/chart/chart";
-
+import "../../modules/header/header";
 const pieChartElements = document.querySelectorAll(".js-doughnut-chart__item");
 pieChartElements.forEach((element) => new DoughnutChart(element));
 
